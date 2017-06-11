@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "sonniesedge"
-theme = "blank"
+theme = "sonniesedge"
 
 SectionPagesMenu = "main"

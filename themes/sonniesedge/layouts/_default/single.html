@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+	<main>
+		<article>
+			<h1>{{ .Title }}</h1>
+			<div>
+				{{ .Content }}
+			</div>
+			<div>
+				{{ template "_internal/disqus.html" . }}
+			</div>
+		</article>
+	</main>
+{{ partial "sidebar.html" . }}
+{{ partial "footer.html" . }}
