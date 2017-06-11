@@ -4,6 +4,7 @@ date = "2014-09-25 11:00:16"
 strapline = "Say you've done this and watch the hordes descend upon you."
 tags = ["web"]
 categories = ["posts"]
+slug = "using-bootstrap-large-site"
 +++
 
 <p>It's fair to say that Bootstrap has a poor reputation in modern frontend circles. "It's bloated! It's redundant! It makes every site look the same!", shouts the Bearded Developer, "Roll your own damn solution!"</p>

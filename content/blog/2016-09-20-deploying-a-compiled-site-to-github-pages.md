@@ -4,6 +4,7 @@ date = "2016-09-20 17:57:00"
 strapline = "Personal Github Pages only allow either static sites or Jekyll as a source, not both."
 tags = ["web"]
 categories = ["posts"]
+slug = "deploying-a-compiled-site-to-github-pages"
 +++
 
 Having recently switched to using [Github Pages](https://pages.github.com/) to host this site I thought I'd quickly note down how I overcame some of the limitations of the Github Pages when it comes to using modern build processes.

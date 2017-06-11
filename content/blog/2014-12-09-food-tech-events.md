@@ -4,6 +4,7 @@ date = "2014-12-09 11:00:16"
 strapline = "You've never noticed the food at tech events. Not unless you've got some kind of dietary restriction."
 tags = ["web"]
 categories = ["posts"]
+slug = "food-tech-events"
 +++
 
 You've never noticed the food at tech events.

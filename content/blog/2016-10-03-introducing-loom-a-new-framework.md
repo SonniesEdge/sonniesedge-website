@@ -4,6 +4,7 @@ date = "2016-10-03 12:00:00"
 strapline = "A framework that helps you weave your own pattern libraries."
 tags = ["web"]
 categories = ["posts"]
+slug = "introducing-loom-a-new-framework"
 +++
 
 So, I thought it'd be a great idea to write my own CSS framework. This is the kind of thinking that occurs when I've had too much caffeine (file this alongside my other caffeine-based projects, such as "Why not repaint the apartment?" and "Try abseiling down an industrial chimney").

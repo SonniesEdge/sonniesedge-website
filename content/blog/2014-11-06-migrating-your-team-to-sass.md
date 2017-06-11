@@ -4,6 +4,7 @@ date = "2014-11-04 12:00:00"
 strapline = "Migrating to a modern process is all about the planning."
 tags = ["web"]
 categories = ["posts"]
+slug = "migrating-your-team-to-sass"
 +++
 
 Having read all the articles, watched all the talks, and used it on your own personal projects, you've decided to start using Sass in your workplace. Congratulations! But now you've got the job of actually implementing it in your team.

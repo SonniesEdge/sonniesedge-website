@@ -4,6 +4,7 @@ date = "2016-10-08 13:30:00"
 strapline = "First in a series of posts on learning to write Loom, a new Sass framework."
 tags = ["web"]
 categories = ["posts"]
+slug = "loom-setting-the-scope"
 +++
 
 *Writing the core of [Loom](https://github.com/sonniesedge/loom) has been extraordinary fun, and I'll be sharing some of the thought processes and techniques behind it with you.*

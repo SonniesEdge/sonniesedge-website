@@ -4,6 +4,7 @@ date = "2016-12-27 12:00:00"
 strapline = "Seriously dude, what's wrong with you?"
 tags = ["web"]
 categories = ["posts"]
+slug = "an-open-letter-to-that-always-hacking-guy"
 +++
 
 Joe, if you want an insight into why the web industry is so broken, just look at [the tweet](https://twitter.com/joemccann/status/812732099027419139) that you wrote on Christmas Eve:

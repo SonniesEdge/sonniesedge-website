@@ -4,6 +4,7 @@ date = "2014-10-27 11:00:16"
 strapline = "Sticking some nitro up your CSS."
 tags = ["web"]
 categories = ["posts"]
+slug = "inlining-critical-css"
 +++
 
 Lately I've been playing with <a href="https://github.com/filamentgroup/loadCSS">LoadCSS</a> from Filament Group. It's a wonderful system for asynchronously loading CSS, therefore removing a blocking resource from your page loads.

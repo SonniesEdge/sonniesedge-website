@@ -4,6 +4,7 @@ date = "2014-09-30 11:00:16"
 strapline = "Sass is an essential part of any modern workflow, but the default compiler is let down by slow compilation times."
 tags = ["web"]
 categories = ["posts"]
+slug = "using-libsass-library"
 +++
 
 

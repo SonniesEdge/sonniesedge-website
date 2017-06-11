@@ -4,6 +4,7 @@ date = "2016-10-08 13:30:00"
 strapline = "tl;dr npm version handles semver and publishes for you..."
 tags = ["web"]
 categories = ["posts"]
+slug = "npm-version"
 +++
 
 So, I'm supposed to be prepping for an interview right now, but I had to write this down before I forget as it is SO FUCKING COOL.

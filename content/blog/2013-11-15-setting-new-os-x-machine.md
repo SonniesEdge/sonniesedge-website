@@ -4,6 +4,7 @@ date = "2013-11-15 11:00:16"
 strapline = "UNIX at the core of every machine."
 tags = ["web"]
 categories = ["posts"]
+slug = "setting-new-os-x-machine"
 +++
 
 **UPDATED 2013-01-23: using virtual hosts and SSL certs.**

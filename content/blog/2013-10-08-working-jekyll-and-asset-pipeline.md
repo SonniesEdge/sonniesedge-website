@@ -4,6 +4,7 @@ date = "2013-10-08 11:00:16"
 strapline = "It's actually quite exciting."
 tags = ["web", "jekyll", "staticsites"]
 categories = ["posts"]
+slug = "working-jekyll-and-asset-pipeline"
 +++
 
 

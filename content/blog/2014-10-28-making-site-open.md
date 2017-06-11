@@ -4,6 +4,7 @@ date = "2014-10-28 11:00:16"
 strapline = "I'm such a generous soul."
 tags = ["web"]
 categories = ["posts"]
+slug = "making-site-open"
 +++
 
 I remember what it was like when I was starting out with this web game. I didn't have a clue how to build things, how to write code, how to optimise. Like all of us, I was clueless. What got me rapidly going was being able to look at the code of other sites via dev tools, and see how they did things.

@@ -4,6 +4,7 @@ date = "2014-11-24 11:00:16"
 strapline = "Fancy pants show off."
 tags = ["web"]
 categories = ["posts"]
+slug = "writing-sitepoint"
 +++
 
 In a big move for me, I've started writing articles for <a href="http://sitepoint.com">Sitepoint.com</a>. My first featured piece is <a href="http://www.sitepoint.com/migrating-team-sass/">Migrating a Team to Sass</a>, where I talk about... migrating a team to Sass. (There are no surprises in that title).

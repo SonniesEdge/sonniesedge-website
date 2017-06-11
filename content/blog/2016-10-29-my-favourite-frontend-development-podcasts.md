@@ -4,6 +4,7 @@ date = "2016-10-29 12:50:00"
 strapline = "aka mouthblogs"
 tags = ["web"]
 categories = ["posts"]
+slug = "my-favourite-frontend-development-podcasts"
 +++
 
 As I can't be arsed to read blogs or Twitter that often, podcasts are kinda vital for me. They let me keep up with latest news and trends in the web world, and keep me occupied on my 40 minute bicycle commute to work.

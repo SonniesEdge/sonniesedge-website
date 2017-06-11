@@ -4,6 +4,7 @@ date = "2014-09-06 11:00:16"
 strapline = "Just do an end run around it."
 tags = ["web"]
 categories = ["posts"]
+slug = "bypassing-jekyll-your-grunt-tasks"
 +++
 
 Like most front-end people, I find myself mostly working on stylesheet files, rather than the actual HTML structure of a site.

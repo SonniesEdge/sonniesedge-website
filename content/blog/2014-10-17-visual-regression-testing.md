@@ -4,6 +4,7 @@ date = "2014-10-17 11:00:16"
 strapline = "Visual Regression Testing becomes more important the more complex a project becomes."
 tags = ["web"]
 categories = ["posts"]
+slug = "visual-regression-testing"
 +++
 
 <h2>Why the hell do we need tests for CSS?</h2>

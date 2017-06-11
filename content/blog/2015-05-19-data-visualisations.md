@@ -4,6 +4,7 @@ date = "2015-05-19 12:00:00"
 strapline = "Look at the pretty graphs!"
 tags = ["web"]
 categories = ["posts"]
+slug = "data-visualisations"
 +++
 
 I understand the fascination with data visualisation now. This morning my colleague showed me what he was doing with some of the data we had gathered from the general election and - I can't lie - I got a bit excited over it.

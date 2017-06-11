@@ -4,6 +4,7 @@ date = "2013-10-03 11:00:16"
 strapline = "Ticket severity seems to be orientated towards backend projects."
 tags = ["web"]
 categories = ["posts"]
+slug = "categorising-ticket-severity-frontend-work"
 +++
 
 I've had the pleasure of having an entire day having every developer on my team watch me mess up their lovely web appliciations. Developers aren't happy about this, I've found.

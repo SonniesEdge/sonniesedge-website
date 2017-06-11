@@ -4,6 +4,7 @@ date = "2016-12-30 12:00:00"
 strapline = "Thanks for writing in. Even if you were wrong."
 tags = ["web"]
 categories = ["posts"]
+slug = "always-hacking-feedback"
 +++
 
 My [last post](/blog/an-open-letter-to-that-always-hacking-guy) made a lot of men quite annoyed. In a surprising move they felt the need to tell me about how annoyed they are. I know, right?  
