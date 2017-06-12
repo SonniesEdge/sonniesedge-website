@@ -5,7 +5,7 @@
 			</div>
 			<div>
 				<ul>
-					{{ range first 5 .Site.Pages }}
+					{{ range (where .Data.Pages "Section" "blog").ByDate.Reverse }}
 					<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
 					{{ end }}
 				</ul>
