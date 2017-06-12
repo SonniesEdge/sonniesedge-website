@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 	<main>
-		DEFAULT LIST TEMPLATE
-		{{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+		PAGE LIST TEMPLATE
+		{{ $paginator := .Paginate (where .Site.Pages "Type" "page") }}
 		{{ range $paginator.Pages }}
 			{{ partial "summary.html" . }}
 		{{ end }}
