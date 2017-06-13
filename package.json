@@ -1,0 +1,23 @@
+{
+  "name": "sonniesedge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "sonniesedge",
+  "scripts": {
+    "clean": "rm -f static/*.js static/*.css",
+    "babel:build": "babel themes/sonniesedge/static-src/js --out-file themes/sonniesedge/static/site.js --source-maps",
+    "babel:watch": "babel themes/sonniesedge/static-src/js --watch --out-file themes/sonniesedge/static/site.js --source-maps",
+    "sass:watch": "onchange 'themes/sonniesedge/static-src/scss/**/*.scss' -- npm run sass:build",
+    "sass:build": "node-sass --include-path node_modules/bootstrap-sass/assets/stylesheets themes/sonniesedge/static-src/scss/main.scss themes/sonniesedge/static/site.css",
+    "build:assets": "npm run clean && npm run sass:build && npm run babel:build",
+    "build": "npm run build:assets && hugo",
+    "start": "npm run clean && npm run sass:build && npm run babel:build && parallelshell 'npm run sass:watch' 'npm run babel:watch' 'hugo serve'"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-babili": "0.0.9",
+    "node-sass": "^4.1.1",
+    "onchange": "^3.2.1",
+    "parallelshell": "^2.0.0"
+  }
+}
