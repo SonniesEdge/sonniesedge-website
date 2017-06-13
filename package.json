@@ -4,7 +4,7 @@
   "private": true,
   "description": "sonniesedge",
   "scripts": {
-    "clean": "rm -f static/*.js static/*.css",
+    "clean": "rm -f themes/sonniesedge/static/*.js themes/sonniesedge/static/*.css",
     "babel:build": "babel themes/sonniesedge/static-src/js --out-file themes/sonniesedge/static/site.js --source-maps",
     "babel:watch": "babel themes/sonniesedge/static-src/js --watch --out-file themes/sonniesedge/static/site.js --source-maps",
     "sass:watch": "onchange 'themes/sonniesedge/static-src/scss/**/*.scss' -- npm run sass:build",
