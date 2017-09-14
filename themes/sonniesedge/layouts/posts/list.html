@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 	<main>
 		BLOG LIST TEMPLATE
-		{{ $paginator := .Paginate (where .Site.Pages "Type" "blog") }}
+		{{ $paginator := .Paginate (where .Site.Pages "Type" "posts") }}
 		{{ range $paginator.Pages }}
 			{{ partial "summary.html" . }}
 		{{ end }}
