@@ -2,9 +2,11 @@
 	<main>
 		{{ .Content }}
 		{{ $paginator := .Paginate (where .Site.Pages "Type" "posts") }}
-		{{ range $paginator.Pages }}
-			{{ partial "summary.html" . }}
-		{{ end }}
+		<ul>
+			{{ range $paginator.Pages }}
+				<li>{{ partial "summary.html" . }}</li>
+			{{ end }}
+		</ul>
 		{{ partial "pagination.html" . }}
 	</main>
 {{ partial "sidebar.html" . }}

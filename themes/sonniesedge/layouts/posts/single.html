@@ -3,19 +3,20 @@
 		BLOG SINGLE TEMPLATE
 		<article>
 			<h1>{{ .Title }}</h1>
-			<time>{{ .Date.Format "02.01.2006 15:04" }}</time>
-			<div>
+			<time>{{ .Date.Format "January 2, 2006" }}</time>
+			<div class="c-reading-time">
 				<p>
 					Reading time:
-					{{ if le (div .WordCount 275) 1 }}
+					{{ if le .ReadingTime 1 }}
 					  mere seconds.
 					{{ else }}
-					  {{ div .WordCount 275 }} minute{{ if ge (div .WordCount 275.0) 2 }}s{{ end }}.
+					  {{ .ReadingTime }} minute{{ if ge .ReadingTime 2 }}s{{ end }}.
 					{{ end }}
 				</p>
 			</div>
 			{{ .Content }}
 			<div>
+				<p>Tags</p>
 				<ul id="tags">
 					{{ range .Params.tags }}
 					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
