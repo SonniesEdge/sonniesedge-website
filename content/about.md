@@ -3,6 +3,7 @@ title = "About her"
 slug = "about"
 menu = "main"
 type = "page"
+weight = 10
 +++
 
 I'm a 30-something woman living in Berlin, Germany (the famous one, with the wall and stuff).
