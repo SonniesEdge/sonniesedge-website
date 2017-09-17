@@ -1,8 +1,9 @@
 {{ partial "header.html" . }}
 	<main>
-		<article>
 			<h1>{{ .Title }}</h1>
+
 			{{ .Content }}
+
 			<div>
 				<ul id="tags">
 					{{ range .Params.tags }}
@@ -10,7 +11,7 @@
 					{{ end }}
 				</ul>
 			</div>
-		</article>
+			
 	</main>
 {{ partial "sidebar.html" . }}
 {{ partial "footer.html" . }}

@@ -1,27 +1,33 @@
 {{ partial "header.html" . }}
 	<main>
 		<article>
-			<h1>{{ .Title }}</h1>
-			<time>{{ .Date.Format "January 2, 2006" }}</time>
-			<div class="c-reading-time">
-				<p>
-					Reading time:
-					{{ if le .ReadingTime 1 }}
-					  mere seconds.
-					{{ else }}
-					  {{ .ReadingTime }} minute{{ if ge .ReadingTime 2 }}s{{ end }}.
-					{{ end }}
-				</p>
-			</div>
+			<header>
+				<h1>{{ .Title }}</h1>
+				<p>{{ .Params.strapline }}</p>
+				<time>{{ .Date.Format "January 2, 2006" }}</time>
+				<div class="c-reading-time">
+					<p>
+						Reading time:
+						{{ if le .ReadingTime 1 }}
+						  mere seconds.
+						{{ else }}
+						  {{ .ReadingTime }} minute{{ if ge .ReadingTime 2 }}s{{ end }}.
+						{{ end }}
+					</p>
+				</div>
+			</header>
+
 			{{ .Content }}
-			<div>
+
+			<section>
 				<p>Tags</p>
 				<ul id="tags">
 					{{ range .Params.tags }}
 					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
 					{{ end }}
 				</ul>
-			</div>
+			</section>
+
 		</article>
 	</main>
 {{ partial "sidebar.html" . }}

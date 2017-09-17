@@ -1,5 +1,7 @@
 {{ partial "header.html" . }}
 	<main>
+		<h1>{{ .Title }}</h1>
+		
 		{{ .Content }}
 		{{ $paginator := .Paginate (where .Site.Pages "Type" "posts") }}
 		<ul>
