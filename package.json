@@ -8,7 +8,7 @@
     "babel:build": "babel themes/sonniesedge/static-src/js --out-file themes/sonniesedge/static/main.js --source-maps",
     "babel:watch": "babel themes/sonniesedge/static-src/js --watch --out-file themes/sonniesedge/static/main.js --source-maps",
     "sass:watch": "onchange 'themes/sonniesedge/static-src/scss/**/*.scss' -- npm run sass:build",
-    "sass:build": "node-sass --include-path node_modules/bootstrap-sass/assets themes/sonniesedge/static-src/scss/main.scss themes/sonniesedge/static/main.css",
+    "sass:build": "node-sass --include-path node_modules/loomcss/assets themes/sonniesedge/static-src/scss/main.scss themes/sonniesedge/static/main.css",
     "build:assets": "npm run clean && npm run sass:build && npm run babel:build",
     "build": "npm run build:assets && hugo",
     "start": "npm run clean && npm run sass:build && npm run babel:build && parallelshell 'npm run sass:watch' 'npm run babel:watch' 'hugo serve'"
