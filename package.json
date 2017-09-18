@@ -19,6 +19,7 @@
     "node-sass": "^4.1.1",
     "onchange": "^3.2.1",
     "parallelshell": "^2.0.0",
-    "loom": "git+https://github.com/sonniesedge/loom.git"
+    "loom": "git+https://github.com/sonniesedge/loom.git",
+    "font-face-observer": "1.0.0"
   }
 }
