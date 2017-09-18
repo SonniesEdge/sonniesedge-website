@@ -2,3 +2,4 @@ themes/sonniesedge/static/css
 node_modules/
 public/
 themes/sonniesedge/static/
+.DS_Store
