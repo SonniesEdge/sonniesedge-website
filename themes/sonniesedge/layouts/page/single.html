@@ -1,17 +1,15 @@
-{{ partial "header.html" . }}
-	<main>
-			<h1>{{ .Title }}</h1>
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
 
-			{{ .Content }}
+	{{ .Content }}
 
-			<div>
-				<ul id="tags">
-					{{ range .Params.tags }}
-					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
-					{{ end }}
-				</ul>
-			</div>
-			
+	<div>
+		<ul id="tags">
+			{{ range .Params.tags }}
+			<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+			{{ end }}
+		</ul>
+	</div>
+
 	</main>
-{{ partial "sidebar.html" . }}
-{{ partial "footer.html" . }}
+{{ end }}

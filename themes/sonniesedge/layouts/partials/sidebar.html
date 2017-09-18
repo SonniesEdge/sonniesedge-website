@@ -1,14 +1,9 @@
 	<aside>
-		<div>
-			<div>
-				<h3>LATEST POSTS</h3>
-			</div>
-			<div>
-				<ul>
-					{{ range first 5 (where .Site.Pages "Type" "posts").ByDate.Reverse }}
-					<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-					{{ end }}
-				</ul>
-			</div>
-		</div>
+		<h1>Latest posts</h1>
+
+		<ul>
+			{{ range first 5 (where .Site.Pages "Type" "posts").ByDate.Reverse }}
+			<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+			{{ end }}
+		</ul>
 	</aside>

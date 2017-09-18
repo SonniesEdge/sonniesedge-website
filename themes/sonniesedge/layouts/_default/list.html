@@ -1,11 +1,8 @@
-{{ partial "header.html" . }}
-	<main>
-		DEFAULT LIST TEMPLATE
-		{{ $paginator := .Paginate (where .Site.Pages ) }}
-		{{ range $paginator.Pages }}
-			{{ partial "summary.html" . }}
-		{{ end }}
-		{{ partial "pagination.html" . }}
-	</main>
-{{ partial "sidebar.html" . }}
-{{ partial "footer.html" . }}
+{{ define "main" }}
+	DEFAULT LIST TEMPLATE
+	{{ $paginator := .Paginate (where .Site.Pages ) }}
+	{{ range $paginator.Pages }}
+		{{ partial "summary.html" . }}
+	{{ end }}
+	{{ partial "pagination.html" . }}
+{{ end }}

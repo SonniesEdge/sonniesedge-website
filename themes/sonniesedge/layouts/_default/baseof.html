@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+  <head>
+  	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<title>{{ .Title }}</title>
+  	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+  	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  	<link rel="stylesheet" href="{{ .Site.BaseURL }}/main.css">
+  	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
+  	{{ .Hugo.Generator }}
+  </head>
+  <body>
+  	<header>
+  		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+  		{{ partial "navigation.html" . }}
+  	</header>
+    <main>
+      <!-- Code that all your templates share, like a header -->
+      {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->
+      {{ end }}
+      {{ block "footer" . }}
+      <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+      {{ end }}
+
+    </main>
+
+    <footer>
+      <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
+    </footer>
+
+    {{ template "_internal/google_analytics_async.html" . }}
+
+  </body>
+</html>

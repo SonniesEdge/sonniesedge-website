@@ -1,14 +1,14 @@
-{{ partial "header.html" . }}
-	<main>
-		<h1>{{ .Title }}</h1>
-		
-		{{ .Content }}
-		{{ $paginator := .Paginate (where .Site.Pages "Type" "posts") }}
-		<ul>
-			{{ range $paginator.Pages }}
-				<li>{{ partial "summary.html" . }}</li>
-			{{ end }}
-		</ul>
-		{{ partial "pagination.html" . }}
-	</main>
-{{ partial "footer.html" . }}
+{{ define "main" }}
+
+	<h1>{{ .Title }}</h1>
+
+	{{ .Content }}
+	{{ $paginator := .Paginate (where .Site.Pages "Type" "posts") }}
+	<ul>
+		{{ range $paginator.Pages }}
+			<li>{{ partial "summary.html" . }}</li>
+		{{ end }}
+	</ul>
+	{{ partial "pagination.html" . }}
+
+{{ end }}

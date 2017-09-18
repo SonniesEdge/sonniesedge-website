@@ -1,6 +1,7 @@
-{{ partial "header.html" . }}
-	<main>
-		{{ .Content }}
-	</main>
-{{ partial "sidebar.html" . }}
-{{ partial "footer.html" . }}
+{{ define "main" }}
+
+	{{ .Content }}
+
+	{{ partial "sidebar.html" . }}
+
+{{ end }}
