@@ -14,17 +14,17 @@
     <script src="main.js"></script>
   </head>
   <body>
-  	<header>
+  	<header class="l-container">
   		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
   		{{ partial "navigation.html" . }}
   	</header>
-    <main>
+    <main class="l-container">
       {{ block "main" . }}
         Test
       {{ end }}
     </main>
 
-    <footer>
+    <footer class="l-container">
       <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
     </footer>
 
