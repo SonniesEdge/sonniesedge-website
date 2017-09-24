@@ -1,45 +1,44 @@
-// SETTINGS
+// ----->  Overrides of this layer's Loom variables go above here!
 @import '10-settings/misc';
-// ----->  ADD YOUR OWN SETTINGS HERE! :D
-@import 'loom/10-global-settings';
-// NOOOO! DON'T YOUR OWN SETTINGS AT THE END! :( SEE THE TEXT ABOVE!
+@import 'loom/010-global-settings';
+// ----->  Add your own custom global settings below here!
 
-// TOOLS
-@import 'loom/20-tools';
-// -----> ADD YOUR OWN TOOLS HERE! :D
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/020-functions';
+// ----->  Add your own custom tools below here!
 
-// GENERIC
-@import 'loom/30-generic';
-// -----> ADD YOUR OWN GENERIC STYLES HERE! :D
-@import '30-generic/syntax-highlighting';
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/030-mixins';
+// ----->  Add your own custom tools below here!
 
-// BASE ELEMENTS
-@import '40-base-elements/typography';
-@import '40-base-elements/images';
-@import 'loom/40-base-elements';
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/040-generic';
+// ----->  Add your own custom global settings below here!
 
-// -----> ADD YOUR OWN BASE ELEMENTS HERE! :D
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/050-base-elements';
+// ----->  ADD YOUR OWN MODULES BELOW HERE!
 
-// LAYOUT
-@import 'loom/50-layout';
-// -----> ADD YOUR OWN LAYOUT ENGINES HERE! :D
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/060-layout';
+// ----->  ADD YOUR OWN MODULES BELOW HERE!
 
-// OBJECTS
-@import 'loom/60-objects';
-// -----> ADD YOUR OWN OBJECTS HERE! :D
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/070-objects';
+// ----->  ADD YOUR OWN MODULES BELOW HERE!
 
-// UI COMPONENTS
-@import '70-ui-components/meta';
-@import '70-ui-components/logo';
-@import '70-ui-components/nav-button';
-@import '70-ui-components/nav-list';
-@import '70-ui-components/lede';
-@import '70-ui-components/page-header';
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/080-ui-components';
+// ----->  ADD YOUR OWN MODULES BELOW HERE!
 
-// UTILITIES
-@import 'loom/80-utilities';
-// -----> ADD YOUR OWN UTILITIES HERE! :D
-@import '80-utilities/border';
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/090-scaffolding';
+// ----->  ADD YOUR OWN MODULES BELOW HERE!
 
-// TRUMPS
-// -----> ADD YOUR OWN TRUMPS HERE! :D
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/100-utilities';
+// ----->  ADD YOUR OWN MODULES BELOW HERE!
+
+// ----->  Overrides of this layer's Loom variables go above here!
+@import 'loom/110-overrides'; // rename to veto
+// ----->  ADD YOUR OWN MODULES BELOW HERE!
