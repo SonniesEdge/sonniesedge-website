@@ -1,0 +1,68 @@
+$font-family-basic: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+
+$font-family-opensans:   "Open Sans", Helvetica, Arial, sans-serif;
+$font-family-robotoslab: "Roboto Slab", Helvetica, Arial, sans-serif;
+
+$LOOM-font-map-default: (
+  'primary': (
+    'default': $font-family-basic,
+    'webfont': $font-family-opensans
+  ),
+  'secondary': (
+    'default': $font-family-basic,
+    'webfont': $font-family-robotoslab
+  )
+);
+
+$LOOM-fonts: $LOOM-font-map-default;
+
+$LOOM-colors: (
+  'black': #000,
+  'white': #fff,
+  'gray': #f4f4f4,
+  'darkgray': #333,
+  'pink': #ce96aa
+);
+
+$LOOM-line-height: 1.6;
+
+$LOOM-container-margin: get-spacing(small);
+
+$LOOM-font-sizes: (
+  'default': (
+    'smaller-viewport': ('font-size': 18px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 16px, 'line-height': 1.5)
+  ),
+  'major': (
+    'smaller-viewport': ('font-size': 44px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 34px, 'line-height': 1.5)
+  ),
+  'alpha': (
+    'smaller-viewport': ('font-size': 36px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 32px, 'line-height': 1.5)
+  ),
+  'beta': (
+    'smaller-viewport': ('font-size': 30px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 28px, 'line-height': 1.5)
+  ),
+  'gamma': (
+    'smaller-viewport': ('font-size': 26px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 24px, 'line-height': 1.5)
+  ),
+  'delta': (
+    'smaller-viewport': ('font-size': 24px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 22px, 'line-height': 1.5)
+  ),
+  'epsilon': (
+    'smaller-viewport': ('font-size': 22px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 20px, 'line-height': 1.5)
+  ),
+  'zeta': (
+    'smaller-viewport': ('font-size': 20px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 18px, 'line-height': 1.5)
+  ),
+  'sub': (
+    'smaller-viewport': ('font-size': 14px, 'line-height': 1.5),
+    'larger-viewport': ('font-size': 12px, 'line-height': 1.5)
+  )
+);

@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "http://localhost:3000"
 languageCode = "en-gb"
 title = "sonniesedge"
 theme = "sonniesedge"

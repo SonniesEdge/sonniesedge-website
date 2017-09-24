@@ -7,11 +7,11 @@
   	<title>{{ .Title }}</title>
   	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
   	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-  	<link rel="stylesheet" href="{{ .Site.BaseURL }}main.css">
+  	<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css">
   	{{ if .RSSLink -}}<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}">{{- end }}
   	{{ .Hugo.Generator }}
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-    <script src="main.js"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
   </head>
   <body>
@@ -30,6 +30,6 @@
     </footer>
 
     {{ template "_internal/google_analytics_async.html" . }}
-
+  <script src="/app.js"></script>
   </body>
 </html>
