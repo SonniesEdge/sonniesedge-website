@@ -3,6 +3,8 @@ languageCode = "en-gb"
 title = "sonniesedge"
 theme = "sonniesedge"
 pluralizeListTitles = "false"
+pygmentsuseclasses = "true"
+PygmentsCodeFences = "true"
 
 SectionPagesMenu = "main"
 googleAnalytics = "UA-123-45"

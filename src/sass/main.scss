@@ -1,5 +1,5 @@
 // ----->  Overrides of this layer's Loom variables go above here!
-@import '10-settings/misc';
+@import '010-settings/misc';
 @import 'loom/010-global-settings';
 // ----->  Add your own custom global settings below here!
 
@@ -13,11 +13,14 @@
 
 // ----->  Overrides of this layer's Loom variables go above here!
 @import 'loom/040-generic';
+@import '040-generic/syntax-highlighting';
 // ----->  Add your own custom global settings below here!
 
 // ----->  Overrides of this layer's Loom variables go above here!
 @import 'loom/050-base-elements';
 // ----->  ADD YOUR OWN MODULES BELOW HERE!
+@import '050-base-elements/images';
+@import '050-base-elements/typography';
 
 // ----->  Overrides of this layer's Loom variables go above here!
 @import 'loom/060-layout';
@@ -30,6 +33,12 @@
 // ----->  Overrides of this layer's Loom variables go above here!
 @import 'loom/080-ui-components';
 // ----->  ADD YOUR OWN MODULES BELOW HERE!
+@import '080-ui-components/lede';
+@import '080-ui-components/logo';
+@import '080-ui-components/meta';
+@import '080-ui-components/nav-button';
+@import '080-ui-components/nav-list';
+@import '080-ui-components/page-header';
 
 // ----->  Overrides of this layer's Loom variables go above here!
 @import 'loom/090-scaffolding';
@@ -38,6 +47,7 @@
 // ----->  Overrides of this layer's Loom variables go above here!
 @import 'loom/100-utilities';
 // ----->  ADD YOUR OWN MODULES BELOW HERE!
+@import '100-utilities/border';
 
 // ----->  Overrides of this layer's Loom variables go above here!
 @import 'loom/110-overrides'; // rename to veto

@@ -1,8 +1,3 @@
 <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
 <p>{{ .Params.strapline }}</p>
 <p><time>{{ .Date.Format "January 2, 2006" }}</time></p>
-<p>
-{{ range .Params.tags }}
-	<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-{{ end }}
-</p>
