@@ -16,8 +16,14 @@
   </head>
   <body>
   	<header class="l-container">
-  		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-  		{{ partial "navigation.html" . }}
+      <nav class="c-header">
+    		<a href="{{ .Site.BaseURL }}">
+          <svg viewBox="0 0 423 71" class="c-logo">
+            <use xlink:href="/sonniesedge.svg#logo"></use>
+          </svg>
+        </a>
+    		{{ partial "navigation.html" . }}
+      </nav>
   	</header>
     <main class="l-container">
       {{ block "main" . }}

@@ -26,7 +26,7 @@ $LOOM-colors: (
 
 $LOOM-line-height: 1.6;
 
-$LOOM-container-margin: get-spacing(small);
+$LOOM-container-margin: get-spacing('small');
 
 $LOOM-font-sizes: (
   'default': (
@@ -66,3 +66,5 @@ $LOOM-font-sizes: (
     'larger-viewport': ('font-size': 12px, 'line-height': 1.5)
   )
 );
+
+$LOOM-single-column-width: 80rem;

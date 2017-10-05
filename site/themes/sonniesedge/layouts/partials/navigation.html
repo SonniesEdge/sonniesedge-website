@@ -1,7 +1,5 @@
-<nav>
-  <ul>
-    {{ range .Site.Menus.main }}
-    <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-    {{ end }}
-  </ul>
-</nav>
+<ul class="c-nav-list">
+  {{ range .Site.Menus.main }}
+  <li><a href="{{ .URL | relURL }}" class="">{{ .Name }}</a></li>
+  {{ end }}
+</ul>
