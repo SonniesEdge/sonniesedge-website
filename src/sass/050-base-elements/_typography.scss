@@ -1,14 +1,15 @@
-$LOOM-a-color: get-color(pink);
-$LOOM-a-color-visited: get-color(pink);
-$LOOM-a-color-hoverfocus: get-color(pink);
+a {
+  color: get-color('pink');
 
-$LOOM-typography-vertical-spacing: 1.5rem;
+  &:hover {
+    color: get-color('black');
+  }
 
-html {
-  &.fonts-loaded {
-
+  &:visited {
+    color: darken(get-color('pink'), 50%);
   }
 }
+
 
 
 blockquote {

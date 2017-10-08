@@ -1,8 +1,13 @@
 .c-header {
   display: flex;
   justify-content: space-between;
+  padding-top: get-spacing('small');
+  padding-bottom: get-spacing('small');
+  flex-wrap: wrap;
+  align-items: center;
 
   > * {
     flex-grow: 1;
   }
 }
+//

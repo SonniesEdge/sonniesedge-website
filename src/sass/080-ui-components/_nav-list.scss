@@ -1,5 +1,19 @@
 .c-nav-list {
   display: flex;
   @include list-reset();
-  justify-content: space-around;
+  justify-content: space-between;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+}
+
+.c-nav-list__item {
+  white-space: nowrap;
+}
+
+.c-nav-list__link {
+  color: get-color('black');
+
+  &:hover {
+    color: get-color('pink');
+  }
 }
