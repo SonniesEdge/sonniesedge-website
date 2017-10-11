@@ -8,3 +8,4 @@ PygmentsCodeFences = "true"
 
 SectionPagesMenu = "main"
 googleAnalytics = "UA-123-45"
+paginate = 100
