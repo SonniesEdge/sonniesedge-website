@@ -17,7 +17,7 @@ const sassOpts = {
   errLogToConsole: true };
 
 // Hugo arguments
-const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v"];
+const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v", "-b", "http://localhost:3000"];
 const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
 
 // Development tasks
