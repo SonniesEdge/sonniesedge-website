@@ -1,0 +1,8 @@
+<ul>
+  {{ $data := .Data }}
+  {{ range $key, $value := .Data.Terms }}
+    <li>
+        <a href="{{ $key | urlize }}">{{ $key }}</a> {{ len $value }}
+    </li>
+  {{ end }}
+</ul>
