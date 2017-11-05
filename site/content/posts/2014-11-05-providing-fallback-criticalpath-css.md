@@ -3,7 +3,7 @@ title = "Providing a fallback for critical-path CSS"
 date = "2014-11-05 11:00:16"
 strapline = "tl;dr make sure you do it."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "providing-fallback-criticalpath-css"
 +++
 

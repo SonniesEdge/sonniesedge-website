@@ -3,7 +3,7 @@ title = "Bypassing Jekyll via Grunt"
 date = "2014-09-06 11:00:16"
 strapline = "Just do an end run around it."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "bypassing-jekyll-your-grunt-tasks"
 +++
 

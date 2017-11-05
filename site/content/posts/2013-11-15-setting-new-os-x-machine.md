@@ -3,7 +3,7 @@ title = "Setting up an OS X machine"
 date = "2013-11-15 11:00:16"
 strapline = "UNIX at the core of every machine."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "setting-new-os-x-machine"
 +++
 

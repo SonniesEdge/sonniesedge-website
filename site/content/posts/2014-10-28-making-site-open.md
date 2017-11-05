@@ -3,7 +3,7 @@ title = "Making this site open"
 date = "2014-10-28 11:00:16"
 strapline = "I'm such a generous soul."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "making-site-open"
 +++
 

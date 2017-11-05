@@ -2,8 +2,8 @@
 title = "Inlining critical CSS"
 date = "2014-10-27 11:00:16"
 strapline = "Sticking some nitro up your CSS."
-tags = ["web"]
-categories = ["posts"]
+tags = ["css", "sass", "performance"]
+categories = ["webtech"]
 slug = "inlining-critical-css"
 +++
 
@@ -58,4 +58,3 @@ Please, try <a href="https://www.npmjs.org/package/grunt-inlinestyles">grunt-inl
 ## Resources
 - <a href="https://www.npmjs.org/package/grunt-inlinestyles">https://www.npmjs.org/package/grunt-inlinestyles</a>
 - <a href="https://github.com/filamentgroup/loadCSS">https://github.com/filamentgroup/loadCSS</a>
-

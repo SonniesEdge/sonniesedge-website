@@ -3,7 +3,7 @@ title = "Data Visualisations"
 date = "2015-05-19 12:00:00"
 strapline = "Look at the pretty graphs!"
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "data-visualisations"
 +++
 

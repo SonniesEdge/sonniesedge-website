@@ -3,7 +3,7 @@ title = "Migrating your team to Sass"
 date = "2014-11-04 12:00:00"
 strapline = "Migrating to a modern process is all about the planning."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "migrating-your-team-to-sass"
 +++
 

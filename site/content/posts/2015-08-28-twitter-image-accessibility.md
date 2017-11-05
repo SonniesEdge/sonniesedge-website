@@ -3,7 +3,7 @@ title = "Twitter image accessibility"
 date = "2015-08-28 11:00:16"
 strapline = "The way we use Twitter isn't accessible for everyone."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "twitter-image-accessibility"
 +++
 

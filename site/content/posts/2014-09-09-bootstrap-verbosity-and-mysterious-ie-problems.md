@@ -3,7 +3,7 @@ title = "Bootstrap verbosity and mysterious IE problems"
 date = "2014-09-09 11:00:16"
 strapline = "Bootstrap? Verbose? Pull the other one. It has bells on it."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "bootstrap-verbosity-and-mysterious-ie-problems"
 +++
 

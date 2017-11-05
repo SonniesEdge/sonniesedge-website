@@ -3,7 +3,7 @@ title = "Auto-publishing via npm version"
 date = "2016-10-08 13:30:00"
 strapline = "tl;dr npm version handles semver and publishes for you..."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "npm-version"
 +++
 

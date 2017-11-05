@@ -3,7 +3,7 @@ title = "Categorising front end ticket severity"
 date = "2013-10-03 11:00:16"
 strapline = "Ticket severity seems to be orientated towards backend projects."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "categorising-ticket-severity-frontend-work"
 +++
 
@@ -15,7 +15,7 @@ Anyway, it got me thinking about how frontend tickets are categorised in trackin
 
 - Blocker - Somehow causes Critical issues in other systems or services.
 - Critical - Causes no data to be sent from page. Causes bad data to be sent.
-- Major - Makes information on page unreadable. 
+- Major - Makes information on page unreadable.
 - Minor - Something looks odd, but doesn't look awful.
 - Trivial - Should be 1px off to the left.
 

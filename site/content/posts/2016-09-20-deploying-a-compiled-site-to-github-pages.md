@@ -3,7 +3,7 @@ title = "Deploying a compiled site to a personal Github Pages account"
 date = "2016-09-20 17:57:00"
 strapline = "Personal Github Pages only allow either static sites or Jekyll as a source, not both."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "deploying-a-compiled-site-to-github-pages"
 +++
 

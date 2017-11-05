@@ -3,7 +3,7 @@ title = "A day without Javascript"
 date = "2017-06-07 12:00:00"
 strapline = "What could go wrong?"
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "a-day-without-javascript"
 +++
 

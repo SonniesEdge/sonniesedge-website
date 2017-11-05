@@ -3,7 +3,7 @@ title = "Introducing Loom"
 date = "2016-10-03 12:00:00"
 strapline = "A framework that helps you weave your own pattern libraries."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "introducing-loom-a-new-framework"
 +++
 

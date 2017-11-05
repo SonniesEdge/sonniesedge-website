@@ -3,7 +3,7 @@ title = "My favourite UX, design and frontend development podcasts"
 date = "2016-10-29 12:50:00"
 strapline = "aka mouthblogs"
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "my-favourite-frontend-development-podcasts"
 +++
 

@@ -3,7 +3,7 @@ title = "User Queries: Returning control to the user"
 date = "2017-01-24 12:00:00"
 strapline = "Give them thqe power to fuck up in their own way."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "user-queries"
 +++
 

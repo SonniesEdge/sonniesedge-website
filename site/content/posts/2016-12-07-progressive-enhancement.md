@@ -3,7 +3,7 @@ title = "Yes, progressive enhancement is a fucking moral argument"
 date = "2016-12-06 12:00:00"
 strapline = "You don't get to choose who is viewing your work, you fucking fuck."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "progressive-enhancement"
 +++
 

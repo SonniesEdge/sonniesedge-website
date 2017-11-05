@@ -3,7 +3,7 @@ title = "An open letter to the guy who wrote that 'Always Hacking' tweet"
 date = "2016-12-27 12:00:00"
 strapline = "Seriously dude, what's wrong with you?"
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "an-open-letter-to-that-always-hacking-guy"
 +++
 

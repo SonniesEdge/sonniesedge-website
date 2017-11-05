@@ -3,7 +3,7 @@ title = "Using Bootstrap on a large site"
 date = "2014-09-25 11:00:16"
 strapline = "Say you've done this and watch the hordes descend upon you."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "using-bootstrap-large-site"
 +++
 

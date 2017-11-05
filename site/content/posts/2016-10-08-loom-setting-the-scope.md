@@ -3,7 +3,7 @@ title = "Setting the scope for Loom"
 date = "2016-10-08 13:30:00"
 strapline = "First in a series of posts on learning to write Loom, a new Sass framework."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "loom-setting-the-scope"
 +++
 

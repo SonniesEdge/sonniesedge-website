@@ -3,7 +3,7 @@ title = "Some feedback from the Internet of Men"
 date = "2016-12-30 12:00:00"
 strapline = "Thanks for writing in. Even if you were wrong."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "always-hacking-feedback"
 +++
 

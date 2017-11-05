@@ -2,6 +2,6 @@
 title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: {{ .Date }}
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 draft = true
 +++

@@ -3,7 +3,7 @@ title = "Writing for sitepoint is a thing that I do now"
 date = "2014-11-24 11:00:16"
 strapline = "Fancy pants show off."
 tags = ["web"]
-categories = ["posts"]
+categories = ["webtech"]
 slug = "writing-sitepoint"
 +++
 
