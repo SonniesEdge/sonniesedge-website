@@ -1,3 +1,5 @@
-<p><a href="{{ .Permalink }}">{{ .Title }}</a></p>
-<p>{{ .Params.strapline }}</p>
-<p><time>{{ .Date.Format "January 2, 2006" }}</time></p>
+<article class="c-summary">
+  <h2 class="c-summary__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  <p class="c-summary__strapline">{{ .Params.strapline }}</p>
+  <p class="c-summary__date"><time>{{ .Date.Format "January 2, 2006" }}</time></p>
+</article>

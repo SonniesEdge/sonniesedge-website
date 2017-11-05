@@ -4,11 +4,11 @@
 
 	{{ .Content }}
 	{{ $paginator := .Paginate (where .Site.Pages "Type" "posts") }}
-	<ul>
+	<div>
 		{{ range $paginator.Pages }}
-			<li>{{ partial "summary.html" . }}</li>
+			{{ partial "summary.html" . }}
 		{{ end }}
-	</ul>
+	</div>
 	{{ partial "pagination.html" . }}
 
 {{ end }}
