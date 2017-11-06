@@ -1,19 +1,21 @@
 {{ define "main" }}
 	<article>
 		<header>
-			<h1>{{ .Title }}</h1>
-			<p>{{ .Params.strapline }}</p>
-			<time>{{ .Date.Format "January 2, 2006" }}</time>
-			<div class="c-reading-time">
-				<p>
+			<div class="c-post-title">
+				<h1>{{ .Title }}</h1>
+				<p>{{ .Params.strapline }}</p>
+			</div>
+			<ul class="c-post-strapline">
+				<li>Published: <time>{{ .Date.Format "January 2, 2006" }}</time></li>
+				<li>
 					Reading time:
 					{{ if le .ReadingTime 1 }}
 					  mere seconds.
 					{{ else }}
 					  {{ .ReadingTime }} minute{{ if ge .ReadingTime 2 }}s{{ end }}.
 					{{ end }}
-				</p>
-			</div>
+				</li>
+			</ul>
 		</header>
 
 		{{ .Content }}
