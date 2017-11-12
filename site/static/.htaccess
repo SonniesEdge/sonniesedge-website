@@ -1,5 +1,5 @@
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
-  RewriteRule ^blog/(.*)$ /post/$1 [R=301,NC,L]
+  RewriteRule ^blog/(.*)$ /posts/$1 [R=301,NC,L]
 </IfModule>
