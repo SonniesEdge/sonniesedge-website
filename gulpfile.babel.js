@@ -21,7 +21,7 @@ const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v"];
 const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
 
 // Development tasks
-gulp.task("hugo", (cb) => buildSite(cb, ["-b", "http://localhost:3000"]));
+gulp.task("hugo", (cb) => buildSite(cb, []));
 gulp.task("hugo-preview", (cb) => buildSite(cb, hugoArgsPreview));
 
 // Build/production tasks
@@ -29,12 +29,12 @@ gulp.task("build", ["css", "js"], (cb) => buildSite(cb, [], "production"));
 gulp.task("build-preview", ["css", "js"], (cb) => buildSite(cb, hugoArgsPreview, "production"));
 
 // Compile CSS with PostCSS
-gulp.task("css", () => (
-  gulp.src("./src/css/*.css")
-    .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext()]))
-    .pipe(gulp.dest("./dist/css"))
-    .pipe(browserSync.stream())
-));
+// gulp.task("css", () => (
+//   gulp.src("./src/css/*.css")
+//     .pipe(postcss([cssImport({from: "./src/css/main.css"}), cssnext()]))
+//     .pipe(gulp.dest("./dist/css"))
+//     .pipe(browserSync.stream())
+// ));
 
 gulp.task('sass', () => {
    gulp.src('./src/sass/**/*.scss')
