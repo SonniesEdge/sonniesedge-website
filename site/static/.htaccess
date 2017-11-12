@@ -1,4 +1,5 @@
-Options +FollowSymLinks
-RewriteEngine On
+<IfModule mod_rewrite.c>
+  RewriteEngine on
 
-RewriteRule ^blog/(.*)$ /post/$1 [R=301,NC,L]
+  RewriteRule ^blog/(.*)$ /post/$1 [R=301,NC,L]
+</IfModule>
