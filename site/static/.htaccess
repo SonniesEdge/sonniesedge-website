@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^blog/(.*)$ /post/$1 [R=301,NC,L]
