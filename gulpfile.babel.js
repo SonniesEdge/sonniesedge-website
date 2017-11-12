@@ -17,11 +17,11 @@ const sassOpts = {
   errLogToConsole: true };
 
 // Hugo arguments
-const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v", "-b", "http://localhost:3000"];
+const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v"];
 const hugoArgsPreview = ["--buildDrafts", "--buildFuture"];
 
 // Development tasks
-gulp.task("hugo", (cb) => buildSite(cb));
+gulp.task("hugo", (cb) => buildSite(cb, ["-b", "http://localhost:3000"]));
 gulp.task("hugo-preview", (cb) => buildSite(cb, hugoArgsPreview));
 
 // Build/production tasks
