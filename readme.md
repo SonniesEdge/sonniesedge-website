@@ -12,4 +12,4 @@ Set this as a production environment, so the build scripts will be run.
 
 Add a cron job to run `cron.sh` every 5 minutes.
 
-`*/5 * * * * /var/www/sonniesedge-websites/cron.sh`
+`*/5 * * * * /var/www/sonniesedge-website/cron.sh`
