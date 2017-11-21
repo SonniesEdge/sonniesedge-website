@@ -1,5 +1,9 @@
 #!/bin/bash
 
-echo "it worked!"
+echo "Received new lovely code"
 
-touch stupidfile
+echo $PROD
+if [ $PROD ]
+then
+  ./build
+fi
