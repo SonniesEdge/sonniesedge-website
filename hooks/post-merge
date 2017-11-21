@@ -5,5 +5,5 @@ echo "Received new lovely code"
 echo $PROD
 if [ $PROD == "true" ]
 then
-  ./build
+  ./build.sh
 fi
