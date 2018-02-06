@@ -1,8 +1,0 @@
-{{ define "main" }}
-	DEFAULT LIST TEMPLATE
-	{{ $paginator := .Paginate (where .Site.Pages "Type" "") }}
-	{{ range $paginator.Pages }}
-		{{ partial "summary.html" . }}
-	{{ end }}
-	{{ partial "pagination.html" . }}
-{{ end }}

@@ -1,8 +1,0 @@
-name = "Sonniesedge"
-tags = ["blog", "plain", "blank", "starter"]
-features = ["blog"]
-min_version = 0.19
-
-[author]
-  name = "sonniesedge"
-  homepage = "https://github.com/sonniesedge"
