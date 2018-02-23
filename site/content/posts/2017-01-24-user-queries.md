@@ -1,11 +1,13 @@
-+++
-title = "User Queries: Returning control to the user"
-date = "2017-01-24 12:00:00"
-strapline = "Give them thqe power to fuck up in their own way."
-tags = ["web"]
-categories = ["webtech"]
-slug = "user-queries"
-+++
+---
+categories:
+- webtech
+date: 2017-01-24 12:00:00
+slug: user-queries
+strapline: Give them thqe power to fuck up in their own way.
+tags:
+- web
+title: 'User Queries: Returning control to the user'
+---
 
 As I write this I'm trying to use my fancy iPad in a cafe. The cafe doesn't have wifi (because this is German) and I'm being forced to tether to my phones 3G connection (which is piss-poor because the 0.5 meter of Berlin concrete creates quite the radio dead zone).
 

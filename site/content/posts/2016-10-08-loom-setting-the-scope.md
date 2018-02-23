@@ -1,11 +1,13 @@
-+++
-title = "Setting the scope for Loom"
-date = "2016-10-08 13:30:00"
-strapline = "First in a series of posts on learning to write Loom, a new Sass framework."
-tags = ["web"]
-categories = ["webtech"]
-slug = "loom-setting-the-scope"
-+++
+---
+categories:
+- webtech
+date: 2016-10-08 13:30:00
+slug: loom-setting-the-scope
+strapline: First in a series of posts on learning to write Loom, a new Sass framework.
+tags:
+- web
+title: Setting the scope for Loom
+---
 
 *Writing the core of [Loom](https://github.com/sonniesedge/loom) has been extraordinary fun, and I'll be sharing some of the thought processes and techniques behind it with you.*
 

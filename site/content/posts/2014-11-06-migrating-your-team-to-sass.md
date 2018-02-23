@@ -1,11 +1,13 @@
-+++
-title = "Migrating your team to Sass"
-date = "2014-11-04 12:00:00"
-strapline = "Migrating to a modern process is all about the planning."
-tags = ["web"]
-categories = ["webtech"]
-slug = "migrating-your-team-to-sass"
-+++
+---
+categories:
+- webtech
+date: 2014-11-04 12:00:00
+slug: migrating-your-team-to-sass
+strapline: Migrating to a modern process is all about the planning.
+tags:
+- web
+title: Migrating your team to Sass
+---
 
 Having read all the articles, watched all the talks, and used it on your own personal projects, you've decided to start using Sass in your workplace. Congratulations! But now you've got the job of actually implementing it in your team.
 

@@ -1,11 +1,14 @@
-+++
-title = "Visual Regression Testing"
-date = "2014-10-17 11:00:16"
-strapline = "Visual Regression Testing becomes more important the more complex a project becomes."
-tags = ["web"]
-categories = ["webtech"]
-slug = "visual-regression-testing"
-+++
+---
+categories:
+- webtech
+date: 2014-10-17 11:00:16
+slug: visual-regression-testing
+strapline: Visual Regression Testing becomes more important the more complex a project
+  becomes.
+tags:
+- web
+title: Visual Regression Testing
+---
 
 <h2>Why the hell do we need tests for CSS?</h2>
 

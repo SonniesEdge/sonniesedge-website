@@ -1,11 +1,13 @@
-+++
-title = "Categorising front end ticket severity"
-date = "2013-10-03 11:00:16"
-strapline = "Ticket severity seems to be orientated towards backend projects."
-tags = ["web"]
-categories = ["webtech"]
-slug = "categorising-ticket-severity-frontend-work"
-+++
+---
+categories:
+- webtech
+date: 2013-10-03 11:00:16
+slug: categorising-ticket-severity-frontend-work
+strapline: Ticket severity seems to be orientated towards backend projects.
+tags:
+- web
+title: Categorising front end ticket severity
+---
 
 I've had the pleasure of having an entire day having every developer on my team watch me mess up their lovely web appliciations. Developers aren't happy about this, I've found.
 

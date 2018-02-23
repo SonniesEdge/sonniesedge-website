@@ -1,11 +1,13 @@
-+++
-title = "Setting up an OS X machine"
-date = "2013-11-15 11:00:16"
-strapline = "UNIX at the core of every machine."
-tags = ["web"]
-categories = ["webtech"]
-slug = "setting-new-os-x-machine"
-+++
+---
+categories:
+- webtech
+date: 2013-11-15 11:00:16
+slug: setting-new-os-x-machine
+strapline: UNIX at the core of every machine.
+tags:
+- web
+title: Setting up an OS X machine
+---
 
 **UPDATED 2013-01-23: using virtual hosts and SSL certs.**
 

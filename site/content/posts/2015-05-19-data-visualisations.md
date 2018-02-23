@@ -1,11 +1,13 @@
-+++
-title = "Data Visualisations"
-date = "2015-05-19 12:00:00"
-strapline = "Look at the pretty graphs!"
-tags = ["web"]
-categories = ["webtech"]
-slug = "data-visualisations"
-+++
+---
+categories:
+- webtech
+date: 2015-05-19 12:00:00
+slug: data-visualisations
+strapline: Look at the pretty graphs!
+tags:
+- web
+title: Data Visualisations
+---
 
 I understand the fascination with data visualisation now. This morning my colleague showed me what he was doing with some of the data we had gathered from the general election and - I can't lie - I got a bit excited over it.
 

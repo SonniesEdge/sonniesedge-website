@@ -1,11 +1,13 @@
-+++
-title = "Bootstrap verbosity and mysterious IE problems"
-date = "2014-09-09 11:00:16"
-strapline = "Bootstrap? Verbose? Pull the other one. It has bells on it."
-tags = ["web"]
-categories = ["webtech"]
-slug = "bootstrap-verbosity-and-mysterious-ie-problems"
-+++
+---
+categories:
+- webtech
+date: 2014-09-09 11:00:16
+slug: bootstrap-verbosity-and-mysterious-ie-problems
+strapline: Bootstrap? Verbose? Pull the other one. It has bells on it.
+tags:
+- web
+title: Bootstrap verbosity and mysterious IE problems
+---
 
 <p>Nobody can deny it. <a href="http://getbootstrap.com/">Bootstrap</a> is bloated. There's a good reason for that - it's the jack-of-all-trades, the swiss army knife, the (not so) little framework that could. If you want it to do something, then it probably can.</p>
 

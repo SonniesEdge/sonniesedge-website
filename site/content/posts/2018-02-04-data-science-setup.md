@@ -1,11 +1,13 @@
-+++
-title = "Getting started with data science tools"
-date = "2018-02-04 12:00:00"
-strapline = "Using a microscope to hammer DNA"
-tags = ["datascience"]
-categories = ["webtech"]
-slug = "data-science-tools"
-+++
+---
+categories:
+- webtech
+date: 2018-02-04 12:00:00
+slug: data-science-tools
+strapline: Using a microscope to hammer DNA
+tags:
+- datascience
+title: Getting started with data science tools
+---
 
 My girfriend recently attended an [introduction to data science workshop at Thoughtworks](https://github.com/ThoughtWorksInc/twde-datalab) that assumed that the attendees had a working knowledge of package managers and tech tooling. As she's an actual, you know, _post-doctoral research scientist helping build insights into Alzheimer's Disease_, she really doesn't have to time to fuck around learning tech tools for fun, and so didn't have a machine ready to deal with this stuff. But being the kind soul that I am (and who likes having a happy partner), I wrote up how to get a machine working with data science tech tools, and I'm sharing it with you here. 
 

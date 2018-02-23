@@ -1,12 +1,15 @@
-+++
-title = "Working with Jekyll and the asset pipeline"
-date = "2013-10-08 11:00:16"
-strapline = "It's actually quite exciting."
-tags = ["web", "jekyll", "staticsites"]
-categories = ["webtech"]
-slug = "working-jekyll-and-asset-pipeline"
-+++
-
+---
+categories:
+- webtech
+date: 2013-10-08 11:00:16
+slug: working-jekyll-and-asset-pipeline
+strapline: It's actually quite exciting.
+tags:
+- web
+- jekyll
+- staticsites
+title: Working with Jekyll and the asset pipeline
+---
 
 As I noted earlier, I've started running this site on [Jekyll][1].  And oh my lord, have I learned a lot about it and Ruby doing so. So please, sit down, relax, let me bore you about it for a few minutes.
 

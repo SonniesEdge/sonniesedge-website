@@ -1,11 +1,13 @@
-+++
-title = "Providing a fallback for critical-path CSS"
-date = "2014-11-05 11:00:16"
-strapline = "tl;dr make sure you do it."
-tags = ["web"]
-categories = ["webtech"]
-slug = "providing-fallback-criticalpath-css"
-+++
+---
+categories:
+- webtech
+date: 2014-11-05 11:00:16
+slug: providing-fallback-criticalpath-css
+strapline: tl;dr make sure you do it.
+tags:
+- web
+title: Providing a fallback for critical-path CSS
+---
 
 The method I recently talked about using, for <a href="/2014-10-27/critical-css.html">loading non-critical CSS asynchronously</a> via javascript, has one blindingly obvious fatal flaw: it fails when javascript is disabled.
 

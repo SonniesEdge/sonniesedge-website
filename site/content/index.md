@@ -1,8 +1,9 @@
-+++
-title = "Home"
-menu = "main"
-weight = -10
-+++
+---
+menu: main
+title: Home
+weight: -10
+template: home.hbt
+---
 
 # Back off man, I'm a web developer
 

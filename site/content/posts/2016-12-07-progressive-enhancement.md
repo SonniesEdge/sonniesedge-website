@@ -1,11 +1,13 @@
-+++
-title = "Yes, progressive enhancement is a fucking moral argument"
-date = "2016-12-06 12:00:00"
-strapline = "You don't get to choose who is viewing your work, you fucking fuck."
-tags = ["web"]
-categories = ["webtech"]
-slug = "progressive-enhancement"
-+++
+---
+categories:
+- webtech
+date: 2016-12-06 12:00:00
+slug: progressive-enhancement
+strapline: You don't get to choose who is viewing your work, you fucking fuck.
+tags:
+- web
+title: Yes, progressive enhancement is a fucking moral argument
+---
 
 I rolled my eyes when I saw [this post](https://web.archive.org/web/20161205174122/https://www.viget.com/articles/the-case-against-progressive-enhancements-flimsy-moral-foundation) circulate around the webosphere. I knew it was clickbait, but I clicked it and read it, because what else is a whiney SJW feminist fuck meant to do while she's drinking her coffee in the morning? But then, as I scanned the page, I realised what deeper level of fucked-up-ness it represents.
 

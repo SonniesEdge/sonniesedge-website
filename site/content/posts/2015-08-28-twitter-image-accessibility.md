@@ -1,11 +1,13 @@
-+++
-title = "Twitter image accessibility"
-date = "2015-08-28 11:00:16"
-strapline = "The way we use Twitter isn't accessible for everyone."
-tags = ["web"]
-categories = ["webtech"]
-slug = "twitter-image-accessibility"
-+++
+---
+categories:
+- webtech
+date: 2015-08-28 11:00:16
+slug: twitter-image-accessibility
+strapline: The way we use Twitter isn't accessible for everyone.
+tags:
+- web
+title: Twitter image accessibility
+---
 
 *UPDATE: March 29 2016. [Twitter have announced](https://blog.twitter.com/2016/accessible-images-for-everyone) that they will support a limited amount of alt text on images posted to twitter. Unfortunately they will not be enforcing alt text or using AI to determine what is in an image.*
 

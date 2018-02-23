@@ -1,11 +1,13 @@
-+++
-title = "A day without Javascript"
-date = "2017-06-07 12:00:00"
-strapline = "What could go wrong?"
-tags = ["web"]
-categories = ["webtech"]
-slug = "a-day-without-javascript"
-+++
+---
+categories:
+- webtech
+date: 2017-06-07 12:00:00
+slug: a-day-without-javascript
+strapline: What could go wrong?
+tags:
+- web
+title: A day without Javascript
+---
 
 As I write this it's raining outside, and I'm trying to avoid having to go out into the murk and watch the Germans conduct their annual [diversity maneuvers](http://www.karneval-berlin.de/en/). I've therefore decided to pass my time by doing the one thing that counts as a religious crime in web dev land: I'm going to turn off javascript in my browser and see what sites work and what sites don't. 
 

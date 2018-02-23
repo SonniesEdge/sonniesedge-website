@@ -1,11 +1,13 @@
-+++
-title = "Auto-publishing via npm version"
-date = "2016-10-08 13:30:00"
-strapline = "tl;dr npm version handles semver and publishes for you..."
-tags = ["web"]
-categories = ["webtech"]
-slug = "npm-version"
-+++
+---
+categories:
+- webtech
+date: 2016-10-08 13:30:00
+slug: npm-version
+strapline: tl;dr npm version handles semver and publishes for you...
+tags:
+- web
+title: Auto-publishing via npm version
+---
 
 So, I'm supposed to be prepping for an interview right now, but I had to write this down before I forget as it is SO FUCKING COOL.
 

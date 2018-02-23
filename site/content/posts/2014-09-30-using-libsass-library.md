@@ -1,12 +1,14 @@
-+++
-title = "Using libsass"
-date = "2014-09-30 11:00:16"
-strapline = "Sass is an essential part of any modern workflow, but the default compiler is let down by slow compilation times."
-tags = ["sass"]
-categories = ["webtech"]
-slug = "using-libsass-library"
-+++
-
+---
+categories:
+- webtech
+date: 2014-09-30 11:00:16
+slug: using-libsass-library
+strapline: Sass is an essential part of any modern workflow, but the default compiler
+  is let down by slow compilation times.
+tags:
+- sass
+title: Using libsass
+---
 
 ## Why use libsass?
 The standard version of Sass is written in Ruby by [Hampton Catlin](http://www.hamptoncatlin.com/), [Natalie Weizenbaum](http://nex-3.com/) and [Chris Eppstein](http://chriseppstein.github.io/). It's fantastic - constantly adding new features whilst maintaining stability for existing ones.

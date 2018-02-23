@@ -1,11 +1,13 @@
-+++
-title = "Bypassing Jekyll via Grunt"
-date = "2014-09-06 11:00:16"
-strapline = "Just do an end run around it."
-tags = ["web"]
-categories = ["webtech"]
-slug = "bypassing-jekyll-your-grunt-tasks"
-+++
+---
+categories:
+- webtech
+date: 2014-09-06 11:00:16
+slug: bypassing-jekyll-your-grunt-tasks
+strapline: Just do an end run around it.
+tags:
+- web
+title: Bypassing Jekyll via Grunt
+---
 
 Like most front-end people, I find myself mostly working on stylesheet files, rather than the actual HTML structure of a site.
 

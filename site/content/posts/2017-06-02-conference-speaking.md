@@ -1,11 +1,13 @@
-+++
-title = "Speaking at Frontend United 2017"
-date = "2017-06-02 12:00:00"
-strapline = "Speaking at people in public"
-tags = ["web"]
-categories = ["webtech"]
-slug = "conference-speaking"
-+++
+---
+categories:
+- webtech
+date: 2017-06-02 12:00:00
+slug: conference-speaking
+strapline: Speaking at people in public
+tags:
+- web
+title: Speaking at Frontend United 2017
+---
 
 I got back last week from Athens, where I was privileged enough to be able to give a talk at Frontend United 2017.
 
