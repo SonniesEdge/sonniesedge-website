@@ -12,7 +12,10 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "handlebars": "^4.0.11",
     "metalsmith": "^2.3.0",
-    "metalsmith-markdown": "^0.2.2"
+    "metalsmith-markdown": "^0.2.2",
+    "metalsmith-rename": "^1.0.0",
+    "metalsmith-templates": "^0.7.0"
   }
 }
