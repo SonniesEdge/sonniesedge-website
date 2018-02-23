@@ -1,0 +1,6 @@
+        </div> {{!-- END .main-wrapper --}}
+        <footer>
+            © Metalsmith demo site - demonstrating Metalsmith in continuous deployment using GitHub on Netlify.
+        </footer>
+    </body>
+</html>

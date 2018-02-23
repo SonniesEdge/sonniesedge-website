@@ -11,6 +11,12 @@ Metalsmith(__dirname)
         ])
       )
     .use(markdown())
-    .use(templates('handlebars'))
+    .use(templates({
+        engine: 'handlebars',
+        partials: {
+            header: 'partials/header',
+            footer: 'partials/footer'
+        }
+    }))
     .destination('./dist')
     .build(function (err) { if(err) console.log(err) });
