@@ -1,21 +1,38 @@
 var Metalsmith = require('metalsmith'),
     markdown   = require('metalsmith-markdown'),
     templates  = require('metalsmith-templates'),
-    rename  = require('metalsmith-rename');
+    rename  = require('metalsmith-rename')
+    default_values = require('metalsmith-default-values');
 
 Metalsmith(__dirname)
-    .source('./site/content')
+    .source('./content')
     .use(
         rename([
-          [/\_index.md$/, "index.html"]
+            [/\_index.md$/, "index.html"]
         ])
-      )
+    )
+    .use(default_values([
+    {
+        pattern : 'posts/*.md',
+        defaults: {
+        layout: 'post.hbs'
+        }
+    },
+    {
+        pattern : '**/*.md',
+        defaults: {
+        layout : 'generic.hbs'
+        }
+    }
+    ]))
     .use(markdown())
     .use(templates({
         engine: 'handlebars',
         partials: {
-            header: 'partials/header',
-            footer: 'partials/footer'
+            header_generic: 'partials/header_generic',
+            header_home: 'partials/header_home',
+            footer: 'partials/footer',
+            metadata: 'partials/metadata'
         }
     }))
     .destination('./dist')

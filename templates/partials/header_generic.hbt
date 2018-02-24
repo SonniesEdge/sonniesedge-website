@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+    <head>
+				<title>{{title}} | sonniesedge</title>
+				{{> metadata}}
+    </head>
+    <body>
+
+        <div class="main-wrapper">

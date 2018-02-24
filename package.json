@@ -8,13 +8,21 @@
     "build": "gulp build",
     "build-preview": "gulp build-preview",
     "start": "gulp server",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "bs": "gulp browser-sync"
   },
   "devDependencies": {},
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
     "handlebars": "^4.0.11",
     "metalsmith": "^2.3.0",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-default-values": "^2.0.1",
     "metalsmith-markdown": "^0.2.2",
+    "metalsmith-permalinks": "^0.5.0",
     "metalsmith-rename": "^1.0.0",
     "metalsmith-templates": "^0.7.0"
   }
