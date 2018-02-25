@@ -1,5 +1,5 @@
 import gulp from "gulp";
-// import {spawn} from "child_process";
+import {exec} from "child_process";
 // import hugoBin from "hugo-bin";
 // import gutil from "gulp-util";
 // import postcss from "gulp-postcss";
@@ -8,13 +8,13 @@ import gulp from "gulp";
 import BrowserSync from "browser-sync";
 // import webpack from "webpack";
 // import webpackConfig from "./webpack.conf";
-// import sass from "gulp-sass";
+import sass from "gulp-sass";
 
 // const browserSync = BrowserSync.create();
-// const sassOpts = {
-//   outputStyle: 'compressed',
-//   includePaths: ['./node_modules/loomcss/assets'],
-//   errLogToConsole: true };
+const sassOpts = {
+  outputStyle: 'compressed',
+  includePaths: ['./node_modules/loom/assets'],
+  errLogToConsole: true };
 
 // // Hugo arguments
 // const hugoArgsDefault = ["-d", "../dist", "-s", "site", "-v"];
@@ -35,14 +35,6 @@ import BrowserSync from "browser-sync";
 // //     .pipe(gulp.dest("./dist/css"))
 // //     .pipe(browserSync.stream())
 // // ));
-
-// gulp.task('sass', () => {
-//    gulp.src('./src/sass/**/*.scss')
-//     .pipe(sass(sassOpts))
-//     .pipe(gulp.dest('./dist/css'));
-//  });
-
-
 
 // // Compile Javascript
 // gulp.task("js", (cb) => {
@@ -69,13 +61,35 @@ import BrowserSync from "browser-sync";
 //   gulp.watch("./src/js/**/*.js", ["js"]);
 //   gulp.watch("./src/sass/**/*.scss", ["sass"]);
 //   gulp.watch("./site/**/*", ["hugo"]);
-// });§
+// });
 
-// Static server
-gulp.task('browser-sync', () => {
-  BrowserSync.init({
-      server: {
-          baseDir: "./dist/"
-      }
-  });
+// Build markdown files into HTML via Metalsmith
+gulp.task('metalsmith', function (cb) {
+    console.log("Metalsmith run");
+    exec('node build.js', function (err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+        cb(err);
+    });
+});
+
+// Build Sass files into CSS
+gulp.task('sass', ["metalsmith"], () => { 
+    console.log('Sass run');
+    gulp.src('./assets/sass/**/*.scss')
+        .pipe(sass(sassOpts))
+        .pipe(gulp.dest('./dist/css/'));
+        // .pipe(BrowserSync.stream());
+});
+
+// Serve files via Browser sync
+gulp.task('serve', ["sass"], () => {
+    BrowserSync.init({
+        server: {
+            baseDir: "./dist/"
+        }
+    });
+    gulp.watch("./assets/sass/**/*.scss", ["sass"]);
+    gulp.watch('./dist/**/*.html', BrowserSync.reload); 
+    // gulp.watch('./dist/js/**/*.md', ["metalsmith"]);
 });
