@@ -7,25 +7,26 @@
     "hugo": "gulp hugo",
     "build": "gulp build",
     "build-preview": "gulp build-preview",
-    "start": "gulp server",
+    "start": "gulp serve",
     "lint": "eslint src",
-    "bs": "gulp browser-sync"
+    "default": "gulp default"
   },
   "devDependencies": {},
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "browser-sync": "^2.23.6",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-sass": "^3.1.0",
     "handlebars": "^4.0.11",
+    "loom": "git+https://github.com/sonniesedge/loom.git#v2",
     "metalsmith": "^2.3.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-default-values": "^2.0.1",
     "metalsmith-markdown": "^0.2.2",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-rename": "^1.0.0",
-    "metalsmith-templates": "^0.7.0",
-    "loom": "git+https://github.com/sonniesedge/loom.git#v2"
+    "metalsmith-templates": "^0.7.0"
   }
 }

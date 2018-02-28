@@ -74,22 +74,27 @@ gulp.task('metalsmith', function (cb) {
 });
 
 // Build Sass files into CSS
-gulp.task('sass', ["metalsmith"], () => { 
+gulp.task('sass', () => { 
     console.log('Sass run');
-    gulp.src('./assets/sass/**/*.scss')
+    return gulp.src('./assets/sass/**/*.scss')
         .pipe(sass(sassOpts))
-        .pipe(gulp.dest('./dist/css/'));
-        // .pipe(BrowserSync.stream());
+        .pipe(gulp.dest('./dist/css/'))
+        .pipe(BrowserSync.stream());
 });
 
 // Serve files via Browser sync
-gulp.task('serve', ["sass"], () => {
-    BrowserSync.init({
+gulp.task('browser-sync', () => {
+    return BrowserSync.init({
         server: {
             baseDir: "./dist/"
         }
     });
-    gulp.watch("./assets/sass/**/*.scss", ["sass"]);
-    gulp.watch('./dist/**/*.html', BrowserSync.reload); 
-    // gulp.watch('./dist/js/**/*.md', ["metalsmith"]);
 });
+
+gulp.task('watch', () => {
+    gulp.watch("./assets/sass/**/*.scss", gulp.series('sass'));
+    gulp.watch('./dist/**/*.html', gulp.series(BrowserSync.reload)); 
+    gulp.watch('./dist/js/**/*.md', gulp.series("metalsmith"));
+});
+
+gulp.task('default', gulp.series('metalsmith', 'sass', gulp.parallel('watch', 'browser-sync')));
