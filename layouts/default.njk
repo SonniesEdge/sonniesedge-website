@@ -16,12 +16,9 @@
 
         </header>
         <main>
-
-            {{ contents }}
-
+            {{ contents | safe }}
             {% block list %}
             {% endblock %}
-
         </main>
         <footer>
             <p>Footer</p>

@@ -1,5 +1,5 @@
 const Metalsmith = require('metalsmith');
-const inPlace = require('metalsmith-layouts');
+const layouts = require('metalsmith-layouts');
 const markdown = require('metalsmith-markdown');
 const rename = require('metalsmith-rename');
 
@@ -9,8 +9,14 @@ Metalsmith(__dirname)
     .use(rename([
         [/\_index.md$/, "index.md"]
     ]))
-    .use(markdown())    
-    .use(inPlace({
+    .use(markdown(
+        {
+            smartypants: true,
+            gfm: true,
+            tables: true
+        }
+    )) 
+    .use(layouts({
         engine: 'nunjucks',
         default: 'default.njk',
         pattern: '**/*.html'

@@ -2,7 +2,6 @@
 menu: main
 title: Home
 weight: -10
-template: home.hbt
 ---
 
 # Back off man, I'm a web developer

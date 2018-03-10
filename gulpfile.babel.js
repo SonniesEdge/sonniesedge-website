@@ -98,3 +98,4 @@ gulp.task('watch', () => {
 });
 
 gulp.task('default', gulp.series('metalsmith', 'sass', gulp.parallel('watch', 'browser-sync')));
+gulp.task('build', gulp.series('metalsmith', 'sass'));
