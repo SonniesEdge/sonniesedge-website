@@ -1,8 +1,0 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Sonniesedge.co.uk</title>
-		{{> metadata}}
-	</head>
-	<body>
-		<div class="main-wrapper">

@@ -1,39 +1,22 @@
-var Metalsmith = require('metalsmith'),
-    markdown   = require('metalsmith-markdown'),
-    templates  = require('metalsmith-templates'),
-    rename  = require('metalsmith-rename')
-    default_values = require('metalsmith-default-values');
+const Metalsmith = require('metalsmith');
+const inPlace = require('metalsmith-layouts');
+const markdown = require('metalsmith-markdown');
+const rename = require('metalsmith-rename');
 
 Metalsmith(__dirname)
     .source('./content')
-    .use(
-        rename([
-            [/\_index.md$/, "index.html"]
-        ])
-    )
-    .use(default_values([
-    {
-        pattern : 'posts/*.md',
-        defaults: {
-        layout: 'post.hbs'
-        }
-    },
-    {
-        pattern : '**/*.md',
-        defaults: {
-        layout : 'generic.hbs'
-        }
-    }
-    ]))
-    .use(markdown())
-    .use(templates({
-        engine: 'handlebars',
-        partials: {
-            header_generic: 'partials/header_generic',
-            header_home: 'partials/header_home',
-            footer: 'partials/footer',
-            metadata: 'partials/metadata'
-        }
-    }))
     .destination('./dist')
-    .build(function (err) { if(err) console.log(err) });
+    .use(rename([
+        [/\_index.md$/, "index.md"]
+    ]))
+    .use(markdown())    
+    .use(inPlace({
+        engine: 'nunjucks',
+        default: 'default.njk',
+        pattern: '**/*.html'
+    }))
+    .build(function (error) {
+        if (error) {
+            throw error;
+        }
+    });
