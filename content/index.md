@@ -2,6 +2,7 @@
 menu: main
 title: Home
 weight: -10
+permalink: false
 ---
 
 # Back off man, I'm a web developer
