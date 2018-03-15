@@ -13,9 +13,17 @@
     </head>
     <body>
         <header>
-
+            <nav>
+                <ol>
+                    {% for item in mainnav %}
+                        <li><a href="/{{item.path}}">{{item.title}}</a></li>
+                    {% endfor %}
+                </ol>
+            </nav>
         </header>
         <main>
+            <h1>{{ realtitle | title }}</h1>
+
             {{ contents | safe }}
             {% block list %}
             {% endblock %}

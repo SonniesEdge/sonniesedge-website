@@ -1,7 +1,6 @@
 ---
+collection: mainnav
 title: Blog posts
-type: indexpage
-weight: 20
 layout: list.njk
 ---
 

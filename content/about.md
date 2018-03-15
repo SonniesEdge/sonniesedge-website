@@ -1,9 +1,6 @@
 ---
-menu: main
-slug: about
+collection: mainnav
 title: About her
-type: page
-weight: 10
 ---
 
 I'm a 30-something woman living in Berlin, Germany (the famous one, with the wall and stuff).

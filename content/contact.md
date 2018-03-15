@@ -1,5 +1,5 @@
 ---
-menu: main
+collection: mainnav
 slug: contact
 title: Contact
 type: page
