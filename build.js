@@ -4,7 +4,6 @@ const markdown = require('metalsmith-markdown');
 const rename = require('metalsmith-rename');
 const collections = require('metalsmith-collections');
 const permalinks = require('metalsmith-permalinks');
-const picsetGenerate = require('metalsmith-picset-generate');
 
 Metalsmith(__dirname)
     .source('./content')
@@ -36,9 +35,6 @@ Metalsmith(__dirname)
         ],
         relative: false
       }))
-    .use(picsetGenerate({
-        path: 'images'
-    }))
     .use(layouts({
         engine: 'nunjucks',
         default: 'default.njk',
