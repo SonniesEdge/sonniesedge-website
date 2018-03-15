@@ -1,6 +1,6 @@
 ---
 collection: mainnav
-title: Blog posts
+title: Posts
 layout: list.njk
 ---
 
