@@ -8,6 +8,7 @@ import BrowserSync from "browser-sync";
 // import webpack from "webpack";
 // import webpackConfig from "./webpack.conf";
 import sass from "gulp-sass";
+import responsive from 'gulp-responsive';
 
 // // Compile CSS with PostCSS
 // // gulp.task("css", () => (
@@ -31,6 +32,29 @@ import sass from "gulp-sass";
 //     cb();
 //   });
 // });
+
+gulp.task('images', function () {
+    return gulp.src(['./static/images/**/*.{png,jpg}'])
+      .pipe(responsive(
+        {
+            '**/*.jpg': { 
+                width: 200 
+            },
+            '**/*.png': { 
+                width: '50%' 
+            },
+            '**/*': {
+                rename: { suffix: '-thumbnail' },
+            },
+        }, 
+        {
+            quality: 70,
+            progressive: true,
+            compressionLevel: 6,
+            withMetadata: false,
+        }))
+      .pipe(gulp.dest('dist/images'));
+  });
 
 // Build markdown files into HTML via Metalsmith
 gulp.task('metalsmith', function (cb) {
@@ -63,7 +87,8 @@ gulp.task('browser-sync', () => {
     return BrowserSync.init({
         server: {
             baseDir: "./dist/"
-        }
+        },
+        open: false
     });
 });
 
