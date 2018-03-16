@@ -22,7 +22,13 @@
             </nav>
         </header>
         <main>
-            <h1>{{ realtitle | title }}</h1>
+            <h1>
+                {% if realtitle %}
+                    {{ realtitle }}
+                {% else %}
+                    {{ title }}
+                {% endif %}
+            </h1>
 
             {{ contents | safe }}
             {% block list %}
