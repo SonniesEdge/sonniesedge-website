@@ -1,15 +1,17 @@
-# sonniesedge-website
+# sonniesedge.co.uk
 
-## On the server
+## Installation
 
-Make git use the custom hook path.
+You need Yarn to build this site!
 
-`git config core.hooksPath hooks`
+`$ brew install yarn`
 
-Set this as a production environment, so the build scripts will be run.
+Install the npm packages with Yarn.
 
-`export PROD="true"`
+`$ yarn install`
 
-Add a cron job to run `cron.sh` every 5 minutes.
+## Running
 
-`*/5 * * * * /var/www/sonniesedge-website/cron.sh`
+`$ yarn run build` to build out a working version of the site to `./dist`.
+
+`$ yarn start` to build the site and serve it on `http://localhost:3000` via Browsersync. 
