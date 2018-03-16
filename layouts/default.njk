@@ -12,30 +12,32 @@
         <link rel="stylesheet" href="/css/main.css" type="text/css" />
     </head>
     <body>
-        <header>
-            <nav>
-                <ul>
-                    {% for item in mainnav %}
-                        <li><a href="/{{item.path}}">{{item.title}}</a></li>
-                    {% endfor %}
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h1>
-                {% if realtitle %}
-                    {{ realtitle }}
-                {% else %}
-                    {{ title }}
-                {% endif %}
-            </h1>
+        <div class="c-mainlayout">
+            <header>
+                <nav>
+                    <ul>
+                        {% for item in mainnav %}
+                            <li><a href="/{{item.path}}">{{item.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <h1>
+                    {% if realtitle %}
+                        {{ realtitle }}
+                    {% else %}
+                        {{ title }}
+                    {% endif %}
+                </h1>
 
-            {{ contents | safe }}
-            {% block list %}
-            {% endblock %}
-        </main>
-        <footer>
-            <p>Footer</p>
-        </footer>
+                {{ contents | safe }}
+                {% block list %}
+                {% endblock %}
+            </main>
+            <footer>
+                <p>Footer</p>
+            </footer>
+        </div>
     </body>
 </html>
