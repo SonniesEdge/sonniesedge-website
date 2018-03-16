@@ -2,6 +2,7 @@
 collection: mainnav
 title: Home
 realtitle: Back off man, I'm a web developer
+weight: 0
 ---
 
 Hallo, Ich heiße Charlie (aka sonniesedge). I'm an Ex-Britisher lives and works in the beautiful city of Berlin, Deutschland.

@@ -17,8 +17,8 @@ Metalsmith(__dirname)
           sortBy: 'date',
           reverse: true
         },
-        utility: {
-            pattern: ['*.md']
+        mainnav: {
+            sortBy: 'weight'
         }
     }))
     .use(markdown({

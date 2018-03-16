@@ -1,6 +1,7 @@
 ---
 collection: mainnav
 title: About her
+weight: 10
 ---
 
 I'm a 30-something woman living in Berlin, Germany (the famous one, with the wall and stuff).
