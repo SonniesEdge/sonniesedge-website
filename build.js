@@ -4,6 +4,7 @@ const markdown = require('metalsmith-markdown');
 const rename = require('metalsmith-rename');
 const collections = require('metalsmith-collections');
 const permalinks = require('metalsmith-permalinks');
+const metalsmithPrism = require('metalsmith-prism');
 
 Metalsmith(__dirname)
     .source('./content')
@@ -24,7 +25,8 @@ Metalsmith(__dirname)
     .use(markdown({
         smartypants: true,
         gfm: true,
-        tables: true
+        tables: true,
+        langPrefix: 'language-'
     })) 
     .use(permalinks({
         linksets: [
@@ -39,6 +41,9 @@ Metalsmith(__dirname)
         engine: 'nunjucks',
         default: 'default.njk',
         pattern: '**/*.html'
+    }))
+    .use(metalsmithPrism({
+        lineNumbers: true
     }))
     .build(function (error) {
         if (error) {
