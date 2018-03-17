@@ -1,0 +1,10 @@
+.c-footer {
+    background-color: get-color('darkgray');
+    color: get-color('white');
+    padding: get-spacing('xsmall');
+    @include font-size('sub');
+}
+
+.c-footer__text {
+    margin: 0;
+}
