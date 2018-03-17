@@ -1,7 +1,7 @@
 $font-family-basic: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 
 $font-family-opensans:   "Open Sans", Helvetica, Arial, sans-serif;
-$font-family-robotoslab: "roboto-slab-regular", Helvetica, Arial, sans-serif;
+$font-family-robotoslab: "Roboto Slab", Helvetica, Arial, sans-serif;
 
 $LOOM-font-map-default: (
   'primary': (
@@ -9,7 +9,7 @@ $LOOM-font-map-default: (
     'webfont': $font-family-basic
   ),
   'secondary': (
-    'default': $font-family-basic,
+    'default': $font-family-robotoslab,
     'webfont': $font-family-robotoslab
   )
 );

@@ -10,20 +10,6 @@ a {
   }
 }
 
-@font-face {
-  font-family: 'roboto-slab-bold';
-  src: url('/fonts/RobotoSlab-Bold-webfont.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'roboto-slab-regular';
-  src: url('/fonts/RobotoSlab-Regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 blockquote {
   border-left: get-spacing(xsmall) solid get-color(gray);
   margin-left: 0;
@@ -53,6 +39,6 @@ h6,
   .fonts-loaded & {
     letter-spacing: initial;
     line-height: 1.2;
-    margin-bottom: get-spacing(xsmall);
+    margin-bottom: get-spacing('xsmall');
   }
 }
