@@ -8,8 +8,7 @@
     "start": "gulp default",
     "images": "gulp images"
   },
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
@@ -27,5 +26,8 @@
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-prism": "^3.1.1",
     "metalsmith-rename": "^1.0.0"
+  },
+  "dependencies": {
+
   }
 }
