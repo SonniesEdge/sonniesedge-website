@@ -15,9 +15,9 @@
         <div class="c-mainlayout">
             <header>
                 <nav>
-                    <ul>
+                    <ul class="c-nav">
                         {% for item in mainnav %}
-                            <li><a href="/{{item.path}}">{{item.title}}</a></li>
+                            <li class="c-nav__item {% if item.path == path %}c-nav__item--current{% endif %}"><a class="c-nav__link" href="/{{item.path}}">{{item.title}}</a></li>
                         {% endfor %}
                     </ul>
                 </nav>
