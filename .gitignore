@@ -5,3 +5,4 @@ themes/sonniesedge/static/
 .DS_Store
 dist/
 yarn-error.log
+content/css

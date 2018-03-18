@@ -3,6 +3,70 @@ import {exec} from "child_process";
 import BrowserSync from "browser-sync";
 import sass from "gulp-sass";
 import responsive from 'gulp-responsive';
+import metalsmith from 'gulp-metalsmith';
+
+import layouts from 'metalsmith-layouts';
+import markdown from 'metalsmith-markdown';
+import rename from 'metalsmith-rename';
+import collections from 'metalsmith-collections';
+import permalinks from 'metalsmith-permalinks';
+import metalsmithPrism from 'metalsmith-prism';
+
+gulp.task('smithy', function () {
+    return gulp.src('./content/**')
+    .pipe(metalsmith({
+        root: __dirname,
+        frontmatter: true,
+        clean: true,
+        use: [
+            rename([
+                [/\_index.md$/, "index.md"]
+            ]),
+            collections({ // why u no work?
+                posts: {
+                  pattern: [
+                      'content/posts/*.md', 
+                      '!content/posts/index.md'
+                    ],
+                  sortBy: 'date',
+                  reverse: true
+                },
+                mainnav: {
+                    sortBy: 'weight'
+                }
+            }),
+            markdown({
+                smartypants: true,
+                gfm: true,
+                tables: true,
+                langPrefix: 'language-'
+            }),
+            permalinks({
+                linksets: [
+                    {
+                        match: { collection: 'posts' },
+                        pattern: '/posts/:title'
+                    }
+                ],
+                relative: false
+              }),
+            layouts({
+                engine: 'nunjucks',
+                default: 'default.njk',
+                pattern: '**/*.html'
+            }),
+            metalsmithPrism({
+                lineNumbers: true
+            })
+        ],
+        metadata: {
+          site_title: 'Sample static site'
+        }
+      }))
+      .pipe(gulp.dest('./dist'))
+      .pipe(BrowserSync.stream());
+});
+
 
 gulp.task('images', function () {
     return gulp.src(['./static/images/**/*.{png,jpg}'])
@@ -27,17 +91,6 @@ gulp.task('images', function () {
       .pipe(gulp.dest('dist/images'));
   });
 
-// Build markdown files into HTML via Metalsmith
-gulp.task('metalsmith', function (cb) {
-    console.log("Metalsmith run");
-    exec('node build.js', function (err, stdout, stderr) {
-        console.log(stdout);
-        console.log(stderr);
-        cb(err);
-    });
-    BrowserSync.reload();
-});
-
 // const browserSync = BrowserSync.create();
 const sassOpts = {
     outputStyle: 'compressed',
@@ -46,10 +99,9 @@ const sassOpts = {
 
 // Build Sass files into CSS
 gulp.task('sass', () => { 
-    console.log('Sass run');
-    return gulp.src('./assets/sass/main.scss')
+    return gulp.src('./assets/sass/*.scss')
         .pipe(sass(sassOpts))
-        .pipe(gulp.dest('./dist/css/'))
+        .pipe(gulp.dest('./content/css/'))
         .pipe(BrowserSync.stream());
 });
 
@@ -65,10 +117,9 @@ gulp.task('browser-sync', () => {
 
 gulp.task('watch', () => {
     gulp.watch("./assets/sass/**/*.scss", gulp.series('sass'));
-    gulp.watch('./dist/**/*.html', gulp.series(BrowserSync.reload)); 
-    gulp.watch('./layouts/*.njk', gulp.series("metalsmith", "sass"));
-    gulp.watch('./content/**/*.md', gulp.series("metalsmith", "sass"));
+    gulp.watch('./content/posts/**/*', gulp.series("smithy"));
+    gulp.watch('./layouts/**/*', gulp.series("smithy"));
 });
 
-gulp.task('default', gulp.series('metalsmith', 'sass', gulp.parallel('watch', 'browser-sync')));
-gulp.task('build', gulp.series('metalsmith', 'sass'));
+gulp.task('default', gulp.series( 'sass', 'smithy', gulp.parallel('watch', 'browser-sync')));
+gulp.task('build', gulp.series('sass', 'smithy'));

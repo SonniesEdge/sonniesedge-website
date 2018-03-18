@@ -6,7 +6,8 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp default",
-    "images": "gulp images"
+    "images": "gulp images",
+    "smithy": "gulp smithy"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -16,6 +17,7 @@
     "gulp": "^4.0.0",
     "gulp-responsive": "^2.9.0",
     "gulp-sass": "^3.1.0",
+    "gulp-metalsmith": "^1.1.0",
     "jstransformer-nunjucks": "^0.5.0",
     "loom": "git+https://github.com/sonniesedge/loom.git#v2",
     "metalsmith": "^2.3.0",
