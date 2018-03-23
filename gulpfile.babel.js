@@ -22,11 +22,11 @@ gulp.task('smithy', function () {
             rename([
                 [/\_index.md$/, "index.md"]
             ]),
-            collections({ // why u no work?
+            collections({
                 posts: {
                   pattern: [
-                      'content/posts/*.md', 
-                      '!content/posts/index.md'
+                      '**/posts/*.md', 
+                      '!**/posts/index.md'
                     ],
                   sortBy: 'date',
                   reverse: true
