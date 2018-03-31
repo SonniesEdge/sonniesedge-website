@@ -15,6 +15,7 @@ import defaultvals from 'metalsmith-default-values';
 import dateFormatter from 'metalsmith-date-formatter';
 import metalsmithFeed from 'metalsmith-feed';
 import metalsmithExcerpts from 'metalsmith-excerpts';
+import pinboard from './metalsmith-pinboard';
 
 gulp.task('smithy', function () {
     return gulp.src('./content/**')
@@ -40,6 +41,7 @@ gulp.task('smithy', function () {
                     }
                 }
             ]),
+            pinboard(),
             collections({
                 posts: {
                   pattern: [
