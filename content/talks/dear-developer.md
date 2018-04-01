@@ -9,15 +9,17 @@ I've now given this talk at a few international conferences. I suspect it's one 
 
 ## History of the Web
 
+<img src="/images/talks/dear-developer/history.jpg" alt="History of the web" class="comp-talk-image-left">
+
 I'm here to talk to you about the single biggest invention in human history. Care to guess what that is? Some might might say that invention is fire, or language, or beer (actually, maybe it is beer). Some might say it's the invention of electricity, or THE MASTERING OF THE ATOM. Some others, more aware of the topic of this site, might say that it's the Internet (lower or uppercase "I"). But no, the intro of this talk is about the invention of the World Wide Web. The Dub Dub Dub. Or, as we all just call it in the mid 2010's - the Web. 
 
 ### Not a single invention
 
 It's important to realise that the Web wasn't just a single sudden invention, without portent or precedent. We know that one man invented it, yes (thanks Tim!), but he did so on the back of a thousand other technologies, inspired and enabled to build by their previous work. 
 
-The Web is increadible. It's increadible because it's stuipid. Yup, you heard me. In fact, it's made of stupid - or more accurately, at its core it is a collection of very dumb, very _simple_, technologies, chained together to make something much greater. 
+The Web is incredible. It's incredible because it's stuipid. Yup, you heard me. In fact, it's made of stupid - or more accurately, at its core it is a collection of very dumb, very _simple_, technologies, chained together to make something much greater. 
 
-Let's take a - very simplified! - look at the history of the Web, and the simple technologies that allowed it to be built. And because we don't want to be going back to Mog hitting Gog over the head with a handy stone, and proclaiming this little patch of sand HIS (inadvertandly inventing the first nation state) we're just going to concentrate on the last 100 years.
+Let's take a - very simplified! - look at the history of the Web, and the simple technologies that allowed it to be built. And because we don't want to be going back to Mog hitting Gog over the head with a handy stone, and proclaiming this little patch of sand HIS (inadvertently inventing the first nation state) we're just going to concentrate on the last 100 years.
 
 Oh, and let's credit Jeremy Keith with the notion of the web as a evolutionary product, rather than a single invention - his talks on this topic are fascinating, and far more detailed than anything here. 
 
