@@ -32,6 +32,12 @@ gulp.task('smithy', function () {
                     defaults: {
                         layout: 'post.njk'
                     }
+                },
+                {
+                    pattern: ['**/talks/*.md', '!**/talks/index.md'],
+                    defaults: {
+                        layout: 'talk.njk'
+                    }
                 }
             ]),
             collections({

@@ -1,0 +1,13 @@
+{% extends "default.njk" %}
+{% block list %}
+    <ul class="comp-contentlist">
+    {% for post in posts %}
+        <li class="comp-contentlist__item">
+            <a href="{{ post.path }}" class="comp-contentlist__link">
+                <p class="comp-contentlist__title">{{ post.title }}</p>
+                <p class="comp-contentlist__date">{{ post.date }}</p>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

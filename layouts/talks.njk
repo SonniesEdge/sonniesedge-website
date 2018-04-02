@@ -1,11 +1,11 @@
 {% extends "default.njk" %}
 {% block list %}
-    <ul class="comp-postslist">
+    <ul class="comp-contentlist">
     {% for talk in talks %}
-        <li class="comp-postslist__item">
-            <a href="{{ talk.path }}" class="comp-postslist__link">
-                <p class="comp-postslist__title">{{ talk.title }}</p>
-                <p class="comp-postslist__date">{{ talk.date }}</p>
+        <li class="comp-contentlist__item">
+            <a href="{{ talk.path }}" class="comp-contentlist__link">
+                <p class="comp-contentlist__title">{{ talk.title }}</p>
+                <p class="comp-contentlist__date">{{ talk.date }}</p>
             </a>
         </li>
     {% endfor %}

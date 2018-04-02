@@ -1,4 +1,35 @@
-.comp-talk-image-left {
-    float: left;
-    width: 200px;
+.comp-talk {
+
+}
+
+.comp-talk__section {
+    clear: both;
+}
+
+.comp-talk__slide {
+    @include mq(get-mqbreakpoint('medium')) {
+        float: right;
+        display: block;
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+    }
+}
+
+.comp-talk__image {
+    @include mq(get-mqbreakpoint('medium')) {
+        width: 300px;
+        height: 169px;
+    }
+}
+
+.comp-talk__text {
+    @include mq(get-mqbreakpoint('medium')) {
+        margin-right: 320px;
+    }
+}
+
+.comp-talk__divider {
+    clear: both;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }

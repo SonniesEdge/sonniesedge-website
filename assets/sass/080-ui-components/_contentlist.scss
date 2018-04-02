@@ -1,5 +1,5 @@
 
-.comp-postslist {
+.comp-contentlist {
     @include list-reset();
     @include mq(get-mqbreakpoint('medium')) {
         display: grid;
@@ -9,14 +9,14 @@
     }
 }
 
-.comp-postslist__item {
+.comp-contentlist__item {
     margin-bottom: get-spacing('xsmall');
     @include mq(get-mqbreakpoint('medium')) {
         margin-bottom: 0;
     }
 }
 
-.comp-postslist__link {
+.comp-contentlist__link {
     border: 1px solid get-color('gray');
     text-decoration: none;
     display: block;
@@ -27,11 +27,11 @@
     }
 }
 
-.comp-postslist__title {
+.comp-contentlist__title {
     @include font-family('secondary');
     @include font-size('gamma');
 }
 
-.comp-postslist__date {
+.comp-contentlist__date {
     color: get-color('darkgray');
 }

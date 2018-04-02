@@ -1,7 +1,7 @@
 ---
 collection: mainnav
 title: Posts
-layout: list.njk
+layout: posts.njk
 weight: 20
 ---
 
