@@ -136,10 +136,10 @@ gulp.task('images', function () {
                 { 
                     width: 300
                 },
-                { 
-                    width: 600,
-                    rename: { suffix: '-600px' }
-                }
+                // { 
+                //     width: 600,
+                //     rename: { suffix: '-600px' }
+                // }
             ]
         }, 
         {
