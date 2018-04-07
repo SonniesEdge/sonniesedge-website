@@ -9,7 +9,10 @@ function plugin(options){
         setImmediate(done);
         files['posts/test.md'] = {
             'title': 'this is a test title',
-            'content': 'test content'
+            'contents': 'test content',
+            'date': '2013-10-08 11:00:16',
+            'slug': 'test-title',
+            'strapline': 'help help'
         }
 
         Object.keys(files).forEach(function(file){
