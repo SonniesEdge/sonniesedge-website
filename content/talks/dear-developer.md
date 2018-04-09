@@ -13,9 +13,9 @@ This is Old Lady Shouts At Clouds to the nth degree.
 <div class="comp-talk__slide"><img class="comp-talk__image" src="/images/talks/dear-developer/history-of-the-web/history.jpeg" alt=""></div>
 <div class="comp-talk__text">
 <h2>History of the Web</h2>
-<p>I'm here to talk to you about the single biggest invention in human history. Some might might say that invention is fire, or language. Some might say that it's the printing press, or beer (actually, maybe it is beer). Some might say it's the invention of electricity, or THE MASTERING OF THE ATOM. 
+<p>I'm here to talk to you about the single biggest invention in human history. Some might say that invention is fire, or language. Some might say that it's the printing press, or beer (actually, maybe it is beer). Some might say it's the invention of electricity, or THE MASTERING OF THE ATOM. 
 
-<p>Some others, perhaps less drunk on beer and easily accessible literature, might say that it's the Internet (lower or uppercase "I"). But no, the this talk is about the invention of the World Wide Web. The good old Dub Dub Dub. Or, as we all just call it in the late 2010's - the Web. </p>
+<p>Some others, perhaps less drunk on beer and easily accessible literature, might say that it's the Internet (lower or uppercase "I"). But no, this talk is about the invention of the World Wide Web. The good old Dub Dub Dub. Or, as we all just call it in the late 2010's - the Web. </p>
 </div>
 </section>
 
@@ -129,7 +129,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 <p>Especially HTML. It is strong because it is such a simple, [declarative language](https://en.wikipedia.org/wiki/Declarative_programming). It _requests_ things from the browser. Flirts with it. It doesn't _demand_, like other languages might. 
 
 <aside  class="comp-talk__note">
-<p>Technically, HTML is a domain-specific markup language that requests an outcome, and doesn't care how that is accomplished. This is in stark contrast to imperative languages, which explictly details what a program should do at every moment of its state.
+<p>Technically, HTML is a domain-specific markup language that requests an outcome, and doesn't care how that is accomplished. This is in stark contrast to imperative languages, which explicitly details what a program should do at every moment of its state.
 </aside>
 </div>
 </section>
@@ -340,7 +340,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 <div class="comp-talk__slide"><img class="comp-talk__image" src="/images/talks/dear-developer/history-repeating/a11y-who.jpeg" alt=""></div>
 <div class="comp-talk__text">
 <h3>A11y-who?</h3>
-<p>It's not just performance where we have inexplicably low industry knowledge. Accessibility is still an unknown to most developers. Personally, this one blows my mind - it it still somehow not a core requirement of being a front end developer. It should be a _core skill_, the default on any frontend developers resume.
+<p>It's not just performance where we have inexplicably low industry knowledge. Accessibility is still an unknown to most developers. Personally, this one blows my mind - it is still somehow not a core requirement of being a front end developer. It should be a _core skill_, the default on any frontend developers resume.
 </div>
 </section>
 
@@ -348,8 +348,8 @@ happily scream back, singing the song of their people. Computers could now talk 
 <div class="comp-talk__slide"><img class="comp-talk__image" src="/images/talks/dear-developer/history-repeating/js-by-default.jpeg" alt=""></div>
 <div class="comp-talk__text">
 <h3>JavaScript by default</h3>
-<p>And in 2018 we're at a point where Javascript is being seen as a valid content delivery mechanism. For HTML content! Not interactive applications, not games, but simply longfrom textual content. 
-<p>Instead of HTML being generated on, and delivered from, the server, a JS bundle is sent to the client, which is then decompressed and intialised and then requests data, which is then sent from the server (or another server, as now everything is a service) as JSON, where it is then converted on the fly into HTML.
+<p>And in 2018 we're at a point where Javascript is being seen as a valid content delivery mechanism. For HTML content! Not interactive applications, not games, but simply long form textual content. 
+<p>Instead of HTML being generated on, and delivered from, the server, a JS bundle is sent to the client, which is then decompressed and initialised and then requests data, which is then sent from the server (or another server, as now everything is a service) as JSON, where it is then converted on the fly into HTML.
 <p>Permit an old lady to rant here...
 </div>
 </section>
@@ -395,7 +395,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 
 <p>The thing most likely to shatter catastrophically _shouldn't be taking the brunt of the weight_.
 
-<p>If you told this to a physical materials engineer, or a construction worker, they would look at your in _horror_. 
+<p>If you told this to a physical materials engineer, or a construction worker, they would look at you in _horror_. 
 </div>
 </section>
 
@@ -425,12 +425,12 @@ happily scream back, singing the song of their people. Computers could now talk 
 <div class="comp-talk__slide"><img class="comp-talk__image" src="/images/talks/dear-developer/history-repeating/suddenly-exclusionary.jpeg" alt=""></div>
 <div class="comp-talk__text">
 <h3>Suddenly exclusionary</h3>
-<p>We’re back to building sites that are not for everyone - huge, bloated sites, running fragile imperative code on the users local device. We have started to explicitly say "I think you should have this level of tech, processing power, and bandwidth before I think you're eligable to use my site".
+<p>We’re back to building sites that are not for everyone - huge, bloated sites, running fragile imperative code on the users local device. We have started to explicitly say "I think you should have this level of tech, processing power, and bandwidth before I think you're eligible to use my site".
 <p>Why? Because we want to have our fun with technology. Because we don't want to think about "edge case" user needs. 
 <p>"Edge case" is, to be frank, a phrase that should be banned from all developer conversations (and then tattooed onto the forehead of anyone who continues to use it). 
 <p>When we say "Edge Case" we mean "Stress Case". In their book, [Design for Real Life](https://abookapart.com/products/design-for-real-life), [Eric Meyer](https://meyerweb.com/) & [Sara Wachter-Boettcher](https://www.sarawb.com/) point out that what we glibly call an "edge case" is normally an enormously stressful event for a user. 
 <p>It often accompanies high emotions, stress, physical problems, financial problems, etc. When we discount and dismiss the "edge case", we're actually saying "I don't care about that particular user's stressful situation". 
-<p>An succinct example I saw recently was an American chap trying to use an airline website while holidaying in SE Asia. His flight had been cancelled and he were trying to rebook. However, due to terrible internet connectivity in his location the site just wasn't loading - it was trying to pull down huge amounts of images and JS that were simply not happening on that connection.
+<p>n succinct example I saw recently was an American chap trying to use an airline website while holidaying in SE Asia. His flight had been cancelled and he were trying to rebook. However, due to terrible internet connectivity in his location the site just wasn't loading - it was trying to pull down huge amounts of images and JS that were simply not happening on that connection.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/webperf?src=hash&amp;ref_src=twsrc%5Etfw">#webperf</a> in Cambodia: Yesterday I tried to book a domestic flight through various booking platforms and airline sites. Gave up after an hour and called a travel agent to book at a premium.</p>&mdash; Holger Bartel (@foobartel) <a href="https://twitter.com/foobartel/status/946299864551276544?ref_src=twsrc%5Etfw">December 28, 2017</a></blockquote>
 
@@ -506,7 +506,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 
 <p>If you're reading this then you're likely to be quite rich. Hold on, hold on, read the rest of what I have to say before you storm off. 
 <p>It's true, we're rich. Even compared to our national peers we're considered at least "well-off". In comparison to the average person on this planet?: we are fucking _rolling_ in money.
-<p>Yes, I know it doesn't feel like that always. This statement certainly doesn't account for personal circumstance or other axises of oppression (I will receive tweets about this, I know it). But as a rule of thumb, it's a valid one. Techies are more well off than most other people. 
+<p>Yes, I know it doesn't feel like that always. This statement certainly doesn't account for personal circumstance or other axes of oppression (I will receive tweets about this, I know it). But as a rule of thumb, it's a valid one. Techies are more well off than most other people. 
 
 <p>The way we just buy technology, how we will happily splurge on an Alexa or a new laptop. The way we buy new toys on a whim. Check out the tech apparel of your coworkers next time you see them. This is not normal compared to most people on this planet.
 
@@ -537,7 +537,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 
 <p>But the reality of poor connections is actually closer to home.
 <p>30% of the rural USA is closer to dial-up speeds than broadband speeds. 
-<p>Yup, you read that right. While urban broadband users are on 3.1 megabytes per second, rural users are lucky to be achieve a mere 500 kilobytes per second in comparison. 
+<p>Yup, you read that right. While urban broadband users are on 3.1 megabytes per second, rural users are lucky to achieve a mere 500 kilobytes per second in comparison. 
 <p>Guess how long our average webpage from earlier will take to download on this kind of connection? Go on, guess. 
 
 <aside class="comp-talk__note">
@@ -554,7 +554,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 <h3>Download of eons</h3>
 <p>Between 60 and 360 seconds, depending on the line quality.
 <p>Your website had better be _amazing_ for it to justify that length of download time. 
-<p>You can see why people might want to disable images and JS if it means a quicker download. You can certainly see why they pop a blood vessal when you send them adverts that they don't want to view!
+<p>You can see why people might want to disable images and JS if it means a quicker download. You can certainly see why they pop a blood vessel when you send them adverts that they don't want to view!
 </div>
 </section>
 
@@ -567,7 +567,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 <p>Our final lesson. Not everyone is able-bodied, or neurotypical. 
 <p>This is, like connectivity, heavily laden with stereotypes. Able-bodied people assume that a disability will manifest as someone using a wheelchair, or maybe as a completely blind person with a guide-dog. 
 
-<p>But the reailty is that disabilty covers a huge gamut of issues. Yes, wheelchair users and blind people are part of that. But a person does not have to be 100% a wheelchair user, nor do they have to be 100% blind. Percentages exist! 
+<p>But the reality is that disability covers a huge gamut of issues. Yes, wheelchair users and blind people are part of that. But a person does not have to be 100% a wheelchair user, nor do they have to be 100% blind. Percentages exist! 
 <p>Disability also covers things like colour blindness, arthritis, motor control conditions such as Parkinsons or MS. It can be a neurological condition, such as ADHD, autism, or depression.
 <p>There are enormous varieties of disabilities. While you do not have to have a medical knowledge of each one, you must be aware of the range of problems. 
 <p>Most importantly, you must be aware that everything you build could have an effect on any disability. 
@@ -598,7 +598,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 <div class="comp-talk__text">
 <h2>Building with Empathy</h2>
 
-<p>So, fantastic, you're got this far (well done!) and you're ready to start designing with empathy! But what does empathy, accessibility, performance, etc mean in practise. 
+<p>So, fantastic, you've got this far (well done!) and you're ready to start designing with empathy! But what does empathy, accessibility, performance, etc mean in practise. 
 <p>Well, let me give you a non-technical practical example. 
 </section>
 
@@ -613,7 +613,7 @@ happily scream back, singing the song of their people. Computers could now talk 
 <p>Such a simple thing, but offering a lever rather than a rotating knob means that the door becomes usable by people with arthritis, people who have hand or arm amputations, or people with hand/arm injuries. 
 
 <aside class="comp-talk__notes">
-    <p>Blame [Laura Kalbag](https://laurakalbag.com/) for the doorknobs analogy - she orginally came up with it in her book [Accessibility for Everyone](https://abookapart.com/products/accessibility-for-everyone)
+    <p>Blame [Laura Kalbag](https://laurakalbag.com/) for the doorknobs analogy - she originally came up with it in her book [Accessibility for Everyone](https://abookapart.com/products/accessibility-for-everyone)
 </aside>
 
 </div>
@@ -701,7 +701,7 @@ Think about people carrying a baby, or having both hands full of shopping bags. 
 <div class="comp-talk__text">
 <h3>Universal CSS</h3>
 <p>Now that we've created our universal HTML, let's create some universal CSS.
-<p>Now, this is a slighly more tricky one, as there's a few ways of delivering CSS that works for everybody. But for this example I'm going to show a two-stage approach. There are other equally valid ways to do this, but I'll concentrate on the two stage for now. 
+<p>Now, this is a slightly more tricky one, as there's a few ways of delivering CSS that works for everybody. But for this example I'm going to show a two-stage approach. There are other equally valid ways to do this, but I'll concentrate on the two stage for now. 
 
 <p>This means that you initially just add an an ultra basic stylesheet. Call this your Core stylesheet. It's barely more than styled HTML. Maybe it will add a max-width to your main content to stop it going fluid across wide screens. But no more than that. It's all flow content, running vertically down your page, with no positioning attempted.
 
@@ -727,7 +727,7 @@ Think about people carrying a baby, or having both hands full of shopping bags. 
 
 <blockquote>“It’s not okay to block old browsers, but it’s a waste of time to support them 100%”</blockquote>
 
-<p>Too right, Chris! Because you might think that what I’ve been suggesting is that we support all browsers 100% the same, not matter what. Even IE6! 
+<p>Too right, Chris! Because you might think that what I’ve been suggesting is that we support all browsers 100% the same, no matter what. Even IE6! 
 <p>No no no, nothing is further from the truth. I’m lazy, just like every dev. I'm not going to waste time trying to make things look the same in Firefox or Chrome as a browser that even the manufacturer has left to die in the woods. 
 
 <p>No, the trick here is to choose a cut-off point. Especially if you are a large organisation. And the place I work - [Springer Nature](http://springernature.com) - is very fucking large. 
@@ -780,7 +780,7 @@ Think about people carrying a baby, or having both hands full of shopping bags. 
 <div class="comp-talk__text">
 <h3>Add the whizz bang</h3>
 
-<p>Now that we have a core stylesheet and and we have an advanced stylesheet, it's time to add the lovely Javascript layer. It's the most fragile layer, so it goes last. But it has the fun aspects and the most potential to dazzle, even on a boring old scientific site. 
+<p>Now that we have a core stylesheet and we have an advanced stylesheet, it's time to add the lovely Javascript layer. It's the most fragile layer, so it goes last. But it has the fun aspects and the most potential to dazzle, even on a boring old scientific site. 
 <p>Now is the point where we upgrade the forms so they post without doing a page refresh. Now is the time when we make pagination work without page reloads. Now is the time that we add in state management to our forms. 
 </div>
 </section>
@@ -894,7 +894,7 @@ Think about people carrying a baby, or having both hands full of shopping bags. 
 <div class="comp-talk__text">
 <h3>3G performance</h3>
 
-<p>An increadibly easy one is to start simulating slow network conditions in your browser. You can do this in just one tab of Chrome (other browsers will vary) by opening the Network tab in dev tools and turning on "slow 3G". Now you get to experience your site as the average person wandering around the average city does!
+<p>An incredibly easy one is to start simulating slow network conditions in your browser. You can do this in just one tab of Chrome (other browsers will vary) by opening the Network tab in dev tools and turning on "slow 3G". Now you get to experience your site as the average person wandering around the average city does!
 <p>If you're not on Chrome then try using [Charles Proxy](https://www.charlesproxy.com/). A similar thing, but for your entire OS.
 </div>
 </section>
