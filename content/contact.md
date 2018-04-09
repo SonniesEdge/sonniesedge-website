@@ -3,7 +3,7 @@ collection: mainnav
 slug: contact
 title: Contact
 type: page
-weight: 30
+weight: 50
 ---
 
 <p>If you want to get in touch, then email is always the easiest way, but I’ll probably respond if prodded on Twitter.</p>

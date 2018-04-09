@@ -2,7 +2,7 @@
 collection: mainnav
 title: Talks
 layout: talks.njk
-weight: 20
+weight: 30
 ---
 
 I've been talking at meetups and small informal events since I returned to the web industry in 2012. It's fun, and a way of becoming confidently knowledgeable in a subject area that I had never experienced before.

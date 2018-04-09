@@ -15,6 +15,7 @@ import defaultvals from 'metalsmith-default-values';
 import dateFormatter from 'metalsmith-date-formatter';
 import metalsmithFeed from 'metalsmith-feed';
 import metalsmithExcerpts from 'metalsmith-excerpts';
+import pinboard from './metalsmith-pinboard';
 
 gulp.task('smithy', function () {
     return gulp.src('./content/**')
@@ -26,6 +27,12 @@ gulp.task('smithy', function () {
             rename([
                 [/\_index.md$/, "index.md"]
             ]),
+            pinboard({
+                username: 'sonniesedge',
+                tags: ['web'],
+                count: 400,
+                type: 'md'
+            }),
             defaultvals([
                 {
                     pattern: ['**/posts/*.md', '!**/posts/index.md'],
@@ -38,6 +45,12 @@ gulp.task('smithy', function () {
                     defaults: {
                         layout: 'talk.njk'
                     }
+                },
+                {
+                    pattern: ['**/bookmarks/*.md', '!**/bookmarks/index.md'],
+                    defaults: {
+                        layout: 'bookmark.njk'
+                    }
                 }
             ]),
             collections({
@@ -48,6 +61,14 @@ gulp.task('smithy', function () {
                     ],
                   sortBy: 'date',
                   reverse: true
+                },
+                bookmarks: {
+                    pattern: [
+                        '**/bookmarks/*.md',
+                        '!**/bookmarks/index.md'
+                      ],
+                    sortBy: 'date',
+                    reverse: true
                 },
                 talks: {
                     pattern: [
@@ -77,6 +98,10 @@ gulp.task('smithy', function () {
                     {
                         match: { collection: 'talks' },
                         pattern: '/talks/:slug'
+                    },
+                    {
+                        match: { collection: 'bookmarks' },
+                        pattern: '/bookmarks/:slug'
                     }
                 ],
                 relative: false
