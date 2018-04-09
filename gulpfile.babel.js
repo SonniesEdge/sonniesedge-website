@@ -30,7 +30,7 @@ gulp.task('smithy', function () {
             pinboard({
                 username: 'sonniesedge',
                 tags: ['web'],
-                count: 20,
+                count: 400,
                 type: 'md'
             }),
             defaultvals([
