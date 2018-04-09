@@ -51,6 +51,13 @@ gulp.task('smithy', function () {
                   sortBy: 'date',
                   reverse: true
                 },
+                bookmarks: {
+                    pattern: [
+                        '**/bookmarks/*.html'
+                      ],
+                    sortBy: 'date',
+                    reverse: true
+                },
                 talks: {
                     pattern: [
                         '**/talks/*.md', 

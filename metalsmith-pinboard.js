@@ -1,25 +1,54 @@
+var request = require('request');
+var slugify = require('slugify');
+var marked = require('marked');
+
 module.exports = plugin;
 
-function plugin(options){
+function plugin(options) {
     options = options || {};
-    console.log('HELLO');
 
-    return function(files, metalsmith, done){
-        // console.log(files);
-        setImmediate(done);
-        files['posts/test.md'] = {
-            'title': 'this is a test title',
-            'contents': 'test content',
-            'date': '2013-10-08 11:00:16',
-            'slug': 'test-title',
-            'strapline': 'help help'
+
+
+    return function (files, metalsmith, done) {
+        let options = {
+            url: 'https://feeds.pinboard.in/json/u:sonniesedge/t:web?count=10',
+            json: true
         }
 
-        Object.keys(files).forEach(function(file){
-            var data = files[file];
-            console.log(data['title']);
+        let pinboardData = [];
+
+        request.get(options, (err, response) => {
+            let pinboardData = response.body;
+
+            let prefix = 'bookmarks';
+
+            for (var i = 0, len = pinboardData.length; i < len; i++) {
+                let filename = slugify(pinboardData[i]['u'], {
+                    replacement: '-',
+                    lower: true,
+                    remove: /[$*_+~.()'"!\-/:@]/g
+                  });
+
+                filename = `${prefix}/${filename}.html`;
+                
+                files[filename] = {
+                    'title': pinboardData[i]['d'],
+                    'contents': Buffer.from(marked(pinboardData[i]['n']), 'utf8' ),
+                    'date': pinboardData[i]['dt']
+                }
+            }
+
+
+
+            setImmediate(done);
         });
 
-        console.log('EXITED');
+
+
+
+
+
+
+
     }
 }
