@@ -16,6 +16,7 @@ import dateFormatter from 'metalsmith-date-formatter';
 import metalsmithFeed from 'metalsmith-feed';
 import metalsmithExcerpts from 'metalsmith-excerpts';
 import pinboard from './metalsmith-pinboard';
+import metalsmithWebmentions from './metalsmith-webmentions';
 
 gulp.task('smithy', function () {
     return gulp.src('./content/**')
@@ -88,6 +89,7 @@ gulp.task('smithy', function () {
                 tables: true,
                 langPrefix: 'language-'
             }),
+            metalsmithWebmentions(),
             metalsmithExcerpts(),
             permalinks({
                 linksets: [
