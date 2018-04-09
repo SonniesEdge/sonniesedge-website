@@ -6,17 +6,6 @@ var querystring = require('query-string');
 
 module.exports = plugin;
 
-// pinboard username
-// pinboard tags
-// pinboard count
-
-// markdown or html
-// slugify?
-// slugifyopts
-
-
-// http://feeds.pinboard.in/rss/u:username/t:tag1/t:tag2/t:tag3/
-
 function buildPinboardURL(options) {
     let pinboardObj = {};
 
@@ -100,8 +89,6 @@ function plugin(options) {
                 files[filename]['slug'] = options.slug || filename;
                 files[filename]['sourceurl'] = pinboardData[i]['u'];
             }
-
-
 
             setImmediate(done);
         });
