@@ -5,7 +5,7 @@ layout: bookmarks.njk
 weight: 40
 ---
 
-A collection of interesting things that I find on the internet related to WWW development. 
+A collection of interesting things related to WWW development that I've found. 
 
 ## How does this work?
 
