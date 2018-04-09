@@ -120,6 +120,16 @@ gulp.task('smithy', function () {
                     description: file.contents
                 })
             }),
+            metalsmithFeed({
+                collection: 'bookmarks',
+                limit: false,
+                destination: 'bookmarks.xml',
+                preprocess: file => ({
+                    title: file.title,
+                    description: file.contents,
+                    url: file.sourceurl
+                })
+            }),
             layouts({
                 engine: 'nunjucks',
                 default: 'default.njk',
