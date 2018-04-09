@@ -30,7 +30,8 @@ gulp.task('smithy', function () {
             pinboard({
                 username: 'sonniesedge',
                 tags: ['web'],
-                count: 20
+                count: 20,
+                type: 'md'
             }),
             defaultvals([
                 {
@@ -46,7 +47,7 @@ gulp.task('smithy', function () {
                     }
                 },
                 {
-                    pattern: ['**/bookmarks/*.html'],
+                    pattern: ['**/bookmarks/*.md', '!**/bookmarks/index.md'],
                     defaults: {
                         layout: 'bookmark.njk'
                     }
@@ -63,7 +64,8 @@ gulp.task('smithy', function () {
                 },
                 bookmarks: {
                     pattern: [
-                        '**/bookmarks/*.html'
+                        '**/bookmarks/*.md',
+                        '!**/bookmarks/index.md'
                       ],
                     sortBy: 'date',
                     reverse: true

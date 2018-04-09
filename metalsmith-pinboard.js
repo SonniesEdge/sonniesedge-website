@@ -82,11 +82,20 @@ function plugin(options) {
                     remove: /[$*_+~.()'"!\-/:@]/g
                   });
 
-                filename = `${prefix}/${filename}.html`;
+                filename = `${prefix}/${filename}.${options.type}`;
+                let content = '';
+
+                if (pinboardData[i]['n']) {
+                    content = pinboardData[i]['n'];
+                }
+
+                if (options.type === 'md') {
+                    marked(content);
+                }
                 
                 files[filename]= {};
                 files[filename]['title'] = pinboardData[i]['d'];
-                files[filename]['contents'] = Buffer.from(marked(pinboardData[i]['n'] || ''), 'utf8' );
+                files[filename]['contents'] = Buffer.from(content, 'utf8' );
                 files[filename]['date'] = pinboardData[i]['dt'];
                 files[filename]['slug'] = options.slug || filename;
                 files[filename]['sourceurl'] = pinboardData[i]['u'];
