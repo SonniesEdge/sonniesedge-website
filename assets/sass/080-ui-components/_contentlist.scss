@@ -14,6 +14,7 @@
     @include mq(get-mqbreakpoint('medium')) {
         margin-bottom: 0;
         min-width: 0;
+        overflow: hidden;
     }
 }
 
