@@ -27,6 +27,11 @@ gulp.task('smithy', function () {
             rename([
                 [/\_index.md$/, "index.md"]
             ]),
+            pinboard({
+                username: 'sonniesedge',
+                tags: ['web'],
+                count: 20
+            }),
             defaultvals([
                 {
                     pattern: ['**/posts/*.md', '!**/posts/index.md'],
@@ -39,9 +44,14 @@ gulp.task('smithy', function () {
                     defaults: {
                         layout: 'talk.njk'
                     }
+                },
+                {
+                    pattern: ['**/bookmarks/*.html'],
+                    defaults: {
+                        layout: 'bookmark.njk'
+                    }
                 }
             ]),
-            pinboard(),
             collections({
                 posts: {
                   pattern: [
@@ -86,6 +96,10 @@ gulp.task('smithy', function () {
                     {
                         match: { collection: 'talks' },
                         pattern: '/talks/:slug'
+                    },
+                    {
+                        match: { collection: 'bookmarks' },
+                        pattern: '/bookmarks/:slug'
                     }
                 ],
                 relative: false
