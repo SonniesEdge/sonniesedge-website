@@ -26,20 +26,22 @@
     </head>
     <body>
         <div class="comp-mainlayout">
-            <nav class="comp-sidebar comp-mainlayout__sidebar">
-                <a href="/about/" class="comp-sidebar__photoframe"><img src="/images/pages/photo.jpg" class="u-photo comp-sidebar__photo" alt="A photo of Charlie Owen. She is white, with red hair, and green eyes."></a>
-                <ul class="comp-sidebar__list">
-                    {% for item in mainnav %}
-                        {% if item.path == '//' %}
-                            {% set newpath = '/' %}
-                        {% else %}
-                            {% set newpath = item.path %}
-                        {% endif %}
-                        <li class="comp-sidebar__item {% if item.path == path %}comp-sidebar__item--current{% endif %}"><a class="comp-sidebar__link" href="{{ newpath }}">{{ item.title }}</a></li>
-                    {% endfor %}
-                </ul>
+            <header>
+                <nav class="comp-sidebar comp-mainlayout__sidebar">
+                    <a href="/about/" class="comp-sidebar__photoframe"><img src="/images/pages/photo.jpg" class="u-photo comp-sidebar__photo" alt="A photo of Charlie Owen. She is white, with red hair, and green eyes."></a>
+                    <ul class="comp-sidebar__list">
+                        {% for item in mainnav %}
+                            {% if item.path == '//' %}
+                                {% set newpath = '/' %}
+                            {% else %}
+                                {% set newpath = item.path %}
+                            {% endif %}
+                            <li class="comp-sidebar__item {% if item.path == path %}comp-sidebar__item--current{% endif %}"><a class="comp-sidebar__link" href="{{ newpath }}">{{ item.title }}</a></li>
+                        {% endfor %}
+                    </ul>
 
-            </nav>
+                </nav>
+            </header>
             <main class="comp-mainlayout__content">
                 {% block content %}
                     <h1>{% if realtitle %}{{ realtitle }}{% else %}{{ title }}{% endif %}</h1>
@@ -49,7 +51,14 @@
                 {% block list %}
                 {% endblock %}
             </main>
-            <div class="comp-footer comp-mainlayout__footer">
+
+            {% if webmentionCount %}
+                <section class="comp-mainlayout__mentions">
+                    <p>This page has got {{ webmentionCount}} mentions on the glorious World Wide Web!</p>
+                </section>
+            {% endif %}
+
+            <footer class="comp-footer comp-mainlayout__footer">
                 <p class="comp-footer__text">&copy; Some shit about copyright and year that isn't actually in any way relevant or legal, but is a classic "we've always done it like that" thing.</p>
                 
                 <ul class="comp-footer__contacts">
@@ -59,7 +68,7 @@
                   <li><a href="https://github.com/sonniesedge/sonniesedge-website">View the site source on Github</a>.</li>
                 </ul>
 
-            </div>
+            </footer>
         </div>
         
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-22165967-2"></script>

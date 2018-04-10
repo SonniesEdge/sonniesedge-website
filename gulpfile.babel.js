@@ -89,7 +89,6 @@ gulp.task('smithy', function () {
                 tables: true,
                 langPrefix: 'language-'
             }),
-            metalsmithWebmentions(),
             metalsmithExcerpts(),
             permalinks({
                 linksets: [
@@ -132,6 +131,7 @@ gulp.task('smithy', function () {
                     url: file.sourceurl
                 })
             }),
+            metalsmithWebmentions(),
             layouts({
                 engine: 'nunjucks',
                 default: 'default.njk',
