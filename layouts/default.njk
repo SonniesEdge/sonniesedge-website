@@ -54,7 +54,13 @@
 
             {% if webmentionCount %}
                 <section class="comp-mainlayout__mentions">
-                    <p>This page has got {{ webmentionCount}} mentions on the glorious World Wide Web!</p>
+                    <p>This page has found {{ webmentionCount }} mentions of it on the glorious World Wide Web!</p>
+                    <ul>
+                        <li>Likes: {{ webmentionCountLike }}
+                        <li>Reposts: {{ webmentionCountRepost }}
+                        <li>Replies: {{ webmentionCountReply }}
+                    </ul>
+                    <p>There's probably a lot more, but webmentions are still in their infancy and many mentions of a page get missed!</p>
                 </section>
             {% endif %}
 
