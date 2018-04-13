@@ -55,6 +55,8 @@
 
             {% if webmentionCount %}
             <section class="comp-mainlayout__mentions">
+
+                <div>
                 <h1>Feedback</h1>
                 <p>This page has found <strong>{{ webmentionCount }}</strong> mentions of itself on the glorious World Wide Web!</p>
 
@@ -69,9 +71,9 @@
                         {{ item.content | safe}}
                     </div>
                     </li>
-                    {% endfor %}
-                    </ul>
-
+                {% endfor %}
+                </ul>
+                </div>
 
                 <h2>Likes</h2>
                 <ul class="">
