@@ -38,6 +38,7 @@
     "metalsmith-excerpts": "^1.2.0",
     "metalsmith-feed": "^1.0.0",
     "metalsmith-pinboard": "^1.0.0",
+    "moment": "^2.22.0",
     "query-string": "^6.0.0",
     "request": "^2.85.0",
     "slugify": "^1.2.9"
