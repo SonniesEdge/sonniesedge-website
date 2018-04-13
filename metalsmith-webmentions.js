@@ -27,15 +27,17 @@ function plugin(options) {
                     Object.keys(files).forEach(function (file) {
                         var data = files[file];
 
-                        let webmentionCount = 0;
+                        files[file]['webmentionCount'] = 0;
 
-                        let webmentionCountReply = 0;
-                        let webmentionCountLike = 0;
-                        let webmentionCountRepost = 0;
+                        files[file]['webmentionCountReply'] = 0;
+                        files[file]['webmentionCountLike'] = 0;
+                        files[file]['webmentionCountRepost'] = 0;
+                        files[file]['webmentionCountLink'] = 0;
 
-                        let webmentionReplies = [];
-                        let webmentionLikes = [];
-                        let webmentionReposts = [];
+                        files[file]['webmentionReplies'] = [];
+                        files[file]['webmentionLikes'] = [];
+                        files[file]['webmentionReposts'] = [];
+                        files[file]['webmentionLinks'] = [];
 
                         // Loop through each value in api object
                         for (var i = 0, len = apiData['links'].length; i < len; i++) {
@@ -45,20 +47,20 @@ function plugin(options) {
                                 // console.log('API: ', apiData['links'][i]['target']);
                                 // console.log('MS:  ', metalsmith.metadata().site.url + files[file]['path']);
                                 // console.log('TYPE: ', apiData['links'][i]['activity']['type']);
-                                webmentionCount++;
+                                files[file]['webmentionCount']++;
 
                                 if (apiData['links'][i]['activity']['type'] === 'reply') {
-                                    webmentionCountReply++;
-                                    webmentionReplies.push(
+                                    files[file]['webmentionCountReply']++;
+                                    files[file]['webmentionReplies'].push(
                                         {
-                                            
+
                                         }
                                     );
                                 }
 
                                 if (apiData['links'][i]['activity']['type'] === 'like') {
-                                    webmentionCountLike++;
-                                    webmentionLikes.push(
+                                    files[file]['webmentionCountLike']++;
+                                    files[file]['webmentionLikes'].push(
                                         {
 
                                         }
@@ -66,8 +68,17 @@ function plugin(options) {
                                 }
 
                                 if (apiData['links'][i]['activity']['type'] === 'repost') {
-                                    webmentionCountRepost++;
-                                    webmentionReposts.push(
+                                    files[file]['webmentionCountRepost']++;
+                                    files[file]['webmentionReposts'].push(
+                                        {
+
+                                        }
+                                    );
+                                }
+
+                                if (apiData['links'][i]['activity']['type'] === 'link') {
+                                    files[file]['webmentionCountLink']++;
+                                    files[file]['webmentionLinks'].push(
                                         {
 
                                         }
@@ -77,10 +88,7 @@ function plugin(options) {
 
                             }
                         }
-                        files[file]['webmentionCount'] = webmentionCount;
-                        files[file]['webmentionCountLike'] = webmentionCountLike;
-                        files[file]['webmentionCountReply'] = webmentionCountReply;
-                        files[file]['webmentionCountRepost'] = webmentionCountRepost;
+
                     });
 
                     setImmediate(done);
