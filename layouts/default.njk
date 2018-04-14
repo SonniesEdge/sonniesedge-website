@@ -56,40 +56,42 @@
             {% if webmentionCount %}
             <section class="comp-mainlayout__mentions">
 
-                <div>
+
                 <h1>Feedback</h1>
                 <p>This page has found <strong>{{ webmentionCount }}</strong> mentions of itself on the glorious World Wide Web!</p>
 
                 <p>There's probably a lot more, but this site relies on <a href="https://brid.gy/">brid.gy</a> to discover <a href="https://indieweb.org/webmention">webmentions</a> from social media. Retreiving these social media replies/likes/reposts is still unreliable (due to the social media giants' APIs) and many mentions of a page get missed!</p>
 
-                <h2>Links</h2>
-                <ul>
-                {% for item in webmentionLinks %}
-                    <li id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}">{{ item.author_name }}</a> on <a href="{{ item.link_source }}">{{ item.date }}</a>.
-
-                    <div>
-                        {{ item.content | safe}}
-                    </div>
-                    </li>
-                {% endfor %}
-                </ul>
-                </div>
-
-                <h2>Likes</h2>
-                <ul class="">
-                {% for item in webmentionLikes %}
-                    <li class="" id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}" class="">{{ item.author_name }}</a></li>
-                {% endfor %}
-                </ul>
-
-
-                <h2>Reposts</h2>
-                <ul>
-                {% for item in webmentionReposts %}
-                    <li id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}">{{ item.author_name }}</a> on <a href="{{ item.repost_source }}">{{ item.date }}</a>.
-                    </li>
+                {% if webmentionLinks %}
+                    <h2>Links</h2>
+                    <ul>
+                    {% for item in webmentionLinks %}
+                        <li id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}">{{ item.author_name }}</a> on <a href="{{ item.link_source }}">{{ item.date }}</a>.
+                        <div>
+                            {{ item.content | safe}}
+                        </div>
+                        </li>
                     {% endfor %}
                     </ul>
+                {% endif %}
+
+                {% if webmentionLikes %}
+                    <h2>Likes</h2>
+                    <ul class="">
+                    {% for item in webmentionLikes %}
+                        <li class="" id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}" class="">{{ item.author_name }}</a></li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+
+                {% if webmentionReposts %}
+                    <h2>Reposts</h2>
+                    <ul>
+                    {% for item in webmentionReposts %}
+                        <li id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}">{{ item.author_name }}</a> on <a href="{{ item.repost_source }}">{{ item.date }}</a>.</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
             </section>
             {% endif %}
 

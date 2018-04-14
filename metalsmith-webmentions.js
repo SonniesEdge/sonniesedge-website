@@ -23,7 +23,7 @@ function plugin(options) {
 
                 request.get({ url: apiUrl, json: true }, (err, response) => {
                     let apiData = response.body;
-
+                    // console.log(apiData);
 
                     // Loop through each file
                     Object.keys(files).forEach(function (file) {
