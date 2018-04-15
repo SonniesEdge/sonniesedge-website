@@ -1,6 +1,3 @@
-var FontFaceObserver = require('font-face-observer');
-var fontA = new FontFaceObserver('Roboto Slab');
+import webmention from './webmentions';
 
-Promise.all([fontA.check()]).then(function () {
-  document.documentElement.classList.add('fonts-loaded');
-});
+test = new webmention();
