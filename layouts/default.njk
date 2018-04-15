@@ -62,7 +62,7 @@
 
                 <p>There's probably a lot more, but this site relies on <a href="https://brid.gy/">brid.gy</a> to discover <a href="https://indieweb.org/webmention">webmentions</a> from social media. Retreiving these social media replies/likes/reposts is still unreliable (due to the social media giants' APIs) and many mentions of a page get missed!</p>
 
-                {% if webmentionLinks %}
+                {% if webmentionLinks | length > 0 %}
                     <h2>Links</h2>
                     <ul class="comp-wm-links">
                     {% for item in webmentionLinks %}
@@ -80,7 +80,7 @@
                     </ul>
                 {% endif %}
 
-                {% if webmentionLikes %}
+                {% if webmentionLikes | length  > 0 %}
                     <h2>Likes</h2>
                     <ul class="">
                     {% for item in webmentionLikes %}
@@ -89,7 +89,7 @@
                     </ul>
                 {% endif %}
 
-                {% if webmentionReposts %}
+                {% if webmentionReposts | length > 0 %}
                     <h2>Reposts</h2>
                     <ul>
                     {% for item in webmentionReposts %}
