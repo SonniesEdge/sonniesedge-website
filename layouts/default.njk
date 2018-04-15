@@ -64,12 +64,17 @@
 
                 {% if webmentionLinks %}
                     <h2>Links</h2>
-                    <ul>
+                    <ul class="comp-wm-links">
                     {% for item in webmentionLinks %}
-                        <li id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}">{{ item.author_name }}</a> on <a href="{{ item.link_source }}">{{ item.date }}</a>.
-                        <div>
-                            {{ item.content | safe}}
-                        </div>
+                        <li id="{{ item.id }}" class="comp-wm-links__item"> 
+                            <img src="{{ item.author_photo }}" class="comp-wm-links__image">
+                            <a href="{{ item.author_url }}" class="comp-wm-links__title">{{ item.author_name }}</a>
+                            <div  class="comp-wm-links__body">
+                                {{ item.content | safe}}
+                            </div>
+                            <div class="comp-wm-links__footer">
+                            <a href="#{{ item.id }}">#</a> <a href="{{ item.link_source }}">{{ item.date }}</a>
+                            </div>
                         </li>
                     {% endfor %}
                     </ul>

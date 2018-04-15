@@ -14,6 +14,7 @@ function plugin(options) {
     return function (files, metalsmith, done) {
         try {
             if (!process.env.WEBMENTTOKEN) {
+                console.log('No webmention token specified.');
                 setImmediate(done); // effectively feature flag this
                 // throw new Error('Webmentions.io key is not defined in env vars!');
             } else {
@@ -77,6 +78,7 @@ function plugin(options) {
 
                                     payload.author_name = _.get(apiData['links'][i], 'data.author.name', 'Unknown');
                                     payload.author_url = _.get(apiData['links'][i], 'data.author.url', 'Unknown');
+                                    payload.author_photo = _.get(apiData['links'][i], 'data.author.photo', 'Unknown');
                                     payload.date = moment(_.get(apiData['links'][i], 'data.published', '1970-01-01')).format("MMMM Do YYYY");
                                     payload.link_source = _.get(apiData['links'][i], 'data.url', 'Unknown');
                                     payload.content = _.get(apiData['links'][i], 'data.content', 'Unknown');
