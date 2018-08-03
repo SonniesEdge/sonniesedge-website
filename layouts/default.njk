@@ -83,7 +83,7 @@
 
                 {% if webmentionLikes | length  > 0 %}
                     <h2>Likes</h2>
-                    <ul class="">
+                    <ul class="c-likes">
                     {% for item in webmentionLikes %}
                         <li class="" id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}" class="">{{ item.author_name }}</a></li>
                     {% endfor %}
@@ -92,7 +92,7 @@
 
                 {% if webmentionReposts | length > 0 %}
                     <h2>Reposts</h2>
-                    <ul>
+                    <ul class="c-reposts">
                     {% for item in webmentionReposts %}
                         <li id="{{ item.id }}"><a href="#{{ item.id }}">#</a> <a href="{{ item.author_url }}">{{ item.author_name }}</a> on <a href="{{ item.repost_source }}">{{ item.date }}</a>.</li>
                     {% endfor %}

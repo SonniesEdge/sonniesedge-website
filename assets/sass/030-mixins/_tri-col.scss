@@ -1,0 +1,5 @@
+@mixin tri-col() {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: get-spacing('small');
+}

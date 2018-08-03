@@ -4,6 +4,7 @@
 @import 'loom/020-functions'; // Loom settings above, your modules below
 
 @import 'loom/030-mixins'; // Loom settings above, your modules below
+@import '030-mixins/tri-col';
 
 @import 'loom/040-generic'; // Loom settings above, your modules below
 @import '040-generic/syntax-highlighting';
@@ -25,6 +26,8 @@
 @import '080-ui-components/postheader';
 @import '080-ui-components/talk';
 @import '080-ui-components/webmentions';
+@import '080-ui-components/likes';
+@import '080-ui-components/reposts';
 
 // @import 'loom/090-scaffolding'; // Loom settings above, your modules below
 
