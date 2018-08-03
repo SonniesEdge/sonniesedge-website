@@ -3594,6 +3594,10 @@ metalsmith-default-values@^2.0.1:
     lodash.set "^4.3.2"
     multimatch "^2.1.0"
 
+metalsmith-drafts@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/metalsmith-drafts/-/metalsmith-drafts-0.0.1.tgz#727858ba266934a37a287013beca9b6033272f77"
+
 metalsmith-excerpts@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/metalsmith-excerpts/-/metalsmith-excerpts-1.2.0.tgz#968306340ab13e53da686643af890331e7105887"
