@@ -1,5 +1,4 @@
 ---
-draft: true
 title: Removing Site Tracking
 subtitle: I don't get paid enough by the NSA
 date: 2018-08-03
