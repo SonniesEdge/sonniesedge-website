@@ -74,17 +74,20 @@ function plugin(options) {
 
                                 if (apiData['links'][i]['activity']['type'] === 'link') {
                                     files[file]['webmentionCountLink']++;
-                                    let payload = {};
 
-                                    payload.author_name = _.get(apiData['links'][i], 'data.author.name', 'Unknown');
-                                    payload.author_url = _.get(apiData['links'][i], 'data.author.url', 'Unknown');
-                                    payload.author_photo = _.get(apiData['links'][i], 'data.author.photo', 'Unknown');
-                                    payload.date = moment(_.get(apiData['links'][i], 'data.published', '1970-01-01')).format("MMMM Do YYYY");
-                                    payload.link_source = _.get(apiData['links'][i], 'data.url', 'Unknown');
-                                    payload.content = _.get(apiData['links'][i], 'data.content', 'Unknown');
-                                    payload.id = _.get(apiData['links'][i], 'id', 0);
+                                    if (_.get(apiData['links'][i], 'data.author.name', 'Unknown') !== 'Unknown') {
+                                        let payload = {};
 
-                                    files[file]['webmentionLinks'].push(payload);
+                                        payload.author_name = _.get(apiData['links'][i], 'data.author.name', 'Unknown');
+                                        payload.author_url = _.get(apiData['links'][i], 'data.author.url', 'Unknown');
+                                        payload.author_photo = _.get(apiData['links'][i], 'data.author.photo', 'Unknown');
+                                        payload.date = moment(_.get(apiData['links'][i], 'data.published', '1970-01-01')).format("MMMM Do YYYY");
+                                        payload.link_source = _.get(apiData['links'][i], 'data.url', 'Unknown');
+                                        payload.content = _.get(apiData['links'][i], 'data.content', 'Unknown');
+                                        payload.id = _.get(apiData['links'][i], 'id', 0);
+
+                                        files[file]['webmentionLinks'].push(payload);
+                                    }
                                 }
 
 
