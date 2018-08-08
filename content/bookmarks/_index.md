@@ -1,7 +1,7 @@
 ---
 collection: mainnav
 title: Bookmarks
-layout: bookmarks.njk
+layout: page/bookmarks.njk
 weight: 40
 ---
 

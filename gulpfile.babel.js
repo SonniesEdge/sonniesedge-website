@@ -40,19 +40,19 @@ gulp.task('smithy', function () {
                 {
                     pattern: ['**/posts/*.md', '!**/posts/index.md'],
                     defaults: {
-                        layout: 'post.njk'
+                        layout: 'page/post.njk'
                     }
                 },
                 {
                     pattern: ['**/talks/*.md', '!**/talks/index.md'],
                     defaults: {
-                        layout: 'talk.njk'
+                        layout: 'page/talk.njk'
                     }
                 },
                 {
                     pattern: ['**/bookmarks/*.md', '!**/bookmarks/index.md'],
                     defaults: {
-                        layout: 'bookmark.njk'
+                        layout: 'page/bookmark.njk'
                     }
                 }
             ]),
@@ -137,7 +137,7 @@ gulp.task('smithy', function () {
             layouts({
                 engine: 'nunjucks',
                 directory: 'views',
-                default: 'default.njk',
+                default: 'layout/default.njk',
                 pattern: '**/*.html'
             })
         ],

@@ -1,7 +1,7 @@
 ---
 collection: mainnav
 title: Talks
-layout: talks.njk
+layout: page/talks.njk
 weight: 30
 ---
 
