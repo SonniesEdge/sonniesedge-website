@@ -136,6 +136,7 @@ gulp.task('smithy', function () {
             metalsmithWebmentions(),
             layouts({
                 engine: 'nunjucks',
+                directory: 'views',
                 default: 'default.njk',
                 pattern: '**/*.html'
             })
