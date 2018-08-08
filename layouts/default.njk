@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         {% block header %}
             <title>{{title}} | {{ site.title }}</title>
@@ -102,15 +102,39 @@
             {% endif %}
 
             <footer class="comp-footer comp-mainlayout__footer">
-                <p class="comp-footer__text">&copy; Some shit about copyright and year that isn't actually in any way relevant or legal, but is a classic "we've always done it like that" thing.</p>
+                <p>&copy; Some shit about copyright and year that isn't actually in any way relevant or legal, but is a classic "we've always done it like that" thing.</p>
                 
-                <ul class="comp-footer__contacts">
-                  <li>Email: <a href="mailto:charlie@sonniesedge.co.uk" rel="me">charlie@sonniesedge.co.uk</a></li>
-                  <li>Twitter: <a href="https://twitter.com/sonniesedge" rel="me">@sonniesedge</a></li>
-                  <li>Github: <a href="https://github.com/sonniesedge" rel="me">@sonniesedge</a></li>
-                  <li>Site source: <a href="https://github.com/sonniesedge/sonniesedge-website">View on Github</a>.</li>
-                </ul>
+                <div class="comp-footer__cols">
+                    <section>
+                        <header>
+                            <h2>Feeds</h2>
+                        </header>
+                        <ul>
+                            <li><a href="/rss.xml">Posts (RSS XML)</a></li>
+                            <li><a href="/bookmarks.xml">Bookmarks (RSS XML)</a></li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <header>
+                            <h2>Get in touch</h2>
+                        </header>
+                        <ul>
+                            <li>Email: <a href="mailto:charlie@sonniesedge.co.uk" rel="me">charlie@sonniesedge.co.uk</a></li>
+                            <li>Twitter: <a href="https://twitter.com/sonniesedge" rel="me">@sonniesedge</a></li>
+                            <li>Github: <a href="https://github.com/sonniesedge" rel="me">@sonniesedge</a></li>
+                        </ul>
+                    </section>
 
+                    <section>
+                        <header>
+                            <h2>Resources</h2>
+                        </header>
+                        <ul>
+                            <li>Site source: <a href="https://github.com/sonniesedge/sonniesedge-website">View on Github</a>.</li>
+                        </ul>
+                    </section>
+                </div>
             </footer>
         </div>
 

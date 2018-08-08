@@ -2,27 +2,8 @@
     padding-top: get-spacing('xsmall');
     @include font-size('sub');
     border-top: 1px solid get-color('gray');
-    @include mq(get-mqbreakpoint('medium')) {
-        display: flex;
-        justify-content: space-between;
-    }
 }
-
-.comp-footer__text {
-    margin: 0;
-
-    @include mq(get-mqbreakpoint('medium')) {
-        flex-basis: 50%;
-    }
-}
-
-.comp-footer__contacts {
-    @include mq(get-mqbreakpoint('medium')) {
-        list-style-type: none;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        flex-basis: 40%;
-    }
+.comp-footer__cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
 }
