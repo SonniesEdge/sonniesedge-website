@@ -18,6 +18,7 @@ import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
+import metalsmithDropbox from './metalsmith-dropbox';
 
 gulp.task('smithy', function () {
     return gulp.src('./content/**')
@@ -26,6 +27,7 @@ gulp.task('smithy', function () {
         frontmatter: true,
         clean: true,
         use: [
+            metalsmithDropbox(),
             rename([
                 [/\_index.md$/, "index.md"]
             ]),
@@ -222,5 +224,17 @@ gulp.task('watch', () => {
     gulp.watch('./layouts/**/*', gulp.series("smithy"));
 });
 
-gulp.task('default', gulp.series( 'sass', 'images', 'movies', 'smithy', gulp.parallel('watch', 'browser-sync')));
-gulp.task('build', gulp.series('sass', 'images', 'movies', 'smithy'));
+gulp.task(
+    'default', 
+    gulp.series(
+        'sass', 
+        // 'images', 
+        'movies', 
+        'smithy', 
+        gulp.parallel('watch', 'browser-sync')
+    )
+);
+gulp.task(
+    'build', 
+    gulp.series('sass', 'images', 'movies', 'smithy')
+);
