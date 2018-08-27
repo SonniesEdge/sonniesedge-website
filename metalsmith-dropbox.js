@@ -16,6 +16,17 @@ function plugin(options) {
                 setImmediate(done); // effectively feature flag this
                 // throw new Error('Webmentions.io key is not defined in env vars!');
             } else {
+                var fetch = require('isomorphic-fetch'); // or another library of choice.
+                var Dropbox = require('dropbox').Dropbox;
+                var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
+                dbx.filesListFolder({path: 'test'})
+                .then(function(response) {
+                    console.log(response);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+
                 setImmediate(done);
             }
         }
