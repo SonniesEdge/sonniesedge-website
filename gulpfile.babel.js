@@ -236,5 +236,10 @@ gulp.task(
 );
 gulp.task(
     'build', 
-    gulp.series('sass', 'images', 'movies', 'smithy')
+    gulp.series(
+        'sass', 
+        // 'images', 
+        'movies', 
+        'smithy'
+    )
 );

@@ -6,6 +6,8 @@ var querystring = require('query-string');
 
 module.exports = plugin;
 
+// function 
+
 function plugin(options) {
     options = options || {};
 
@@ -14,10 +16,11 @@ function plugin(options) {
             if (!process.env.DROPBOXTOKEN) {
                 console.log('No Dropbox token specified.');
                 setImmediate(done); // effectively feature flag this
-                throw new Error('Dropbox key is not defined in env vars!');
+                // throw new Error('Webmentions.io key is not defined in env vars!');
             } else {
+                var fetch = require('isomorphic-fetch'); // or another library of choice.
                 var Dropbox = require('dropbox').Dropbox;
-                var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN });
+                var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
                 dbx.filesListFolder({path: '/test'})
                 .then(function(response) {
                     console.log(response);
