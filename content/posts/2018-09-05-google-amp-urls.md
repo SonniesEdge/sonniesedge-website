@@ -1,7 +1,7 @@
 ---
 categories:
 - webtech
-date: 2018-09-03 12:00:00
+date: 2018-09-05 12:00:00
 slug: amp-urls
 strapline: Google has a monopoly on search rankings. We can't let them obtain a monopoly on websites.
 tags:
