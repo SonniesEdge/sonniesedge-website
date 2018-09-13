@@ -5,6 +5,7 @@ var type = require('component-type');
 var querystring = require('query-string');
 var fetch = require('isomorphic-fetch');
 var fs = require('fs');
+var unzip = require('unzip');
 
 module.exports = plugin;
 
@@ -24,10 +25,10 @@ function plugin(options) {
                 var Dropbox = require('dropbox').Dropbox;
                 var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
                 dbx.filesDownloadZip({path: '/test'})
-                    .then(function(response) {
-                        console.log(response);
-                        fs.writeFile('test.zip', response.fileBinary, 'binary', (err) => {
+                    .then((result) => {
+                        fs.writeFile('test.zip', result.fileBinary, 'binary', (err) => {
                             console.log('done');
+                            fs.createReadStream('test.zip').pipe(unzip.Extract({ path: './' }));
                         });
                     })
                     .catch(function(error) {
