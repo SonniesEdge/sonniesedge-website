@@ -18,7 +18,17 @@ import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
-import metalsmithDropbox from './metalsmith-dropbox';
+
+import dropbox from './singledropbox';
+
+gulp.task('dropboxText', function (done) {
+    console.log('dropbox task called');
+    dropbox({
+        dropboxfolder: '/_blog/content',
+        localDestination: './'
+    });
+    done();
+});
 
 gulp.task('smithy', function () {
     return gulp.src('./content/**')
@@ -27,7 +37,6 @@ gulp.task('smithy', function () {
         frontmatter: true,
         clean: true,
         use: [
-            metalsmithDropbox(),
             rename([
                 [/\_index.md$/, "index.md"]
             ]),
@@ -228,7 +237,7 @@ gulp.task(
     'default', 
     gulp.series(
         'sass', 
-        // 'images', 
+        'images', 
         'movies', 
         'smithy', 
         gulp.parallel('watch', 'browser-sync')
@@ -238,8 +247,15 @@ gulp.task(
     'build', 
     gulp.series(
         'sass', 
-        // 'images', 
+        'images', 
         'movies', 
         'smithy'
+    )
+);
+
+gulp.task(
+    'db',
+    gulp.series(
+        'dropboxText'
     )
 );

@@ -20,11 +20,10 @@ function plugin(options) {
             } else {
                 let apiUrl = `https://webmention.io/api/mentions?domain=sonniesedge.co.uk&token=${process.env.WEBMENTTOKEN}&per-page=2000`;
 
-                console.log(apiUrl);
+                console.log('Webmention API URL: ', apiUrl);
 
                 request.get({ url: apiUrl, json: true }, (err, response) => {
                     let apiData = response.body;
-                    // console.log(apiData);
 
                     // Loop through each file
                     Object.keys(files).forEach(function (file) {
@@ -41,10 +40,6 @@ function plugin(options) {
                         for (var i = 0, len = apiData['links'].length; i < len; i++) {
                             // if api URL matches the current file URL then...
                             if (apiData['links'][i]['target'] === metalsmith.metadata().site.url + files[file]['path']) {
-                                // console.log(metalsmith.metadata().site.url + files[file]['path'] + ' got a ' + apiData['links'][i]['activity']['type']);
-                                // console.log('API: ', apiData['links'][i]['target']);
-                                // console.log('MS:  ', metalsmith.metadata().site.url + files[file]['path']);
-                                // console.log('TYPE: ', apiData['links'][i]['activity']['type']);
                                 files[file]['webmentionCount']++;
 
 
@@ -102,7 +97,7 @@ function plugin(options) {
             }
         }
         catch (err) {
-            console.log(err);
+            console.log('Webmention error: ', err);
         }
     }
 }
