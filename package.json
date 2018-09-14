@@ -8,7 +8,8 @@
     "start": "gulp default",
     "images": "gulp images",
     "smithy": "gulp smithy",
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "dropboxtext": "gulp db"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -33,6 +34,7 @@
     "metalsmith-rename": "^1.0.0"
   },
   "dependencies": {
+    "adm-zip": "^0.4.11",
     "component-type": "^1.2.1",
     "dropbox": "^4.0.9",
     "es6-promise": "^4.2.4",

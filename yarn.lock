@@ -52,6 +52,10 @@ acorn@^5.0.0, acorn@^5.5.3:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
 
+adm-zip@^0.4.11:
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/adm-zip/-/adm-zip-0.4.11.tgz#2aa54c84c4b01a9d0fb89bb11982a51f13e3d62a"
+
 after@0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
