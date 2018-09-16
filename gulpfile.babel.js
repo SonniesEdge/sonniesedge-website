@@ -23,8 +23,8 @@ import metalsmithWebmentions from './metalsmith-webmentions';
 gulp.task('dropboxText', function (done) {
     console.log('dropbox task called');
     dropbox({
-        dropboxfolder: '/_blog/content',
-        localDestination: './'
+        dropboxfolder: '/_blog/text',
+        localDestination: './content'
     });
     done();
 });
