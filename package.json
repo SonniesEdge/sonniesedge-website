@@ -9,7 +9,7 @@
     "images": "gulp images",
     "smithy": "gulp smithy",
     "rollup": "rollup -c",
-    "dropboxtext": "gulp db"
+    "dropbox": "gulp db"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
