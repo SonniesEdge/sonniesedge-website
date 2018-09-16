@@ -1,8 +1,11 @@
 import fetch from 'isomorphic-fetch';
 import fs from 'fs';
 import unzip from 'adm-zip';
+import mv from  'mv';
+import path from 'path';
 
 var tmpZip = 'tmpdropboxdata.zip';
+var tmpDir = './tmp';
 
 function plugin(options) {
     try {
@@ -15,10 +18,19 @@ function plugin(options) {
             .then((result) => {
                 fs.writeFile(tmpZip, result.fileBinary, 'binary', (err) => {
                     console.log('Got ' + options.dropboxfolder);
-                    // fs.createReadStream(tmpZip).pipe(unzip.Extract({ path: options.localDestination }));
                     let zip = new unzip(tmpZip);
-                    zip.extractAllTo(options.localDestination, true);
-                    return true;
+
+                    var zipEntries = zip.getEntries();
+                    zip.extractAllTo(tmpDir);
+
+                    let tmptmp = fs.readdirSync(tmpDir)[0];
+                    console.log(tmptmp);
+
+                    mv(path.join(tmpDir, tmptmp), options.localDestination, {mkdirp: true}, function(err) {
+                        console.log('done!');
+                    });
+
+                    
                 });
             })
         }

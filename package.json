@@ -47,6 +47,7 @@
     "metalsmith-feed": "^1.0.0",
     "metalsmith-pinboard": "^1.0.0",
     "moment": "^2.22.0",
+    "mv": "^2.1.1",
     "query-string": "^6.0.0",
     "request": "^2.85.0",
     "rollup": "^0.57.1",
