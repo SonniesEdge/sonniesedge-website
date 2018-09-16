@@ -29,6 +29,15 @@ gulp.task('dropboxText', function (done) {
     done();
 });
 
+gulp.task('dropboxImages', function (done) {
+    console.log('dropbox task called');
+    dropbox({
+        dropboxfolder: '/_blog/images',
+        localDestination: './content/images'
+    });
+    done();
+});
+
 gulp.task('smithy', function () {
     return gulp.src('./content/**')
     .pipe(metalsmith({
@@ -255,6 +264,7 @@ gulp.task(
 gulp.task(
     'db',
     gulp.series(
-        'dropboxText'
+        'dropboxText',
+        'dropboxImages'
     )
 );
