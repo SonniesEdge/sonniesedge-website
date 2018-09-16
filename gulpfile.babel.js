@@ -4,6 +4,7 @@ import BrowserSync from "browser-sync";
 import sass from "gulp-sass";
 import responsive from 'gulp-responsive';
 import metalsmith from 'gulp-metalsmith';
+import dropbox from './getdropboxfolder';
 
 import layouts from 'metalsmith-layouts';
 import markdown from 'metalsmith-markdown';
@@ -18,8 +19,6 @@ import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
-
-import dropbox from './singledropbox';
 
 gulp.task('dropboxText', function (done) {
     console.log('dropbox task called');
