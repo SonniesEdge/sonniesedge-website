@@ -73,7 +73,7 @@ function copyDropboxFiles(options, callback) {
             })
             .catch(function (err) {
                 console.log('Dropbox failure!');
-                throw new Error(err);
+                throw new Error(err[0]);
             });
         }
     }
