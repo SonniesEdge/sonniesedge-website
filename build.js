@@ -1,3 +1,5 @@
+// DEPRACATED IN FAVOUR OF GULPFILE VERSION
+
 const Metalsmith = require('metalsmith');
 const layouts = require('metalsmith-layouts');
 const markdown = require('metalsmith-markdown');

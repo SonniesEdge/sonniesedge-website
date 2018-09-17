@@ -4,6 +4,7 @@ import BrowserSync from "browser-sync";
 import sass from "gulp-sass";
 import responsive from 'gulp-responsive';
 import metalsmith from 'gulp-metalsmith';
+import dropbox from './getdropboxfolder';
 
 import layouts from 'metalsmith-layouts';
 import markdown from 'metalsmith-markdown';
@@ -18,6 +19,20 @@ import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
+
+gulp.task('dropboxText', function (done) {
+    dropbox({
+        dropboxfolder: '/_blog/text',
+        localDestination: './content'
+    }, done);
+});
+
+gulp.task('dropboxImages', function (done) {
+    dropbox({
+        dropboxfolder: '/_blog/images',
+        localDestination: './images'
+    }, done);
+});
 
 gulp.task('smithy', function () {
     return gulp.src('./content/**')
@@ -53,6 +68,12 @@ gulp.task('smithy', function () {
                     pattern: ['**/bookmarks/*.md', '!**/bookmarks/index.md'],
                     defaults: {
                         layout: 'page/bookmark.njk'
+                    }
+                },
+                {
+                    pattern: ['**/notes/*.md', '!**/notes/index.md'],
+                    defaults: {
+                        layout: 'page/note.njk'
                     }
                 }
             ]),
@@ -222,5 +243,38 @@ gulp.task('watch', () => {
     gulp.watch('./layouts/**/*', gulp.series("smithy"));
 });
 
-gulp.task('default', gulp.series( 'sass', 'images', 'movies', 'smithy', gulp.parallel('watch', 'browser-sync')));
-gulp.task('build', gulp.series('sass', 'images', 'movies', 'smithy'));
+gulp.task(
+    'default', 
+    gulp.series(
+        'dropboxText',
+        'dropboxImages',
+        gulp.series(
+            'sass', 
+            'images', 
+            'movies', 
+            'smithy', 
+            gulp.parallel('watch', 'browser-sync')
+        )
+    )
+);
+gulp.task(
+    'build', 
+    gulp.series(
+        'dropboxText',
+        'dropboxImages',
+        gulp.series(
+            'sass', 
+            'images', 
+            'movies', 
+            'smithy'
+            )
+    )
+);
+
+gulp.task(
+    'db',
+    gulp.series(
+        'dropboxText',
+        'dropboxImages'
+    )
+);
