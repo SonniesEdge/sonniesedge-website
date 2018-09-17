@@ -5,11 +5,10 @@ import mv from  'mv';
 import path from 'path';
 import copy from 'copy';
 import expandTilde from 'expand-tilde';
+import {Dropbox} from 'dropbox';
 
 var tmpZipFile = 'tmpdropboxdata.zip';
 var tmpExtractionDir = './tmp';
-
-
 
 function getDropboxPath() {
     try {
@@ -44,7 +43,7 @@ function copyDropboxFiles(options, callback) {
             
         } else {
             console.log('Prod env');
-            var Dropbox = require('dropbox').Dropbox;
+            
             var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
             dbx.filesDownloadZip({path: options.dropboxfolder})
             .then((result) => {
