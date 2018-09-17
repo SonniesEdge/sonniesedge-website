@@ -64,7 +64,7 @@ function copyDropboxFiles(options, callback) {
                 });
             })
             .catch(function (err) {
-                throw new Error('Dropbox failed with error.');
+                throw new Error('Dropbox failed with error: ', err);
             });
         }
     }
