@@ -69,6 +69,12 @@ gulp.task('smithy', function () {
                     defaults: {
                         layout: 'page/bookmark.njk'
                     }
+                },
+                {
+                    pattern: ['**/notes/*.md', '!**/notes/index.md'],
+                    defaults: {
+                        layout: 'page/note.njk'
+                    }
                 }
             ]),
             collections({
