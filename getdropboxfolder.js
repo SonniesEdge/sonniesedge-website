@@ -44,26 +44,36 @@ function copyDropboxFiles(options, callback) {
         } else {
             console.log('Prod env');
             
-            var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
-            dbx.filesDownloadZip({path: options.dropboxfolder})
+            var dbx = new Dropbox({
+                    accessToken: process.env.DROPBOXTOKEN, 
+                    fetch: fetch 
+                });
+
+            dbx.filesDownloadZip({
+                path: options.dropboxfolder
+            })
             .then((result) => {
-                console.log('Got zip file from dropbox');
+                console.log('Got zip file from dropbox: ', result);
                 fs.writeFile(tmpZipFile, result.fileBinary, 'binary', (err) => {
                     console.log('Writing zip file');
-                    let zip = new unzip(tmpZipFile);
 
-                    var zipEntries = zip.getEntries();
+                    // Unzip all files to temp dir
+                    let zip = new unzip(tmpZipFile);
                     zip.extractAllTo(tmpExtractionDir);
 
+                    // Access files in sole nested folder (grrr Dropbox for this) 
                     let tmpExtractionSubDir = fs.readdirSync(tmpExtractionDir)[0];
+                    let fullTmpPath = path.join(tmpExtractionDir, tmpExtractionSubDir);
 
-                    mv(path.join(tmpExtractionDir, tmpExtractionSubDir), options.localDestination, {mkdirp: true}, function(err) {
+                    // Move files to destination
+                    mv(fullTmpPath, options.localDestination, {mkdirp: true}, function(err) {
                         callback();
                     });
                 });
             })
             .catch(function (err) {
-                throw new Error('Dropbox failed with error: ', err);
+                console.log('Dropbox failure!');
+                throw new Error(err);
             });
         }
     }
