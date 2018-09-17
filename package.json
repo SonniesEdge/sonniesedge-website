@@ -9,11 +9,11 @@
     "images": "gulp images",
     "smithy": "gulp smithy",
     "rollup": "rollup -c",
-    "dropbox": "gulp db"
+    "dropbox": "gulp db",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -31,8 +31,8 @@
     "metalsmith-date-formatter": "^1.0.2",
     "metalsmith-default-values": "^2.0.1",
     "metalsmith-layouts": "^2.1.0",
-    "metalsmith-markdown": "^0.2.2",
-    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-markdown": "^1.0.1",
+    "metalsmith-permalinks": "^1.0.0",
     "metalsmith-prism": "^3.1.1",
     "metalsmith-rename": "^1.0.0",
     "adm-zip": "^0.4.11",
@@ -58,6 +58,8 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-uglify": "^3.0.0",
     "slugify": "^1.2.9",
-    "unzip": "^0.1.11"
-  }
+    "unzip": "^0.1.11",
+    "snyk": "^1.95.3"
+  },
+  "snyk": true
 }
