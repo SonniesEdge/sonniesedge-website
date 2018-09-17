@@ -48,33 +48,34 @@ function copyDropboxFiles(options, callback) {
                     accessToken: process.env.DROPBOXTOKEN, 
                     fetch: fetch 
                 });
-
-            dbx.filesDownloadZip({
-                path: options.dropboxfolder
-            })
-            .then((result) => {
-                console.log('Got zip file from dropbox: ', result);
-                fs.writeFile(tmpZipFile, result.fileBinary, 'binary', (err) => {
-                    console.log('Writing zip file');
-
-                    // Unzip all files to temp dir
-                    let zip = new unzip(tmpZipFile);
-                    zip.extractAllTo(tmpExtractionDir);
-
-                    // Access files in sole nested folder (grrr Dropbox for this) 
-                    let tmpExtractionSubDir = fs.readdirSync(tmpExtractionDir)[0];
-                    let fullTmpPath = path.join(tmpExtractionDir, tmpExtractionSubDir);
-
-                    // Move files to destination
-                    mv(fullTmpPath, options.localDestination, {mkdirp: true}, function(err) {
-                        callback();
+            try {
+                dbx.filesDownloadZip({
+                    path: options.dropboxfolder
+                })
+                .then((result) => {
+                    console.log('Got zip file from dropbox: ', result);
+                    fs.writeFile(tmpZipFile, result.fileBinary, 'binary', (err) => {
+                        console.log('Writing zip file');
+    
+                        // Unzip all files to temp dir
+                        let zip = new unzip(tmpZipFile);
+                        zip.extractAllTo(tmpExtractionDir);
+    
+                        // Access files in sole nested folder (grrr Dropbox for this) 
+                        let tmpExtractionSubDir = fs.readdirSync(tmpExtractionDir)[0];
+                        let fullTmpPath = path.join(tmpExtractionDir, tmpExtractionSubDir);
+    
+                        // Move files to destination
+                        mv(fullTmpPath, options.localDestination, {mkdirp: true}, function(err) {
+                            callback();
+                        });
                     });
                 });
-            })
-            .catch(function (err) {
+            } catch(e) {
                 console.log('Dropbox failure!');
-                throw new Error(err[0]);
-            });
+                throw new Error(e);
+            }
+            
         }
     }
 }
