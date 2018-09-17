@@ -1,0 +1,96 @@
+import Pinboard from 'node-pinboard';
+import expandTilde from 'expand-tilde';
+import fs from 'fs';
+import outdent from 'outdent';
+import path from 'path';
+
+import fetch from 'isomorphic-fetch';
+import {Dropbox} from 'dropbox';
+
+var api_token = process.env.PINBOARDTOKEN;
+var pinboard = new Pinboard(api_token);
+
+function getDropboxPath() {
+    try {
+        let infoFile = expandTilde('~/.dropbox/info.json');
+        let data = fs.readFileSync(infoFile);
+        let parsedData = JSON.parse(data);
+
+        return parsedData.personal.path;
+    }
+    catch (err) {
+        console.log('{Path} error: ', err);
+    }
+}
+
+function formatFile(time, href, description, extended, tags) {
+    let tagArray = tags.split(" ");
+    let tagString = '';
+    for (let index = 0; index < tagArray.length; index++) {
+        tagString += '- ' + tagArray[index];
+        if (index !== tagArray.length - 1) {
+            tagString += '\n';
+        }
+    }
+
+    let data = outdent`
+    ---
+    date: ${time}
+    link: ${href}
+    tags: 
+    ${tagString}
+    title: "${description}"
+    ---
+    ${extended}
+    `;
+
+    return data;
+}
+
+function getPinboard(options, callback) {
+
+    let uploadArray = [];
+    pinboard.all({tag: 'web', shared: 'yes'}, function(err, res) {
+        res.forEach(entry => {
+
+            let uploadObj = {}
+
+            uploadObj.data = formatFile(entry.time, entry.href, entry.description, entry.extended, entry.tags);
+            uploadObj.filename = `${entry.meta}.md`;
+
+            uploadArray.push(uploadObj);
+        });
+
+        uploadArrayToDropbox(uploadArray, options.path, callback); 
+    });
+}
+
+function uploadArrayToDropbox(files, saveLocation, callback) {
+
+    if (!process.env.DROPBOXTOKEN) {
+        throw new Error('No Dropbox token specified.');
+    } else {
+        var dbx = new Dropbox({
+            accessToken: process.env.DROPBOXTOKEN, 
+            fetch: fetch 
+        });
+
+        files.forEach(file => {
+            
+            let filePath = path.join(saveLocation, file.filename);
+
+            dbx.filesUpload({ path: filePath, contents: file.content })
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (err) {
+              console.log(err);
+            });
+        });
+
+        callback();
+    
+    }
+}
+
+export default getPinboard;

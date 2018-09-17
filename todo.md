@@ -3,7 +3,6 @@
 - Grab all bookmarks as markdown files via Pinboard API
     - save each one with unique ID or date.
     - Have this script run as part of regular build, to fetch new bookmarks
-- Pull existing post and page images from dropbox, as with text content
 - Create "notes" content type
     - Only body text
     - Use "date from filename" metalsmith plugin

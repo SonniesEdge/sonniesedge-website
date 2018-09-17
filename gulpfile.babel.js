@@ -19,6 +19,7 @@ import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
+import getpinboard from './getpinboard';
 
 gulp.task('dropboxText', function (done) {
     dropbox({
@@ -32,6 +33,10 @@ gulp.task('dropboxImages', function (done) {
         dropboxfolder: '/_blog/images',
         localDestination: './images'
     }, done);
+});
+
+gulp.task('getPinboard', function (done) {
+    getpinboard({path: '/_blog/text/bookmarks'},  done);
 });
 
 gulp.task('smithy', function () {
@@ -276,5 +281,12 @@ gulp.task(
     gulp.series(
         'dropboxText',
         'dropboxImages'
+    )
+);
+
+gulp.task(
+    'pinboard',
+    gulp.series(
+        'getPinboard',
     )
 );
