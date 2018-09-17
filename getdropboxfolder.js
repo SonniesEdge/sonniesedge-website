@@ -31,7 +31,6 @@ function copyDropboxFiles(options, callback) {
         var env = process.env.NODE_ENV || 'dev';
 
         if (env === 'dev') {
-            console.log('Dev env');
             // Combine paths
             let dropboxFullPath = path.join(getDropboxPath(), options.dropboxfolder);
 
@@ -41,9 +40,7 @@ function copyDropboxFiles(options, callback) {
                 callback();
             });
             
-        } else {
-            console.log('Prod env');
-            
+        } else {            
             var dbx = new Dropbox({
                     accessToken: process.env.DROPBOXTOKEN, 
                     fetch: fetch 
@@ -53,7 +50,6 @@ function copyDropboxFiles(options, callback) {
                 path: options.dropboxfolder
             })
             .then((result) => {
-                console.log('Got zip file from dropbox: ', result);
                 fs.writeFile(tmpZipFile, result.fileBinary, 'binary', (err) => {
                     console.log('Writing zip file');
 
