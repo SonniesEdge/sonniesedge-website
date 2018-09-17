@@ -25,54 +25,48 @@ function getDropboxPath() {
 }
 
 function copyDropboxFiles(options, callback) {
-    try {
-        if (!process.env.DROPBOXTOKEN) {
-            throw new Error('No Dropbox token specified.');
+    if (!process.env.DROPBOXTOKEN) {
+        throw new Error('No Dropbox token specified.');
+    } else {
+
+        var env = process.env.NODE_ENV || 'dev';
+
+        if (env === 'dev') {
+            console.log('Dev env');
+            // Combine paths
+            let dropboxFullPath = path.join(getDropboxPath(), options.dropboxfolder);
+
+            // Copy files on local filesystem
+            copy(dropboxFullPath + '/**', options.localDestination, function(err, files) {
+                if (err) throw err;
+                callback();
+            });
+            
         } else {
+            console.log('Prod env');
+            var Dropbox = require('dropbox').Dropbox;
+            var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
+            dbx.filesDownloadZip({path: options.dropboxfolder})
+            .then((result) => {
+                console.log('Got zip file from dropbox');
+                fs.writeFile(tmpZipFile, result.fileBinary, 'binary', (err) => {
+                    console.log('Writing zip file');
+                    let zip = new unzip(tmpZipFile);
 
-            var env = process.env.NODE_ENV || 'dev';
+                    var zipEntries = zip.getEntries();
+                    zip.extractAllTo(tmpExtractionDir);
 
-            if (env === 'dev') {
-                console.log('Dev env');
-                // Combine paths
-                let dropboxFullPath = path.join(getDropboxPath(), options.dropboxfolder);
+                    let tmpExtractionSubDir = fs.readdirSync(tmpExtractionDir)[0];
 
-                // Copy files on local filesystem
-                copy(dropboxFullPath + '/**', options.localDestination, function(err, files) {
-                    if (err) throw err;
-                    callback();
-                });
-               
-            } else {
-                console.log('Prod env');
-                var Dropbox = require('dropbox').Dropbox;
-                var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
-                dbx.filesDownloadZip({path: options.dropboxfolder})
-                .then((result) => {
-                    console.log('Got zip file from dropbox');
-                    fs.writeFile(tmpZipFile, result.fileBinary, 'binary', (err) => {
-                        console.log('Writing zip file');
-                        let zip = new unzip(tmpZipFile);
-    
-                        var zipEntries = zip.getEntries();
-                        zip.extractAllTo(tmpExtractionDir);
-    
-                        let tmpExtractionSubDir = fs.readdirSync(tmpExtractionDir)[0];
-    
-                        mv(path.join(tmpExtractionDir, tmpExtractionSubDir), options.localDestination, {mkdirp: true}, function(err) {
-                            callback();
-                        });
+                    mv(path.join(tmpExtractionDir, tmpExtractionSubDir), options.localDestination, {mkdirp: true}, function(err) {
+                        callback();
                     });
-                }), function(error) {
-                    console.error('uh oh: ', error);   // 'uh oh: something bad happened’
-                };
-            }
-
-
+                });
+            })
+            .catch(function (err) {
+                throw new Error('Dropbox failed with error.');
+            });
         }
-    }
-    catch (err) {
-        console.log('Dropbox error: ', err);
     }
 }
 
