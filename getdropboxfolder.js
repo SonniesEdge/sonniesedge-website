@@ -60,7 +60,9 @@ function copyDropboxFiles(options, callback) {
                             callback();
                         });
                     });
-                });
+                }), function(error) {
+                    console.error('uh oh: ', error);   // 'uh oh: something bad happened’
+                };
             }
 
 
