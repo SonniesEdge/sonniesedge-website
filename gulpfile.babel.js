@@ -21,21 +21,21 @@ import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
 
 gulp.task('dropboxText', function (done) {
-    console.log('dropbox task called');
+    console.log('dropboxText task called');
     dropbox({
         dropboxfolder: '/_blog/text',
         localDestination: './content'
-    });
-    done();
+    }, done);
+    // done();
 });
 
 gulp.task('dropboxImages', function (done) {
-    console.log('dropbox task called');
+    console.log('dropboxImages task called');
     dropbox({
         dropboxfolder: '/_blog/images',
-        localDestination: './content/images'
-    });
-    done();
+        localDestination: './images'
+    }, done);
+    // done();
 });
 
 gulp.task('smithy', function () {
@@ -244,11 +244,15 @@ gulp.task('watch', () => {
 gulp.task(
     'default', 
     gulp.series(
-        'sass', 
-        'images', 
-        'movies', 
-        'smithy', 
-        gulp.parallel('watch', 'browser-sync')
+        'dropboxText',
+        'dropboxImages',
+        gulp.series(
+            'sass', 
+            'images', 
+            'movies', 
+            'smithy', 
+            gulp.parallel('watch', 'browser-sync')
+        )
     )
 );
 gulp.task(
