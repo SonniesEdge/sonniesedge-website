@@ -4,8 +4,8 @@ import unzip from 'adm-zip';
 import mv from  'mv';
 import path from 'path';
 
-var tmpZip = 'tmpdropboxdata.zip';
-var tmpDir = './tmp';
+var tmpZipFile = 'tmpdropboxdata.zip';
+var tmpExtractionDir = './tmp';
 
 function plugin(options, callback) {
     try {
@@ -16,23 +16,17 @@ function plugin(options, callback) {
             var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
             dbx.filesDownloadZip({path: options.dropboxfolder})
             .then((result) => {
-                fs.writeFile(tmpZip, result.fileBinary, 'binary', (err) => {
-                    console.log('Got ' + options.dropboxfolder);
-                    let zip = new unzip(tmpZip);
+                fs.writeFile(tmpZipFile, result.fileBinary, 'binary', (err) => {
+                    let zip = new unzip(tmpZipFile);
 
                     var zipEntries = zip.getEntries();
-                    zip.extractAllTo(tmpDir);
+                    zip.extractAllTo(tmpExtractionDir);
 
-                    let tmptmp = fs.readdirSync(tmpDir)[0];
-                    console.log(tmptmp);
+                    let tmpExtractionSubDir = fs.readdirSync(tmpExtractionDir)[0];
 
-                    mv(path.join(tmpDir, tmptmp), options.localDestination, {mkdirp: true}, function(err) {
-                        console.log('done!');
+                    mv(path.join(tmpExtractionDir, tmpExtractionSubDir), options.localDestination, {mkdirp: true}, function(err) {
                         callback();
                     });
-
-
-                    
                 });
             })
         }

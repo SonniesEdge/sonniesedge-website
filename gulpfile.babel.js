@@ -26,7 +26,6 @@ gulp.task('dropboxText', function (done) {
         dropboxfolder: '/_blog/text',
         localDestination: './content'
     }, done);
-    // done();
 });
 
 gulp.task('dropboxImages', function (done) {
@@ -35,7 +34,6 @@ gulp.task('dropboxImages', function (done) {
         dropboxfolder: '/_blog/images',
         localDestination: './images'
     }, done);
-    // done();
 });
 
 gulp.task('smithy', function () {
@@ -258,10 +256,14 @@ gulp.task(
 gulp.task(
     'build', 
     gulp.series(
-        'sass', 
-        'images', 
-        'movies', 
-        'smithy'
+        'dropboxText',
+        'dropboxImages',
+        gulp.series(
+            'sass', 
+            'images', 
+            'movies', 
+            'smithy'
+            )
     )
 );
 
