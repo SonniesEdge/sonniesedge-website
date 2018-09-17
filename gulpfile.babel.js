@@ -21,7 +21,6 @@ import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
 
 gulp.task('dropboxText', function (done) {
-    console.log('dropboxText task called');
     dropbox({
         dropboxfolder: '/_blog/text',
         localDestination: './content'
@@ -29,7 +28,6 @@ gulp.task('dropboxText', function (done) {
 });
 
 gulp.task('dropboxImages', function (done) {
-    console.log('dropboxImages task called');
     dropbox({
         dropboxfolder: '/_blog/images',
         localDestination: './images'
