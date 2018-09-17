@@ -12,6 +12,9 @@
     "dropbox": "gulp db"
   },
   "devDependencies": {
+    
+  },
+  "dependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
@@ -31,9 +34,7 @@
     "metalsmith-markdown": "^0.2.2",
     "metalsmith-permalinks": "^0.5.0",
     "metalsmith-prism": "^3.1.1",
-    "metalsmith-rename": "^1.0.0"
-  },
-  "dependencies": {
+    "metalsmith-rename": "^1.0.0",
     "adm-zip": "^0.4.11",
     "component-type": "^1.2.1",
     "copy": "^0.3.2",
