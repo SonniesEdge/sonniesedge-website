@@ -4,11 +4,27 @@ import unzip from 'adm-zip';
 import mv from  'mv';
 import path from 'path';
 import copy from 'copy';
+import expandTilde from 'expand-tilde';
 
 var tmpZipFile = 'tmpdropboxdata.zip';
 var tmpExtractionDir = './tmp';
 
-function plugin(options, callback) {
+
+
+function getDropboxPath() {
+    try {
+        let infoFile = expandTilde('~/.dropbox/info.json');
+        let data = fs.readFileSync(infoFile);
+        let parsedData = JSON.parse(data);
+
+        return parsedData.personal.path;
+    }
+    catch (err) {
+        console.log('{Path} error: ', err);
+    }
+}
+
+function copyDropboxFiles(options, callback) {
     try {
         if (!process.env.DROPBOXTOKEN) {
             throw new Error('No Dropbox token specified.');
@@ -17,11 +33,9 @@ function plugin(options, callback) {
             var env = process.env.NODE_ENV || 'dev';
 
             if (env === 'dev') {
-                // Get location of dropbox file
-                let dropboxPath = '/Users/charlie/Dropbox';
 
                 // Combine paths
-                let dropboxFullPath = path.join(dropboxPath, options.dropboxfolder);
+                let dropboxFullPath = path.join(getDropboxPath(), options.dropboxfolder);
 
                 // Copy files on local filesystem
                 copy(dropboxFullPath + '/**', options.localDestination, function(err, files) {
@@ -57,4 +71,4 @@ function plugin(options, callback) {
     }
 }
 
-export default plugin;
+export default copyDropboxFiles;

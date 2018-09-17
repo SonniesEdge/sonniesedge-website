@@ -39,6 +39,7 @@
     "copy": "^0.3.2",
     "dropbox": "^4.0.9",
     "es6-promise": "^4.2.4",
+    "expand-tilde": "^2.0.2",
     "get-json": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.5",
