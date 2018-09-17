@@ -49,6 +49,7 @@ function copyDropboxFiles(options, callback) {
                 var dbx = new Dropbox({ accessToken: process.env.DROPBOXTOKEN, fetch: fetch });
                 dbx.filesDownloadZip({path: options.dropboxfolder})
                 .then((result) => {
+                    console.log('Got zip file from dropbox');
                     fs.writeFile(tmpZipFile, result.fileBinary, 'binary', (err) => {
                         console.log('Writing zip file');
                         let zip = new unzip(tmpZipFile);
