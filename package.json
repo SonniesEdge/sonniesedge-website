@@ -36,6 +36,7 @@
   "dependencies": {
     "adm-zip": "^0.4.11",
     "component-type": "^1.2.1",
+    "copy": "^0.3.2",
     "dropbox": "^4.0.9",
     "es6-promise": "^4.2.4",
     "get-json": "^1.0.0",
