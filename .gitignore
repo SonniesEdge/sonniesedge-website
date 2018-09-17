@@ -1,12 +1,10 @@
-themes/sonniesedge/static/css
 node_modules/
 public/
-themes/sonniesedge/static/
 .DS_Store
 dist/
 yarn-error.log
-content
-.vscode
+content/
+.vscode/
 tmpdropboxdata.zip
-tmp
-images
+tmp/
+images/
