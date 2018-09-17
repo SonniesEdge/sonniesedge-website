@@ -7,7 +7,7 @@ import path from 'path';
 var tmpZip = 'tmpdropboxdata.zip';
 var tmpDir = './tmp';
 
-function plugin(options) {
+function plugin(options, callback) {
     try {
         if (!process.env.DROPBOXTOKEN) {
             throw new Error('No Dropbox token specified.');
@@ -28,7 +28,9 @@ function plugin(options) {
 
                     mv(path.join(tmpDir, tmptmp), options.localDestination, {mkdirp: true}, function(err) {
                         console.log('done!');
+                        callback();
                     });
+
 
                     
                 });
