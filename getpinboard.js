@@ -40,7 +40,7 @@ function formatFile(time, href, description, extended, tags) {
     link: ${href}
     tags: 
     ${tagString}
-    title: "${description}"
+    title: ${description}
     ---
     ${extended}
     `;
@@ -62,8 +62,8 @@ function getPinboard(options, callback) {
                     uploadArray.push(uploadObj);
                 }
             });        
-            _uploadArrayToDropbox(uploadArray, options.path, callback); 
-            // _writeToLocalDropbox(uploadArray, options.path, callback); 
+            // _uploadArrayToDropbox(uploadArray, options.path, callback); 
+            _writeToLocalDropbox(uploadArray, options.path, callback); 
         } else {
             console.log('Nothing found from Pinboard API!');
             callback();
