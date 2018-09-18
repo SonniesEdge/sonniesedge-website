@@ -51,17 +51,36 @@ function formatFile(time, href, description, extended, tags) {
 function getPinboard(options, callback) {
 
     let uploadArray = [];
-    pinboard.all({tag: 'web', shared: 'yes'}, function(err, res) {
-        res.forEach(entry => {
-            let uploadObj = {};
-            let filename = slug(entry.href);
-            uploadObj.content = formatFile(entry.time, entry.href, entry.description, entry.extended, entry.tags);
-            uploadObj.filename = `${filename}.md`;
-            uploadArray.push(uploadObj);
-        });
-
-        _uploadArrayToDropbox(uploadArray, options.path, callback); 
+    pinboard.recent({tag: 'web'}, function(err, res) {
+        if (res.posts.length > 0) {
+            res.posts.forEach(entry => {
+                if (entry.shared === 'yes') {
+                    let uploadObj = {};
+                    let filename = slug(entry.href);
+                    uploadObj.content = formatFile(entry.time, entry.href, entry.description, entry.extended, entry.tags);
+                    uploadObj.filename = `${filename}.md`;
+                    uploadArray.push(uploadObj);
+                }
+            });        
+            _uploadArrayToDropbox(uploadArray, options.path, callback); 
+            // _writeToLocalDropbox(uploadArray, options.path, callback); 
+        } else {
+            console.log('Nothing found from Pinboard API!');
+            callback();
+        }
     });
+}
+
+function _writeToLocalDropbox(files, saveLocation, callback) {
+    if (Object.keys(files).length > 0) {
+        files.forEach(file => {
+            let fullPath = path.join(getDropboxPath(), saveLocation, file.filename);
+            // console.log(fullPath);
+            fs.writeFileSync(fullPath, file.content, {encoding: 'utf8'});
+        });
+    }
+
+    callback();
 }
 
 function _uploadArrayToDropbox(files, saveLocation, callback) {
@@ -79,6 +98,7 @@ function _uploadArrayToDropbox(files, saveLocation, callback) {
             dbx.filesUpload({ path: filePath, contents: file.content})
             .then(function (response) {
                 console.log('Bookmark created in Dropbox: ', filePath);
+                // console.log(response);
             })
             .catch(function (err) {
               console.log(err);
