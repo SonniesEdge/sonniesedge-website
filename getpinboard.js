@@ -3,6 +3,7 @@ import expandTilde from 'expand-tilde';
 import fs from 'fs';
 import outdent from 'outdent';
 import path from 'path';
+import slug from 'slug';
 
 import fetch from 'isomorphic-fetch';
 import {Dropbox} from 'dropbox';
@@ -52,20 +53,18 @@ function getPinboard(options, callback) {
     let uploadArray = [];
     pinboard.all({tag: 'web', shared: 'yes'}, function(err, res) {
         res.forEach(entry => {
-
-            let uploadObj = {}
-
-            uploadObj.data = formatFile(entry.time, entry.href, entry.description, entry.extended, entry.tags);
-            uploadObj.filename = `${entry.meta}.md`;
-
+            let uploadObj = {};
+            let filename = slug(entry.href);
+            uploadObj.content = formatFile(entry.time, entry.href, entry.description, entry.extended, entry.tags);
+            uploadObj.filename = `${filename}.md`;
             uploadArray.push(uploadObj);
         });
 
-        uploadArrayToDropbox(uploadArray, options.path, callback); 
+        _uploadArrayToDropbox(uploadArray, options.path, callback); 
     });
 }
 
-function uploadArrayToDropbox(files, saveLocation, callback) {
+function _uploadArrayToDropbox(files, saveLocation, callback) {
 
     if (!process.env.DROPBOXTOKEN) {
         throw new Error('No Dropbox token specified.');
@@ -76,12 +75,10 @@ function uploadArrayToDropbox(files, saveLocation, callback) {
         });
 
         files.forEach(file => {
-            
             let filePath = path.join(saveLocation, file.filename);
-
-            dbx.filesUpload({ path: filePath, contents: file.content })
+            dbx.filesUpload({ path: filePath, contents: file.content})
             .then(function (response) {
-              console.log(response);
+                console.log('Bookmark created in Dropbox: ', filePath);
             })
             .catch(function (err) {
               console.log(err);
