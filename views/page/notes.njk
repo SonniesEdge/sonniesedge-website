@@ -4,8 +4,7 @@
     {% for note in notes %}
         <li class="comp-contentlist__item">
             <a href="{{ note.path }}" class="comp-contentlist__link">
-                <p class="comp-contentlist__title">{{ talk.title }}</p>
-                <p class="comp-contentlist__date">{{ talk.date }}</p>
+                <p class="comp-contentlist__date">{{ note.date }}</p>
             </a>
         </li>
     {% endfor %}
