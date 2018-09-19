@@ -42,7 +42,7 @@ function formatFile(time, href, description, extended, tags) {
     link: ${href}
     tags: 
     ${tagString}
-    title: ${description}
+    title: "${description.replace(/\"/g,'\\"')}"
     ---
     ${extended}
     `;
