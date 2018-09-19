@@ -4,6 +4,7 @@ import fs from 'fs';
 import outdent from 'outdent';
 import path from 'path';
 import slug from 'slug';
+import moment from 'moment';
 
 import fetch from 'isomorphic-fetch';
 import {Dropbox} from 'dropbox';
@@ -38,7 +39,7 @@ function formatFile(time, href, description, extended, tags) {
 
     let data = outdent`
     ---
-    date: ${time}
+    date: ${moment(new Date(time)).format('YYYY-MM-DD hh:mm')}
     link: ${href}
     tags: 
     ${tagString}
