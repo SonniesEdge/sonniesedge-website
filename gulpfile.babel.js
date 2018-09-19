@@ -107,6 +107,14 @@ gulp.task('smithy', function () {
                     sortBy: 'date',
                     reverse: true
                 },
+                notes: {
+                    pattern: [
+                        '**/notes/*.md', 
+                        '!**/notes/index.md'
+                      ],
+                    sortBy: 'date',
+                    reverse: true
+                },
                 mainnav: {
                     sortBy: 'weight'
                 }

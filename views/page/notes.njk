@@ -1,9 +1,9 @@
 {% extends "default.njk" %}
 {% block list %}
     <ul class="comp-contentlist">
-    {% for talk in talks %}
+    {% for note in notes %}
         <li class="comp-contentlist__item">
-            <a href="{{ talk.path }}" class="comp-contentlist__link">
+            <a href="{{ note.path }}" class="comp-contentlist__link">
                 <p class="comp-contentlist__title">{{ talk.title }}</p>
                 <p class="comp-contentlist__date">{{ talk.date }}</p>
             </a>
