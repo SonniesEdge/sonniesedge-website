@@ -11,6 +11,8 @@ import {Dropbox} from 'dropbox';
 var api_token = process.env.PINBOARDTOKEN;
 var pinboard = new Pinboard(api_token);
 
+var env = process.env.NODE_ENV || 'dev';
+
 function getDropboxPath() {
     try {
         let infoFile = expandTilde('~/.dropbox/info.json');
@@ -62,8 +64,14 @@ function getPinboard(options, callback) {
                     uploadArray.push(uploadObj);
                 }
             });        
-            _uploadArrayToDropbox(uploadArray, options.path, callback); 
-            // _writeToLocalDropbox(uploadArray, options.path, callback); 
+
+
+            if (env === 'dev') {
+                _writeToLocalDropbox(uploadArray, options.path, callback); 
+            } else {
+                _uploadArrayToDropbox(uploadArray, options.path, callback); 
+            }
+
         } else {
             console.log('Nothing found from Pinboard API!');
             callback();
