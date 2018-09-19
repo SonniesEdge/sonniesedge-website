@@ -20,6 +20,7 @@ import metalsmithDrafts from 'metalsmith-drafts';
 import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
 import getpinboard from './getpinboard';
+import metalsmithDateInFilename from 'metalsmith-date-in-filename';
 
 gulp.task('dropboxText', function (done) {
     dropbox({
@@ -55,6 +56,7 @@ gulp.task('smithy', function () {
                 count: 400,
                 type: 'md'
             }),
+            metalsmithDateInFilename(),
             metalsmithDrafts(),
             defaultvals([
                 {

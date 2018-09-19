@@ -3651,6 +3651,10 @@ lodash.transform@^3.0.3:
     lodash.istypedarray "^3.0.0"
     lodash.keys "^3.0.0"
 
+lodash@^2.4.1, lodash@~2.4.1:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
+
 lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
@@ -3662,10 +3666,6 @@ lodash@^4.0.0, lodash@^4.17.5, lodash@^4.6.1, lodash@~4.17.4:
 lodash@^4.17.10, lodash@^4.17.4:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-
-lodash@~2.4.1:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
 
 log-ok@^0.1.1:
   version "0.1.1"
@@ -3802,6 +3802,12 @@ metalsmith-date-formatter@^1.0.2:
     lodash.isstring "^3.0.1"
     lodash.transform "^3.0.3"
     moment "^2.10.3"
+
+metalsmith-date-in-filename@^0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/metalsmith-date-in-filename/-/metalsmith-date-in-filename-0.0.14.tgz#cd89093281f4102df353c0ecbfccf4e1e22fdf77"
+  dependencies:
+    lodash "^2.4.1"
 
 metalsmith-default-values@^2.0.1:
   version "2.0.1"
