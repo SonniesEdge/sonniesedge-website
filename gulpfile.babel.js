@@ -4,7 +4,7 @@ import BrowserSync from "browser-sync";
 import sass from "gulp-sass";
 import responsive from 'gulp-responsive';
 import metalsmith from 'gulp-metalsmith';
-import dropbox from './getdropboxfolder';
+import dropbox from './gulp-getdropboxfolder';
 
 import layouts from 'metalsmith-layouts';
 import markdown from 'metalsmith-markdown';
@@ -18,7 +18,7 @@ import metalsmithFeed from 'metalsmith-feed';
 import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import metalsmithWebmentions from './metalsmith-webmentions';
-import getpinboard from './getpinboard';
+import getpinboard from './gulp-getpinboard';
 import metalsmithDateInFilename from 'metalsmith-date-in-filename';
 
 import metalsmithContentAsField from './metalsmith-contentasfield';
