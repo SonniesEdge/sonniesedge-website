@@ -21,6 +21,8 @@ import metalsmithWebmentions from './metalsmith-webmentions';
 import getpinboard from './getpinboard';
 import metalsmithDateInFilename from 'metalsmith-date-in-filename';
 
+import metalsmithContentAsField from './metalsmith-contentasfield';
+
 gulp.task('dropboxText', function (done) {
     dropbox({
         dropboxfolder: '/_blog/text',
@@ -51,6 +53,9 @@ gulp.task('smithy', function () {
             ]),
             metalsmithDateInFilename(),
             metalsmithDrafts(),
+            metalsmithContentAsField({
+                fieldName: 'dave'
+            }),
             defaultvals([
                 {
                     pattern: ['**/posts/*.md', '!**/posts/index.md'],
@@ -223,7 +228,7 @@ gulp.task('images', function () {
 // const browserSync = BrowserSync.create();
 const sassOpts = {
     outputStyle: 'compressed',
-    includePaths: ['./node_modules/loom/assets'],
+    includePaths: ['./node_modules/loomcss/assets'],
     errLogToConsole: true };
 
 // Build Sass files into CSS
