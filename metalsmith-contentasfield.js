@@ -21,12 +21,10 @@ function plugin(options) {
 
     Object.entries(files).forEach(([filename, file]) => {
       if (!markdown(filename)) return;
-      console.log(filename);
 
       let fileContentString = file.contents.toString('utf8');
       let fileContentHtml = marked(fileContentString);
       let fileContentBuffer = Buffer.from(fileContentHtml, 'utf8' );
-      console.log(fileContentHtml);
 
       file[options.name] = fileContentBuffer;
     });
