@@ -1,13 +1,16 @@
 {% extends "default.njk" %}
 {% block list %}
-    <ul class="comp-contentlist">
-    {% for bookmark in bookmarks %}
-        <li class="comp-contentlist__item">
-            <a href="{{ bookmark.path }}" class="comp-contentlist__link">
-                <p class="comp-contentlist__title">{{ bookmark.title }}</p>
-                <p class="comp-contentlist__date">{{ bookmark.date }}</p>
-            </a>
-        </li>
-    {% endfor %}
-    </ul>
+  <ul class="comp-list-reset">
+  
+  {% for bookmark in bookmarks %}
+    <li class="comp-bookmark">
+      <a href="{{ bookmark.path }}" class=""><h2 class="comp-contentlist__title">{{ bookmark.title }}</h2></a>
+      <p class="comp-contentlist__date">{{ bookmark.date }}</p>
+
+      {{ bookmark.contents_original | safe }}
+
+      <p><a class="comp-bookmark__link" href="{{bookmark.link | safe}}" rel="noopener">{{bookmark.link | safe}}</a></p>
+    </li>
+  {% endfor %}
+  </ul>
 {% endblock %}

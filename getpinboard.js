@@ -92,7 +92,6 @@ function _writeToLocalDropbox(files, saveLocation, callback) {
   if (Object.keys(files).length > 0) {
     files.forEach(file => {
       let fullPath = path.join(getDropboxPath(), saveLocation, file.filename);
-      // console.log(fullPath);
       fs.writeFileSync(fullPath, file.content, { encoding: 'utf8' });
     });
   }
