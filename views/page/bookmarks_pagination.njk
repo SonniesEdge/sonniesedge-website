@@ -1,0 +1,17 @@
+{% extends "default.njk" %}
+sdfsdfsdf
+sdfsdfsdf
+{% block list %}
+
+    <h1>{{title}}</h1>
+  
+    <h2>Test!</h2>
+
+    {% for bookmark in pagination.files %}
+        {{bookmark}}
+
+        {{ contents }}
+    {% endfor %}
+
+    {{ pagination.num }}
+{% endblock %}

@@ -1328,6 +1328,10 @@ component-inherit@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/component-inherit/-/component-inherit-0.0.3.tgz#645fc4adf58b72b649d5cae65135619db26ff143"
 
+component-props@*:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/component-props/-/component-props-1.1.1.tgz#f9b7df9b9927b6e6d97c9bd272aa867670f34944"
+
 component-type@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-type/-/component-type-1.2.1.tgz#8a47901700238e4fc32269771230226f24b415a9"
@@ -3710,6 +3714,13 @@ metalsmith-markdown@^0.2.2:
     debug "~0.7.4"
     marked "~0.3.9"
 
+metalsmith-pagination@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-pagination/-/metalsmith-pagination-1.4.0.tgz#ec440281e93171509e7bccf8e838efb824fc1ed5"
+  dependencies:
+    to-function "^2.0.5"
+    xtend "^4.0.0"
+
 metalsmith-permalinks@^0.5.0:
   version "0.5.0"
   resolved "http://registry.npmjs.org/metalsmith-permalinks/-/metalsmith-permalinks-0.5.0.tgz#0fec5b1f0687828c198d33b5d479cc1cec4b1a1f"
@@ -5562,6 +5573,12 @@ to-file@^0.2.0:
     isobject "^2.1.0"
     lazy-cache "^2.0.1"
     vinyl "^1.1.1"
+
+to-function@^2.0.5:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/to-function/-/to-function-2.0.6.tgz#7d56cd9c3b92fa8dbd7b22e83d51924de740ebc5"
+  dependencies:
+    component-props "*"
 
 to-object-path@^0.3.0:
   version "0.3.0"

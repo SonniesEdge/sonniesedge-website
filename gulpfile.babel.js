@@ -21,6 +21,7 @@ import metalsmithWebmentions from './metalsmith-webmentions';
 import getpinboard from './gulp-getpinboard';
 import metalsmithDateInFilename from 'metalsmith-date-in-filename';
 import metalsmithContentAsField from './metalsmith-contentasfield';
+import metalsmithPagination from 'metalsmith-pagination';
 
 gulp.task('dropboxText', function (done) {
     dropbox({
@@ -125,7 +126,16 @@ gulp.task('smithy', function () {
                 langPrefix: 'language-'
             }),
             metalsmithExcerpts(),
-            metalsmithContentAsField({name: 'contents_original'}),
+            metalsmithContentAsField({
+                name: 'contents_original'
+            }),
+            metalsmithPagination({
+                'collections.bookmarks': {
+                    perPage: 25,
+                    layout: 'page/bookmarks_pagination.njk',
+                    path: 'test/:num/index.html'
+                }
+            }),
             permalinks({
                 linksets: [
                     {
