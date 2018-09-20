@@ -20,7 +20,6 @@ import metalsmithDrafts from 'metalsmith-drafts';
 import metalsmithWebmentions from './metalsmith-webmentions';
 import getpinboard from './gulp-getpinboard';
 import metalsmithDateInFilename from 'metalsmith-date-in-filename';
-
 import metalsmithContentAsField from './metalsmith-contentasfield';
 
 gulp.task('dropboxText', function (done) {
@@ -165,7 +164,7 @@ gulp.task('smithy', function () {
                 preprocess: file => ({
                     title: file.title,
                     description: file.contents,
-                    url: file.sourceurl
+                    url: file.link
                 })
             }),
             metalsmithWebmentions(),
