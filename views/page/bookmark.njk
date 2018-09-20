@@ -11,8 +11,8 @@
   
 {% block content %}
     <h1>{% if realtitle %}{{ realtitle }}{% else %}{{ title }}{% endif %}</h1>
-    
+
     {{ contents | safe }}
 
-    <a href="{{link}}" rel="noopener">{{link}}</a>
+    <p><a href="{{link | safe}}" rel="noopener">{{link | safe}}</a></p>
 {% endblock %}

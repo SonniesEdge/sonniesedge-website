@@ -17,7 +17,6 @@ import dateFormatter from 'metalsmith-date-formatter';
 import metalsmithFeed from 'metalsmith-feed';
 import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
-import pinboard from 'metalsmith-pinboard';
 import metalsmithWebmentions from './metalsmith-webmentions';
 import getpinboard from './getpinboard';
 import metalsmithDateInFilename from 'metalsmith-date-in-filename';
@@ -50,12 +49,6 @@ gulp.task('smithy', function () {
             rename([
                 [/\_index.md$/, "index.md"]
             ]),
-            pinboard({
-                username: 'sonniesedge',
-                tags: ['web'],
-                count: 400,
-                type: 'md'
-            }),
             metalsmithDateInFilename(),
             metalsmithDrafts(),
             defaultvals([
