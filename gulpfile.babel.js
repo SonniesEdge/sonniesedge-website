@@ -126,6 +126,7 @@ gulp.task('smithy', function () {
                 langPrefix: 'language-'
             }),
             metalsmithExcerpts(),
+            metalsmithContentAsField({name: 'contents_original'}),
             permalinks({
                 linksets: [
                     {
