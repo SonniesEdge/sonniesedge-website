@@ -1,13 +1,11 @@
 {% extends "default.njk" %}
 {% block list %}
+  {% for note in notes %}
+    <section class="comp-bookmark">
+      <h2 class="comp-bookmark__title"><a href="{{ note.path }}"><time class="dt-published">{{ note.date }}</time></a></h2>
+      
+      {{ note.contents_original | safe }}
 
-    <ul class="comp-contentlist">
-    {% for note in notes %}
-        <li class="comp-contentlist__item">
-            <a href="{{ note.path }}" class="comp-contentlist__link">
-                <p class="comp-contentlist__date">{{ note.date }}</p>
-            </a>
-        </li>
-    {% endfor %}
-    </ul>
+    </section>
+  {% endfor %}
 {% endblock %}
