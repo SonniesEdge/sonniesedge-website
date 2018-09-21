@@ -154,7 +154,12 @@ gulp.task('smithy', function () {
                 relative: false
               }),
             dateFormatter({
-                date: '2015-05-30'
+              dates: [
+                {
+                  key: 'date',
+                  format: 'MMMM Mo YYYY'
+                }
+              ]
             }),
             metalsmithPrism({
                 lineNumbers: true
