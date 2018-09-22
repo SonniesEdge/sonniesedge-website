@@ -13,8 +13,8 @@
   <article  class="h-entry">
       <header class="comp-postheader">
         <h1 class="e-content p-name comp-postheader__title"><a href="{{ path }}" class="u-url comp-postheader__titlelink">{% if realtitle %}{{ realtitle }}{% else %}{{ title }}{% endif %}</a></h1>
-        <p class="comp-postheader__strapline">{{ strapline }}</p>
         <p class="comp-postheader__date"><time class="dt-published">{{ date }}</time></p>
+        <p class="comp-postheader__strapline">{{ strapline }}</p>
       </header>
       {{ contents | safe }}
   </article>

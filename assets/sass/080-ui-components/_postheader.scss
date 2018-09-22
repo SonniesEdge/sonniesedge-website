@@ -17,9 +17,9 @@
 }
 
 .comp-postheader__strapline {
-    font-weight: bold;
+    // @include font-size('beta');
 }
 
 .comp-postheader__date {
-    
+    font-style: italic;
 }
