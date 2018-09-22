@@ -215,6 +215,11 @@ gulp.task('movies', function () {
     .pipe(gulp.dest('./content'));
 });
 
+gulp.task('favicons', function () {
+  return gulp.src(['./assets/favicons/*.*'])
+  .pipe(gulp.dest('./content'));
+});
+
 gulp.task('images', function () {
     return gulp.src(['./images/**/*.{png,jpg,jpeg}'])
       .pipe(responsive(
@@ -288,6 +293,7 @@ gulp.task(
             'sass', 
             'images', 
             'movies', 
+            'favicons',
             'smithy', 
             gulp.parallel('watch', 'browser-sync')
         )
@@ -302,6 +308,7 @@ gulp.task(
             'sass', 
             'images', 
             'movies', 
+            'favicons',
             'smithy'
             )
     )
