@@ -18,7 +18,7 @@ import metalsmithFeed from 'metalsmith-feed';
 import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import metalsmithWebmentions from './metalsmith-webmentions';
-import metalsmithDateInFilename from './metalsmit-date-from-filename';
+import metalsmithDateInFilename from './metalsmith-date-from-filename';
 import metalsmithContentAsField from './metalsmith-contentasfield';
 import metalsmithDateAsTitle from './metalsmith-dateastitle';
 import metalsmithPagination from 'metalsmith-pagination';
