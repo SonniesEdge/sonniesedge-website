@@ -18,7 +18,7 @@ import metalsmithFeed from 'metalsmith-feed';
 import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import metalsmithWebmentions from './metalsmith-webmentions';
-import metalsmithDateInFilename from 'metalsmith-date-in-filename';
+import metalsmithDateInFilename from './metalsmit-date-from-filename';
 import metalsmithContentAsField from './metalsmith-contentasfield';
 import metalsmithDateAsTitle from './metalsmith-dateastitle';
 import metalsmithPagination from 'metalsmith-pagination';
@@ -160,7 +160,7 @@ gulp.task('smithy', function () {
               dates: [
                 {
                   key: 'date',
-                  format: 'MMMM Mo YYYY'
+                  format: 'MMMM Do YYYY, HH:mm'
                 }
               ]
             }),
