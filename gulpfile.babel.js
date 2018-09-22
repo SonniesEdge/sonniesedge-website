@@ -164,11 +164,11 @@ gulp.task('smithy', function () {
                 }
               ]
             }),
-            metalsmithDateAsTitle(
+            metalsmithDateAsTitle([
               {
                 collection: 'notes'
               }
-            ),
+            ]),
             metalsmithPrism({
                 lineNumbers: true
             }),

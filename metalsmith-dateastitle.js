@@ -1,5 +1,3 @@
-var extname = require('path').extname;
-
 module.exports = plugin;
 
 function plugin(options) {
@@ -7,11 +5,16 @@ function plugin(options) {
 
   return function (files, metalsmith, done) {
     setImmediate(done);
-    Object.entries(metalsmith.metadata()[options.collection]).forEach(([filename, file]) => {
-      // Set the title as the date
-      if (file['date']) {
-        file['title'] = file['date'];
-      }
+    
+    options.forEach((key) => {
+      Object.entries(metalsmith.metadata()[key.collection]).forEach(([filename, file]) => {
+        // Set the title as the date
+        if (file['date']) {
+          file['title'] = file['date'];
+        }
+      });
     });
+
+
   }
 }
