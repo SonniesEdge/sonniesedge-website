@@ -160,7 +160,7 @@ gulp.task('smithy', function () {
               dates: [
                 {
                   key: 'date',
-                  format: 'MMMM Mo YYYY, hh:mm'
+                  format: 'MMMM Do YYYY, hh:mm'
                 }
               ]
             }),
