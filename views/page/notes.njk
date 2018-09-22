@@ -2,7 +2,7 @@
 {% block list %}
   {% for note in notes %}
     <section class="comp-bookmark">
-      <h2 class="comp-bookmark__title"><a href="{{ note.path }}"><time class="dt-published">{{ note.date }}</time></a></h2>
+      <h2 class="comp-bookmark__title"><a href="{{ note.path }}"><time class="dt-published">{{ note.title }}</time></a></h2>
       
       {{ note.contents_original | safe }}
 
