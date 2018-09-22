@@ -1,10 +1,10 @@
 import gulp from "gulp";
-import {exec} from "child_process";
 import BrowserSync from "browser-sync";
 import sass from "gulp-sass";
 import responsive from 'gulp-responsive';
 import metalsmith from 'gulp-metalsmith';
 import dropbox from './gulp-getdropboxfolder';
+import getpinboard from './gulp-getpinboard';
 
 import layouts from 'metalsmith-layouts';
 import markdown from 'metalsmith-markdown';
@@ -18,9 +18,9 @@ import metalsmithFeed from 'metalsmith-feed';
 import metalsmithExcerpts from 'metalsmith-excerpts';
 import metalsmithDrafts from 'metalsmith-drafts';
 import metalsmithWebmentions from './metalsmith-webmentions';
-import getpinboard from './gulp-getpinboard';
 import metalsmithDateInFilename from 'metalsmith-date-in-filename';
 import metalsmithContentAsField from './metalsmith-contentasfield';
+import metalsmithDateAsTitle from './metalsmith-dateastitle';
 import metalsmithPagination from 'metalsmith-pagination';
 
 gulp.task('dropboxText', function (done) {
@@ -113,7 +113,10 @@ gulp.task('smithy', function () {
                         '!**/notes/index.md'
                       ],
                     sortBy: 'date',
-                    reverse: true
+                    reverse: true,
+                    metadata: {
+                        name: 'Notes'
+                    }
                 },
                 mainnav: {
                     sortBy: 'weight'
@@ -161,6 +164,11 @@ gulp.task('smithy', function () {
                 }
               ]
             }),
+            metalsmithDateAsTitle([
+              {
+                collection: 'notes'
+              }
+            ]),
             metalsmithPrism({
                 lineNumbers: true
             }),

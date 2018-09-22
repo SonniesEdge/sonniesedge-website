@@ -3,7 +3,7 @@
 {% block twittercard %}
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@sonniesedge">
-  <meta name="twitter:title" content="{{ title }} | sonniesedge">
+  <meta name="twitter:title" content="Note from {{ title }}">
   <meta name="twitter:url" content="http://sonniesedge.co.uk{{ path }}">
   <meta name="twitter:description" content="{{ strapline }}">
   <meta name="twitter:image:src" content="http://sonniesedge.co.uk/images/pages/photo.jpg">
@@ -12,7 +12,7 @@
 {% block content %}
   <article  class="h-entry">
       <header class="comp-postheader">
-        <h1 class="e-content p-name comp-postheader__title"><a href="{{ path }}" class="u-url comp-postheader__titlelink"><time class="dt-published">{{ date }}</time></a></h1>
+        <h1 class="e-content p-name comp-postheader__title"><a href="{{ path }}" class="u-url comp-postheader__titlelink"><time class="dt-published">{{ title }}</time></a></h1>
       </header>
       {{ contents | safe }}
   </article>
