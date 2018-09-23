@@ -2,17 +2,14 @@
     padding: 0 get-spacing('small');
     margin: get-spacing('small') auto;
     max-width: 1200px;
-
-    @include mq(get-mqbreakpoint('medium')) {
-        display: grid;
-        grid-template-columns: minmax(180px,260px) 1fr;
-        grid-column-gap: get-spacing('large');
-        grid-template-areas:
-        "sidebar content"
-        "sidebar content"
-        "sidebar mentions"
-        "footer footer";
-    }
+    display: grid;
+    grid-column-gap: get-spacing('default');
+    grid-template-areas:
+    "sidebar"
+    "content"
+    "mentions"
+    "footer";
+    
 }
 
 .comp-mainlayout__sidebar {

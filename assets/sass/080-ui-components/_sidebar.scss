@@ -7,8 +7,8 @@
   text-transform: uppercase;
   text-align: center;
   margin-bottom: get-spacing('small');
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  display: flex;
+  justify-content: space-between;
 }
 
 .comp-sidebar__item {
@@ -22,7 +22,7 @@
 
   &:link {
     color: get-color('darkgray');
-    border-bottom: 1px solid get-color('darkgray');
+    // border-bottom: 1px solid get-color('darkgray');
   }
 
   &:visited {
@@ -31,8 +31,12 @@
 
   &:hover {
     color: get-color('pink');
-    border-bottom: 1px solid get-color('darkgray');
+    // border-bottom: 1px solid get-color('darkgray');
   }
+}
+
+.comp-sidebar__item--current {
+    border-bottom: 1px solid get-color('darkgray');
 }
 
 .comp-sidebar__photoframe {
