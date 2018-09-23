@@ -1,0 +1,13 @@
+{% extends "default.njk" %}
+ 
+{% block content %}
+  <article class="h-card">
+      <header>
+        <h1 class="comp-postheader__title p-name"><a href="{{ path }}" class="u-url comp-postheader__titlelink"><time class="dt-published">{{ title }}</time></a></h1>
+      </header>
+
+      <div class="e-content">
+        {{ contents | safe }}
+      </div>
+  </article>
+{% endblock %}
