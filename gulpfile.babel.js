@@ -181,7 +181,8 @@ gulp.task('smithy', function () {
                 limit: false,
                 preprocess: file => ({
                     title: file.title,
-                    description: file.contents
+                    description: file.contents,
+                    url: file.url
                 })
             }),
             metalsmithFeed({
@@ -191,7 +192,17 @@ gulp.task('smithy', function () {
                 preprocess: file => ({
                     title: file.title,
                     description: file.contents,
-                    url: file.link
+                    url: file.url
+                })
+            }),
+            metalsmithFeed({
+                collection: 'notes',
+                limit: false,
+                destination: 'notes.xml',
+                preprocess: file => ({
+                    title: file.title,
+                    description: file.contents,
+                    url: file.url
                 })
             }),
             metalsmithWebmentions(),
