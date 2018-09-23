@@ -36,16 +36,16 @@
   <body>
     <div class="comp-mainlayout">
       <header class="comp-mainlayout__sidebar">
-        <nav class="comp-sidebar">
-          <ul class="comp-sidebar__list">
+        <nav class="comp-nav">
+          <ul class="comp-nav__list">
             {% for item in mainnav %}
               {% if item.path == '//' %}
                 {% set newpath = '/' %}
               {% else %}
                 {% set newpath = item.path %}
               {% endif %}
-              <li class="comp-sidebar__item {% if item.path == path %}comp-sidebar__item--current{% endif %}">
-                <a class="comp-sidebar__link" href="{{ newpath }}">{{ item.title }}</a>
+              <li class="comp-nav__item {% if item.path == path %}comp-nav__item--current{% endif %}">
+                <a class="comp-nav__link" href="{{ newpath }}">{{ item.title }}</a>
               </li>
             {% endfor %}
           </ul>
@@ -54,11 +54,7 @@
       </header>
       <main class="comp-mainlayout__content">
         {% block content %}
-          <h1>
-            {% if realtitle %}{{ realtitle }}
-            {% else %}{{ title }}
-            {% endif %}
-          </h1>
+          <h1>{% if realtitle %}{{ realtitle }}{% else %}{{ title }}{% endif %}</h1>
           {{ contents | safe }}
         {% endblock %}
 

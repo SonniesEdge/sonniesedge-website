@@ -1,8 +1,8 @@
-.comp-sidebar {
+.comp-nav {
 
 }
 
-.comp-sidebar__list {
+.comp-nav__list {
   @include list-reset();
   text-transform: uppercase;
   text-align: center;
@@ -11,11 +11,11 @@
   justify-content: space-between;
 }
 
-.comp-sidebar__item {
+.comp-nav__item {
   white-space: nowrap;
 }
 
-.comp-sidebar__link {
+.comp-nav__link {
   display: block;
   padding: 5px;
   text-decoration: none;
@@ -35,16 +35,16 @@
   }
 }
 
-.comp-sidebar__item--current {
+.comp-nav__item--current {
     border-bottom: 1px solid get-color('darkgray');
 }
 
-.comp-sidebar__photoframe {
+.comp-nav__photoframe {
   text-align: center;
   display: block;
   margin-bottom: get-spacing('xsmall');
 }
 
-.comp-sidebar__photo {
+.comp-nav__photo {
   border-radius: 10%;
 }
