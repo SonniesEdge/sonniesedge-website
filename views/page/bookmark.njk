@@ -10,10 +10,12 @@
 {% endblock %}
   
 {% block content %}
-    <h1>{% if realtitle %}{{ realtitle }}{% else %}{{ title }}{% endif %}</h1>
+    <h1 class="p-name"><a href="{{path}}" class="u-url">{% if realtitle %}{{ realtitle }}{% else %}{{ title }}{% endif %}</a></h1>
     <p class="comp-postheader__date"><time class="dt-published">{{ date }}</time></p>
     
-    {{ contents | safe }}
+    <div class="e-content">
+      {{ contents | safe }}
+    </div>
 
     <p><a href="{{link | safe}}" rel="noopener">{{link | safe}}</a></p>
 {% endblock %}
