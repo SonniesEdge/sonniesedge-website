@@ -3,7 +3,7 @@
 {% block content %}
   <article class="h-card">
       <header>
-        <h1 class="comp-postheader__title p-name"><a href="{{ path }}" class="u-url comp-postheader__titlelink"><time class="dt-published">{{ title }}</time></a></h1>
+        <h1 class="comp-postheader__title p-name"><a href="{{ path }}" class="u-url comp-postheader__titlelink"><time class="dt-published">{% if realtitle %}{{ realtitle }}{% else %}{{ title }}{% endif %}</time></a></h1>
       </header>
 
       <div class="e-content">
