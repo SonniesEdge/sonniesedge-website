@@ -41,6 +41,10 @@ gulp.task('getPinboard', function (done) {
     getpinboard({path: '/_blog/text/bookmarks'},  done);
 });
 
+gulp.task('getPinboardAll', function (done) {
+    getpinboard({path: '/_blog/text/bookmarks'},  done, true);
+});
+
 gulp.task('smithy', function () {
     return gulp.src('./content/**')
     .pipe(metalsmith({
@@ -325,6 +329,6 @@ gulp.task(
 gulp.task(
     'pinboard',
     gulp.series(
-        'getPinboard',
+        'getPinboardAll',
     )
 );

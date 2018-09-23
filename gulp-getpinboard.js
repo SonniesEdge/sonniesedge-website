@@ -51,7 +51,15 @@ function formatFile(time, href, description, extended, tags) {
   return data;
 }
 
-function getPinboard(options, callback) {
+function getPinboard(options, callback, all) {
+  if (all) {
+    getPinboardAll(options, callback);
+  } else {
+    getPinboardRecent(options, callback);
+  }
+}
+
+function getPinboardRecent(options, callback) {
   try {
     if (!api_token) {
       throw new Error('No Pinboard token defined');
@@ -74,6 +82,41 @@ function getPinboard(options, callback) {
             _writeToLocalDropbox(uploadArray, options.path, callback);
           } else {
             _uploadArrayToDropbox(uploadArray, options.path, callback);
+          }
+
+        } else {
+          console.log('Nothing found from Pinboard API!');
+          callback();
+        }
+      });
+    }
+  }
+  catch (err) {
+    console.log('Error: ', err);
+  }
+}
+
+function getPinboardAll(options, callback) {
+  try {
+    if (!api_token) {
+      throw new Error('No Pinboard token defined');
+    } else {
+      let uploadArray = [];
+      pinboard.all({ tag: 'web' }, function (err, res) {
+        if (res.length > 0) {
+          res.forEach(entry => {
+            if (entry.shared === 'yes') {
+              let uploadObj = {};
+              let filename = slug(entry.href);
+              uploadObj.content = formatFile(entry.time, entry.href, entry.description, entry.extended, entry.tags);
+              uploadObj.filename = `${filename}.md`;
+              uploadArray.push(uploadObj);
+            }
+          });
+
+
+          if (env === 'dev') {
+            _writeToLocalDropbox(uploadArray, options.path, callback);
           }
 
         } else {
