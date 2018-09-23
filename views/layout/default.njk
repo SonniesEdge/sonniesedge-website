@@ -45,7 +45,7 @@
                                 {% set newpath = item.path %}
                             {% endif %}
                             <li class="comp-sidebar__item {% if item.path == path %}comp-sidebar__item--current{% endif %}">
-                              <a class="comp-sidebar__link {% if newpath == '/' %}p-author h-card{% endif}" href="{{ newpath }}" {% if newpath == '/' %}rel="author"{% endif %}>{{ item.title }}</a>
+                              <a class="comp-sidebar__link" href="{{ newpath }}">{{ item.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -142,7 +142,7 @@
                         </ul>
                     </section>
                 </div>
-                <p>&copy; Some shit about copyright and year that isn't actually in any way relevant or legal, but is a classic "we've always done it like that" thing.</p>
+                <p>Hey hey. You're looking at the website of <a href="/" rel="author" class="p-author h-card">Charlie Owen</a>. <a href="/contact/">Say hi</a> if you get the chance!</p>
             </footer>
         </div>
 
