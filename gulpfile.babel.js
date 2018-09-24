@@ -302,6 +302,7 @@ gulp.task('watch', () => {
 gulp.task(
     'default', 
     gulp.series(
+        'getPinboard',
         'dropboxText',
         'dropboxImages',
         gulp.series(
@@ -317,6 +318,7 @@ gulp.task(
 gulp.task(
     'build', 
     gulp.series(
+        'getPinboard',
         'dropboxText',
         'dropboxImages',
         gulp.series(
