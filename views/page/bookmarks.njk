@@ -3,7 +3,7 @@
   {% for bookmark in bookmarks %}
     <section class="comp-bookmark">
       <h2 class="comp-bookmark__title"><a href="{{ bookmark.path }}">{{ bookmark.title }}</a></h2>
-      <p class="comp-bookmark__date"><time class="dt-published">{{ bookmark.date }}</time></p>
+      <p class="comp-bookmark__date"><time class="dt-published">{{ bookmark.dateFormatted }}</time></p>
 
       {{ bookmark.contents_original | safe }}
 

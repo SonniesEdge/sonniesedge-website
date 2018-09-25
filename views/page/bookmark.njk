@@ -11,7 +11,7 @@
   
 {% block content %}
     <h1 class="p-name"><a href="{{path}}" class="u-url">{% if realtitle %}{{ realtitle }}{% else %}{{ title }}{% endif %}</a></h1>
-    <p class="comp-postheader__date"><time class="dt-published">{{ date }}</time></p>
+    <p class="comp-postheader__date"><time class="dt-published">{{ dateFormatted }}</time></p>
     
     <div class="e-content">
       {{ contents | safe }}

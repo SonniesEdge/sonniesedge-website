@@ -22,6 +22,7 @@ import metalsmithDateInFilename from './metalsmith-date-from-filename';
 import metalsmithContentAsField from './metalsmith-contentasfield';
 import metalsmithDateAsTitle from './metalsmith-dateastitle';
 import metalsmithPagination from 'metalsmith-pagination';
+import metalsmithKeymaster from 'metalsmith-keymaster';
 
 gulp.task('dropboxText', function (done) {
     dropbox({
@@ -57,8 +58,9 @@ gulp.task('smithy', function () {
             ]),
             metalsmithDateInFilename(),
             metalsmithDrafts(),
-            metalsmithContentAsField({
-                fieldName: 'dave'
+            metalsmithKeymaster({
+              from: 'date',
+              to: 'formattedDate'
             }),
             defaultvals([
                 {
@@ -163,7 +165,7 @@ gulp.task('smithy', function () {
             dateFormatter({
               dates: [
                 {
-                  key: 'date',
+                  key: 'dateFormatted',
                   format: 'MMMM Do YYYY, HH:mm'
                 }
               ]
@@ -182,7 +184,8 @@ gulp.task('smithy', function () {
                 preprocess: file => ({
                     title: file.title,
                     description: file.contents,
-                    url: file.url
+                    url: file.url,
+                    date: file.date
                 })
             }),
             metalsmithFeed({
@@ -192,7 +195,8 @@ gulp.task('smithy', function () {
                 preprocess: file => ({
                     title: file.title,
                     description: file.contents,
-                    url: file.url
+                    url: file.url,
+                    date: file.date
                 })
             }),
             metalsmithFeed({
@@ -202,7 +206,8 @@ gulp.task('smithy', function () {
                 preprocess: file => ({
                     title: file.title,
                     description: file.contents,
-                    url: file.url
+                    url: file.url,
+                    date: file.date
                 })
             }),
             metalsmithWebmentions(),
