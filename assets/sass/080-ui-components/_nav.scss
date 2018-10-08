@@ -9,6 +9,7 @@
   margin-bottom: get-spacing('small');
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .comp-nav__item {
