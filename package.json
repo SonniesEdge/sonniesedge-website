@@ -10,7 +10,9 @@
     "smithy": "gulp smithy",
     "rollup": "rollup -c",
     "dropbox": "gulp db",
-    "pinboard": "gulp pinboard"
+    "pinboard": "gulp pinboard",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "devDependencies": {},
   "dependencies": {
@@ -63,6 +65,8 @@
     "rollup-plugin-uglify": "^3.0.0",
     "slug": "^0.9.1",
     "slugify": "^1.2.9",
-    "unzip": "^0.1.11"
-  }
+    "unzip": "^0.1.11",
+    "snyk": "^1.317.0"
+  },
+  "snyk": true
 }
