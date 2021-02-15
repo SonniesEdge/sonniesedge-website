@@ -14,11 +14,11 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "adm-zip": "^0.4.11",
+    "adm-zip": "^0.5.2",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.26.9",
     "component-type": "^1.2.1",
     "copy": "^0.3.2",
     "dropbox": "^4.0.9",
